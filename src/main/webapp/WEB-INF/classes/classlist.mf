@@ -1,0 +1,3 @@
+gwt.material.demo.errai.client.local.page.HomePage
+gwt.material.demo.errai.client.local.Client
+gwt.material.demo.errai.client.local.widget.Main

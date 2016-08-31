@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+  <servlet>
+
+    <!-- NOTE: the integration-test profile uses this web.xml. Integration tests only work properly
+         with the DefaultBlockingServlet. If you change this setting, alter the integration-test
+         profile in pom.xml to use a different web.xml (for example, maybe src/tomcat/web.xml) -->
+    <servlet-name>ErraiServlet</servlet-name>
+    <servlet-class>org.jboss.errai.bus.server.servlet.DefaultBlockingServlet</servlet-class>
+        <init-param>
+          <param-name>auto-discover-services</param-name>
+          <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+      <servlet-name>ErraiServlet</servlet-name>
+      <url-pattern>*.erraiBus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>com_google_gwt_junit_server_JUnitHostImpl</servlet-name>
+      <servlet-class>com.google.gwt.junit.server.JUnitHostImpl</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>com_google_gwt_junit_server_JUnitHostImpl</servlet-name>
+      <url-pattern>/App/junithost/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
