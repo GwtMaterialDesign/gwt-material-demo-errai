@@ -9,9 +9,9 @@
     <servlet-class>org.jboss.errai.bus.server.servlet.DefaultBlockingServlet</servlet-class>
         <init-param>
           <param-name>auto-discover-services</param-name>
-          <param-value>true</param-value>
+          <param-value>false</param-value>
         </init-param>
-        <load-on-startup>1</load-on-startup>
+        <load-on-startup>0</load-on-startup>
     </servlet>
 
     <servlet-mapping>
