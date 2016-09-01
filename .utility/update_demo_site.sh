@@ -24,23 +24,23 @@ git clone --quiet --branch=gh-pages https://$GH_TOKEN@github.com/GwtMaterialDesi
 cd gh-pages
 
 # remove the GwtMaterialDemo directories from git.
-if [[ -d ./2.0-SNAPSHOT/App ]]; then
-git rm -rf ./2.0-SNAPSHOT/App
+if [[ -d ./1.0-SNAPSHOT/App ]]; then
+git rm -rf ./1.0-SNAPSHOT/App
 fi
-if [[ -f ./2.0-SNAPSHOT/index.html ]]; then
-git rm -rf ./2.0-SNAPSHOT/index.html
+if [[ -f ./1.0-SNAPSHOT/index.html ]]; then
+git rm -rf ./1.0-SNAPSHOT/index.html
 fi
-if [[ -d ./2.0-SNAPSHOT/META-INF ]]; then
-git rm -rf ./2.0-SNAPSHOT/META-INF
+if [[ -d ./1.0-SNAPSHOT/META-INF ]]; then
+git rm -rf ./1.0-SNAPSHOT/META-INF
 fi
-if [[ -d ./2.0-SNAPSHOT/WEB-INF ]]; then
-git rm -rf ./2.0-SNAPSHOT/WEB-INF
+if [[ -d ./1.0-SNAPSHOT/WEB-INF ]]; then
+git rm -rf ./1.0-SNAPSHOT/WEB-INF
 fi
 
-# copy the new GwtMaterialDemo the 2.0-SNAPSHOT dir.
-unzip -u $TRAVIS_BUILD_DIR/target/gwt-material-demo-errai-*.war -d ./2.0-SNAPSHOT/
-rm -rf ./2.0-SNAPSHOT/META-INF
-rm -rf ./2.0-SNAPSHOT/WEB-INF
+# copy the new GwtMaterialDemo the 1.0-SNAPSHOT dir.
+unzip -u $TRAVIS_BUILD_DIR/target/gwt-material-demo-errai-*.war -d ./1.0-SNAPSHOT/
+rm -rf ./1.0-SNAPSHOT/META-INF
+rm -rf ./1.0-SNAPSHOT/WEB-INF
 
 git add -f .
 git commit -m "Auto-push demo to gh-pages successful. (Travis build: $TRAVIS_BUILD_NUMBER)"

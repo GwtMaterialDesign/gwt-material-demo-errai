@@ -1,2 +1,5 @@
 .idea/
 target/
+src/main/webapp/WEB-INF/classes/classlist.mf
+.errai/
+src/main/webapp/WEB-INF/classes/
