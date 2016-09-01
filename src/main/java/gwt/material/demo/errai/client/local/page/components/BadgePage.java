@@ -42,6 +42,9 @@ public class BadgePage extends PageBase {
     @Inject
     MaterialNavSection navSection;
 
+    @Inject
+    MaterialIcon icon2;
+
     @PostConstruct
     public void init() {
         initPage("Badges", "Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.", COMPONENTS_COLOR);
@@ -52,15 +55,15 @@ public class BadgePage extends PageBase {
     }
 
     private void buildNavBar() {
-        icon.setIconType(IconType.NOTIFICATIONS);
+        icon2.setIconType(IconType.NOTIFICATIONS);
         MaterialBadge badge = new MaterialBadge();
         badge.setText("1");
         badge.setRight(0);
         badge.setCircle(true);
         badge.setBackgroundColor("pink");
-        icon.add(badge);
+        icon2.add(badge);
         navBar.add(navSection);
-        navSection.add(icon);
+        navSection.add(icon2);
     }
 
     private void buildLinkAndIcon() {

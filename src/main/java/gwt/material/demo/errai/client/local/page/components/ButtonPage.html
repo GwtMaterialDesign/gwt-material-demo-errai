@@ -1,3 +1,127 @@
 <div>
-    Button
+    <div class="code">
+        <div>Raised</div>
+        <label>The raised button is a standard button that signify actions and seek to give depth to a mostly flat page.</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div data-field="btn1">&lt;/div>
+                &lt;div data-field="btn2">&lt;/div>
+                &lt;div data-field="btn3">&lt;/div>
+                &lt;div data-field="btn4">&lt;/div>
+                &lt;div data-field="btn5">&lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialButton btn1, btn2, btn3, btn4, btn5;
+
+                @PostConstruct
+                public void init() {
+                    btn1.setText("Button");
+                    btn1.setBackgroundColor("white");
+                    btn1.setTextColor("black");
+                    btn1.setWaves(WavesType.DEFAULT);
+
+                    btn2.setText("Primary");
+                    btn2.setWaves(WavesType.LIGHT);
+                    btn2.setIconType(IconType.POLYMER);
+
+                    btn3.setText("Disabled");
+                    btn3.setWaves(WavesType.LIGHT);
+                    btn3.setIconType(IconType.POLYMER);
+                    btn3.setIconPosition(IconPosition.RIGHT);
+                    btn3.setEnabled(false);
+
+                    btn4.setText("Warn");
+                    btn4.setWaves(WavesType.LIGHT);
+                    btn4.setIconType(IconType.POLYMER);
+                    btn4.setBackgroundColor("red");
+                    btn4.setIconPosition(IconPosition.RIGHT);
+
+                    btn5.setText("Icon Color");
+                    btn5.setWaves(WavesType.RED);
+                    btn5.setIconType(IconType.POLYMER);
+                    btn5.setIconColor("red");
+                    btn5.setBackgroundColor("white");
+                    btn5.setTextColor("black");
+                    btn5.setIconPosition(IconPosition.RIGHT);
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="btn1"></div>
+            <div data-field="btn2"></div>
+            <div data-field="btn3"></div>
+            <div data-field="btn4"></div>
+            <div data-field="btn5"></div>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Floating</div>
+        <label>The floating circular action button is meant for very important functions.</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div data-field="btnFloating1">&lt;/div>
+                &lt;div data-field="btnFloating2">&lt;/div>
+                &lt;div data-field="btnFloating3">&lt;/div>
+                &lt;div data-field="btnFloating4">&lt;/div>
+                &lt;div data-field="btnFloating5">&lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialButton btnFloating1, btnFloating2, btnFloating3, btnFloating4, btnFloating5;
+
+                @PostConstruct
+                public void init() {
+                    btnFloating1.setType(ButtonType.FLOATING);
+                    btnFloating1.setWaves(WavesType.LIGHT);
+                    btnFloating1.setSize(ButtonSize.LARGE);
+                    btnFloating1.setBackgroundColor("red");
+                    btnFloating1.setIconType(IconType.CAKE);
+
+                    btnFloating2.setType(ButtonType.FLOATING);
+                    btnFloating2.setWaves(WavesType.LIGHT);
+                    btnFloating2.setSize(ButtonSize.LARGE);
+                    btnFloating2.setIconType(IconType.ANDROID);
+
+                    btnFloating3.setType(ButtonType.FLOATING);
+                    btnFloating3.setWaves(WavesType.LIGHT);
+                    btnFloating3.setSize(ButtonSize.LARGE);
+                    btnFloating3.setIconType(IconType.MESSAGE);
+                    btnFloating3.setEnabled(false);
+
+                    btnFloating4.setType(ButtonType.FLOATING);
+                    btnFloating4.setWaves(WavesType.DEFAULT);
+                    btnFloating4.setSize(ButtonSize.LARGE);
+                    btnFloating4.setIconType(IconType.GROUP);
+
+                    btnFloating5.setType(ButtonType.FLOATING);
+                    btnFloating5.setWaves(WavesType.DEFAULT);
+                    btnFloating5.setSize(ButtonSize.LARGE);
+                    btnFloating5.setIconColor("green");
+                    btnFloating5.setBackgroundColor("white");
+                    btnFloating5.setIconType(IconType.ANDROID);
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="btnFloating1"></div>
+            <div data-field="btnFloating2"></div>
+            <div data-field="btnFloating3"></div>
+            <div data-field="btnFloating4"></div>
+            <div data-field="btnFloating5"></div>
+        </div>
+    </div>
 </div>
