@@ -34,8 +34,8 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
-@Page(path = "home", role = DefaultPage.class)
-public class HomePage {
+@Page(path = "about", role = DefaultPage.class)
+public class HomePage extends PageBase {
 
     @Inject
     @DataField
@@ -47,6 +47,7 @@ public class HomePage {
 
     @PostConstruct
     public void init() {
+        initPage("GWT Material", "A Material Design look and feel for GWT Apps plus Phonegap.", ABOUT_COLOR);
         icon.setIconType(IconType.POLYMER);
         label.setText("GWT Material Errai");
     }

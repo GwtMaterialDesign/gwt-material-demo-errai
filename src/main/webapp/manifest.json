@@ -1,0 +1,17 @@
+{
+  "name": "GWT Material Design",
+  "short_name": "GWT Material",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  },
+    {
+      "src": "icon.png",
+      "sizes": "348x348",
+      "type": "image/png"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#ffbb00"
+}
