@@ -38,7 +38,7 @@ git rm -rf ./1.0-SNAPSHOT/WEB-INF
 fi
 
 # copy the new GwtMaterialDemo the 1.0-SNAPSHOT dir.
-unzip -u $TRAVIS_BUILD_DIR/target/gwt-material-demo-errai-*.war -d ./1.0-SNAPSHOT/
+unzip -u $TRAVIS_BUILD_DIR/target/gwt-material-demo-errai*.war -d ./1.0-SNAPSHOT/
 rm -rf ./1.0-SNAPSHOT/META-INF
 rm -rf ./1.0-SNAPSHOT/WEB-INF
 
