@@ -7,6 +7,7 @@ import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
@@ -49,7 +50,7 @@ public class FormPage extends PageBase {
     @DataField
     MaterialListBox lstBox1;
 
-    @Override
+    @PostConstruct
     public void init() {
         initPage("Forms", "Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.", COMPONENTS_COLOR);
         buildTextBox();

@@ -4,6 +4,8 @@ import gwt.material.demo.errai.client.local.page.PageBase;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
+import javax.annotation.PostConstruct;
+
 @Templated
 @Page(path = "combobox")
 public class ComboBoxPage extends PageBase {
@@ -12,7 +14,7 @@ public class ComboBoxPage extends PageBase {
     @DataField
     MaterialComboBox combo1;*/
 
-    @Override
+    @PostConstruct
     public void init() {
         initPage("ComboBox", "", ADDINS_COLOR);
         /*combo1.addItem("Option 1");

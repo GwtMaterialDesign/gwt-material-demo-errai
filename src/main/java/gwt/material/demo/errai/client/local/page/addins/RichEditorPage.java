@@ -6,6 +6,7 @@ import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
@@ -16,9 +17,9 @@ public class RichEditorPage extends PageBase {
     @DataField
     MaterialRichEditor rich;
 
-    @Override
+    @PostConstruct
     public void init() {
-        initPage("Rich Editor", "Provides a great Rich Editor with amazing options built with Material Design Look and Feel.", ADDINS_COLOR);
-
+        initPage("Rich Editor", "", ADDINS_COLOR);
     }
+
 }

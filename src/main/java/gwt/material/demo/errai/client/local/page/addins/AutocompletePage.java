@@ -8,6 +8,7 @@ import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class AutocompletePage extends PageBase {
     @DataField
     MaterialAutoComplete ac1;
 
-    @Override
+    @PostConstruct
     public void init() {
         initPage("Autocomplete", "Description", ADDINS_COLOR);
         UserOracle oracle = new UserOracle();

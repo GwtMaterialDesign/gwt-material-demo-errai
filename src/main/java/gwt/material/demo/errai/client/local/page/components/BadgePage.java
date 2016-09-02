@@ -9,6 +9,7 @@ import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
@@ -44,7 +45,7 @@ public class BadgePage extends PageBase {
     @Inject
     MaterialNavSection navSection;
 
-    @Override
+    @PostConstruct
     public void init() {
         initPage("Badges", "Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.", COMPONENTS_COLOR);
         buildLinkAndIcon();

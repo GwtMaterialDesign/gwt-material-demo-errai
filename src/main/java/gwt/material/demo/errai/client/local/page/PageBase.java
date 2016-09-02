@@ -28,9 +28,6 @@ public class PageBase extends Composite {
         pageChangeEvent.fire(new PageChangeEvent(title, description, color));
     }
 
-    @PostConstruct
-    public void init() {}
-
     @PageShown
     public void page() {
         $(".code i").on("click", e -> {
