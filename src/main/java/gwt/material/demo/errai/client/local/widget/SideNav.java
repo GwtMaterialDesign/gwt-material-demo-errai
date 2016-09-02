@@ -19,12 +19,18 @@ public class SideNav extends Composite {
     @DataField
     MaterialSideNav sideNav;
 
+    @Inject
+    MaterialNavBrand navBrand;
+
     @PostConstruct
     public void init() {
         sideNav.setId("sideNav");
         sideNav.setType(SideNavType.PUSH);
         sideNav.setWidth(280);
         sideNav.reinitialize();
+
+        navBrand.setText("gwt-material");
+        sideNav.add(navBrand);
 
         for (Link l : DataHelper.getAppLinks()) {
             if (l.getSubLinks().size() > 0) {

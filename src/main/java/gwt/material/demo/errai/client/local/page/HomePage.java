@@ -45,9 +45,9 @@ public class HomePage extends PageBase {
     @DataField
     MaterialLabel label;
 
-    @PostConstruct
+    @Override
     public void init() {
-        initPage("GWT Material", "A Material Design look and feel for GWT Apps plus Phonegap.", ABOUT_COLOR);
+        initPage("GWT Material Errai", "A GWT Material Demo built with Errai", ABOUT_COLOR);
         icon.setIconType(IconType.POLYMER);
         label.setText("GWT Material Errai");
     }

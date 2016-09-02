@@ -124,4 +124,310 @@
             <div data-field="btnFloating5"></div>
         </div>
     </div>
+
+    <div class="code">
+        <div>Flat</div>
+        <label>Flat buttons are usually used within elements that already have depth like cards or modals.</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div data-field="btnFlat1">&lt;/div>
+                &lt;div data-field="btnFlat2">&lt;/div>
+                &lt;div data-field="btnFlat3">&lt;/div>
+                &lt;div data-field="btnFlat4">&lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialButton btnFlat1, btnFlat2, btnFlat3, btnFlat4;
+
+                @PostConstruct
+                public void init() {
+                    btnFlat1.setType(ButtonType.FLAT);
+                    btnFlat1.setText("Button");
+                    btnFlat1.setWaves(WavesType.DEFAULT);
+
+                    btnFlat2.setType(ButtonType.FLAT);
+                    btnFlat2.setText("Primary (No Waves)");
+                    btnFlat2.setTextColor("blue");
+
+                    btnFlat3.setType(ButtonType.FLAT);
+                    btnFlat3.setText("Disabled");
+                    btnFlat3.setWaves(WavesType.DEFAULT);
+                    btnFlat3.setEnabled(false);
+
+                    btnFlat4.setType(ButtonType.FLAT);
+                    btnFlat4.setText("Warn");
+                    btnFlat4.setTextColor("red");
+                    btnFlat4.setWaves(WavesType.RED);
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="btnFlat1"></div>
+            <div data-field="btnFlat2"></div>
+            <div data-field="btnFlat3"></div>
+            <div data-field="btnFlat4"></div>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Icon Button</div>
+        <label>Using MaterialIcon component extends ButtonBased which has predefined click events and functionalities</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div data-field="btnIconButton1">&lt;/div>
+                &lt;div data-field="btnIconButton2">&lt;/div>
+                &lt;div data-field="btnIconButton3">&lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialIcon btnIconButton1, btnIconButton2, btnIconButton3;
+
+                @PostConstruct
+                public void init() {
+                    btnIconButton1.setIconType(IconType.MENU);
+                    btnIconButton1.setIconColor("blue");
+                    btnIconButton1.setWaves(WavesType.DEFAULT);
+                    btnIconButton1.setCircle(true);
+
+                    btnIconButton2.setIconType(IconType.FAVORITE);
+                    btnIconButton2.setIconColor("red");
+                    btnIconButton2.setEnabled(false);
+                    btnIconButton2.setWaves(WavesType.DEFAULT);
+                    btnIconButton2.setCircle(true);
+
+                    btnIconButton3.setIconType(IconType.MORE_VERT);
+                    btnIconButton3.setIconColor("grey");
+                    btnIconButton3.setWaves(WavesType.DEFAULT);
+                    btnIconButton3.setCircle(true);
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="btnIconButton1"></div>
+            <div data-field="btnIconButton2"></div>
+            <div data-field="btnIconButton3"></div>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Large</div>
+        <label>This button has a larger height for buttons that need more attention.</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div data-field="btnLarge1">&lt;/div>
+                &lt;div data-field="btnLarge2">&lt;/div>
+                &lt;div data-field="btnLarge3">&lt;/div>
+                &lt;div data-field="btnLarge4">&lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialButton btnLarge1, btnLarge2, btnLarge3;
+
+                @PostConstruct
+                public void init() {
+                    btnLarge1.setText("Large");
+                    btnLarge1.setWaves(WavesType.LIGHT);
+                    btnLarge1.setSize(ButtonSize.LARGE);
+    
+                    btnLarge2.setText("Large");
+                    btnLarge2.setWaves(WavesType.LIGHT);
+                    btnLarge2.setSize(ButtonSize.LARGE);
+                    btnLarge2.setIconType(IconType.POLYMER);
+                    btnLarge2.setIconPosition(IconPosition.LEFT);
+    
+                    btnLarge3.setText("Large");
+                    btnLarge3.setWaves(WavesType.LIGHT);
+                    btnLarge3.setSize(ButtonSize.LARGE);
+                    btnLarge3.setIconType(IconType.POLYMER);
+                    btnLarge3.setIconPosition(IconPosition.RIGHT);
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="btnLarge1"></div>
+            <div data-field="btnLarge2"></div>
+            <div data-field="btnLarge3"></div>
+            <div data-field="btnLarge4"></div>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Disabled</div>
+        <label>When you set enabled='false' All events will be disabled.</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div data-field="btnDisabled1">&lt;/div>
+                &lt;div data-field="btnDisabled2">&lt;/div>
+                &lt;div data-field="btnDisabled3">&lt;/div>
+                &lt;div data-field="btnDisabled4">&lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialButton btnDisabled1, btnDisabled2, btnDisabled3, btnDisabled4;
+
+                @PostConstruct
+                public void init() {
+                    btnDisabled1.setText("Disabled");
+                    btnDisabled1.setIconType(IconType.POLYMER);
+                    btnDisabled1.setIconPosition(IconPosition.LEFT);
+                    btnDisabled1.setSize(ButtonSize.LARGE);
+                    btnDisabled1.setEnabled(false);
+
+                    btnDisabled2.setText("Disabled");
+                    btnDisabled2.setIconType(IconType.POLYMER);
+                    btnDisabled2.setIconPosition(IconPosition.LEFT);
+                    btnDisabled2.setEnabled(false);
+
+                    btnDisabled3.setText("Disabled");
+                    btnDisabled3.setType(ButtonType.FLAT);
+                    btnDisabled3.setEnabled(false);
+
+                    btnDisabled4.setIconType(IconType.POLYMER);
+                    btnDisabled4.setType(ButtonType.FLOATING);
+                    btnDisabled4.setEnabled(false);
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="btnDisabled1"></div>
+            <div data-field="btnDisabled2"></div>
+            <div data-field="btnDisabled3"></div>
+            <div data-field="btnDisabled4"></div>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Events</div>
+        <label>MaterialButtons , MaterialIcons and MaterialLinks extends ButtonBase which implements all Mouse Handlers, Click Handlers and other events.</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div data-field="btnEvents1">&lt;/div>
+                &lt;div data-field="btnEvents2">&lt;/div>
+                &lt;div data-field="btnEvents3">&lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialButton btnEvents1, btnEvents2, btnEvents3;
+
+                @PostConstruct
+                public void init() {
+                    btnEvents1.setText("Click Me");
+                    btnEvents1.setIconType(IconType.POLYMER);
+                    btnEvents1.setWaves(WavesType.LIGHT);
+                    btnEvents1.addClickHandler(clickEvent -> {
+                    MaterialToast.fireToast("Clicked");
+                    });
+
+                    btnEvents2.setText("Hover Me");
+                    btnEvents2.setIconType(IconType.POLYMER);
+                    btnEvents2.setWaves(WavesType.LIGHT);
+                    btnEvents2.addMouseOverHandler(clickEvent -> {
+                    MaterialToast.fireToast("Hovered");
+                    });
+
+                    btnEvents3.setText("Double Click Me");
+                    btnEvents3.setIconType(IconType.POLYMER);
+                    btnEvents3.setWaves(WavesType.LIGHT);
+                    btnEvents3.addDoubleClickHandler(clickEvent -> {
+                    MaterialToast.fireToast("Double Clicked");
+                    });
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="btnEvents1"></div>
+            <div data-field="btnEvents2"></div>
+            <div data-field="btnEvents3"></div>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Links</div>
+        <label>Using Material Link you can easily add href functionality into your app for navigation</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+            <div class="lang">HTML</div>
+            <code>
+                &lt;div style="display: inline-block">
+                &lt;div data-field="btnLink1">&lt;/div>
+                &lt;/div>
+                &lt;div style="display: inline-block">
+                &lt;div data-field="btnLink2">&lt;/div>
+                &lt;/div>
+                &lt;div style="display: inline-block">
+                &lt;div data-field="btnLink3">&lt;/div>
+                &lt;/div>
+            </code>
+        </pre>
+        <pre>
+            <div class="lang">Java</div>
+            <code>
+                @Inject
+                @DataField
+                MaterialLink btnLink1, btnLink2, btnLink3;
+
+                @PostConstruct
+                public void init() {
+                    btnLink1.setText("Normal Link");
+                    btnLink1.setTextColor("red");
+                    btnLink1.setIconPosition(IconPosition.LEFT);
+                    btnLink1.setIconType(IconType.POLYMER);
+
+                    btnLink2.setText("Link with Href");
+                    btnLink2.setHref("#button");
+                    btnLink2.setTextColor("red");
+                    btnLink2.setIconPosition(IconPosition.LEFT);
+                    btnLink2.setIconType(IconType.POLYMER);
+
+                    btnLink3.setText("Link with different color");
+                    btnLink3.setTextColor("black");
+                    btnLink3.setIconColor("red");
+                    btnLink3.setIconPosition(IconPosition.LEFT);
+                    btnLink3.setIconType(IconType.POLYMER);
+                }
+            </code>
+        </pre>
+        <div class="row" style="margin-top: 20px">
+            <div style="display: inline-block">
+                <div data-field="btnLink1"></div>
+            </div>
+            <div style="display: inline-block">
+                <div data-field="btnLink2"></div>
+            </div>
+            <div style="display: inline-block">
+                <div data-field="btnLink3"></div>
+            </div>
+        </div>
+    </div>
+
 </div>

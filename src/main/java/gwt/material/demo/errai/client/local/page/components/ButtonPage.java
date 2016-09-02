@@ -3,11 +3,13 @@ package gwt.material.demo.errai.client.local.page.components;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.constants.*;
 import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialIcon;
+import gwt.material.design.client.ui.MaterialLink;
+import gwt.material.design.client.ui.MaterialToast;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
@@ -22,11 +24,160 @@ public class ButtonPage extends PageBase {
     @DataField
     MaterialButton btnFloating1, btnFloating2, btnFloating3, btnFloating4, btnFloating5;
 
-    @PostConstruct
+    @Inject
+    @DataField
+    MaterialButton btnFlat1, btnFlat2, btnFlat3, btnFlat4;
+
+    @Inject
+    @DataField
+    MaterialButton btnLarge1, btnLarge2, btnLarge3;
+
+    @Inject
+    @DataField
+    MaterialButton btnDisabled1, btnDisabled2, btnDisabled3, btnDisabled4;
+
+    @Inject
+    @DataField
+    MaterialButton btnEvents1, btnEvents2, btnEvents3;
+
+    @Inject
+    @DataField
+    MaterialLink btnLink1, btnLink2, btnLink3;
+
+    @Inject
+    @DataField
+    MaterialIcon btnIconButton1, btnIconButton2, btnIconButton3;
+
+    @Override
     public void init() {
         initPage("Button", "There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.", COMPONENTS_COLOR);
         buildRaised();
         buildFloating();
+        buildFlat();
+        buildLarge();
+        buildDisabled();
+        buildEvents();
+        buildLinks();
+        buildIconButton();
+    }
+
+    private void buildIconButton() {
+        btnIconButton1.setIconType(IconType.MENU);
+        btnIconButton1.setIconColor("blue");
+        btnIconButton1.setWaves(WavesType.DEFAULT);
+        btnIconButton1.setCircle(true);
+
+        btnIconButton2.setIconType(IconType.FAVORITE);
+        btnIconButton2.setIconColor("red");
+        btnIconButton2.setEnabled(false);
+        btnIconButton2.setWaves(WavesType.DEFAULT);
+        btnIconButton2.setCircle(true);
+
+        btnIconButton3.setIconType(IconType.MORE_VERT);
+        btnIconButton3.setIconColor("grey");
+        btnIconButton3.setWaves(WavesType.DEFAULT);
+        btnIconButton3.setCircle(true);
+    }
+
+    private void buildLinks() {
+        btnLink1.setText("Normal Link");
+        btnLink1.setTextColor("red");
+        btnLink1.setIconPosition(IconPosition.LEFT);
+        btnLink1.setIconType(IconType.POLYMER);
+
+        btnLink2.setText("Link with Href");
+        btnLink2.setHref("#button");
+        btnLink2.setTextColor("red");
+        btnLink2.setIconPosition(IconPosition.LEFT);
+        btnLink2.setIconType(IconType.POLYMER);
+
+        btnLink3.setText("Link with different color");
+        btnLink3.setTextColor("black");
+        btnLink3.setIconColor("red");
+        btnLink3.setIconPosition(IconPosition.LEFT);
+        btnLink3.setIconType(IconType.POLYMER);
+    }
+
+    private void buildEvents() {
+        btnEvents1.setText("Click Me");
+        btnEvents1.setIconType(IconType.POLYMER);
+        btnEvents1.setWaves(WavesType.LIGHT);
+        btnEvents1.addClickHandler(clickEvent -> {
+            MaterialToast.fireToast("Clicked");
+        });
+
+        btnEvents2.setText("Hover Me");
+        btnEvents2.setIconType(IconType.POLYMER);
+        btnEvents2.setWaves(WavesType.LIGHT);
+        btnEvents2.addMouseOverHandler(clickEvent -> {
+            MaterialToast.fireToast("Hovered");
+        });
+
+        btnEvents3.setText("Double Click Me");
+        btnEvents3.setIconType(IconType.POLYMER);
+        btnEvents3.setWaves(WavesType.LIGHT);
+        btnEvents3.addDoubleClickHandler(clickEvent -> {
+            MaterialToast.fireToast("Double Clicked");
+        });
+    }
+
+    private void buildDisabled() {
+        btnDisabled1.setText("Disabled");
+        btnDisabled1.setIconType(IconType.POLYMER);
+        btnDisabled1.setIconPosition(IconPosition.LEFT);
+        btnDisabled1.setSize(ButtonSize.LARGE);
+        btnDisabled1.setEnabled(false);
+
+        btnDisabled2.setText("Disabled");
+        btnDisabled2.setIconType(IconType.POLYMER);
+        btnDisabled2.setIconPosition(IconPosition.LEFT);
+        btnDisabled2.setEnabled(false);
+
+        btnDisabled3.setText("Disabled");
+        btnDisabled3.setType(ButtonType.FLAT);
+        btnDisabled3.setEnabled(false);
+
+        btnDisabled4.setIconType(IconType.POLYMER);
+        btnDisabled4.setType(ButtonType.FLOATING);
+        btnDisabled4.setEnabled(false);
+    }
+
+    private void buildLarge() {
+        btnLarge1.setText("Large");
+        btnLarge1.setWaves(WavesType.LIGHT);
+        btnLarge1.setSize(ButtonSize.LARGE);
+
+        btnLarge2.setText("Large");
+        btnLarge2.setWaves(WavesType.LIGHT);
+        btnLarge2.setSize(ButtonSize.LARGE);
+        btnLarge2.setIconType(IconType.POLYMER);
+        btnLarge2.setIconPosition(IconPosition.LEFT);
+
+        btnLarge3.setText("Large");
+        btnLarge3.setWaves(WavesType.LIGHT);
+        btnLarge3.setSize(ButtonSize.LARGE);
+        btnLarge3.setIconType(IconType.POLYMER);
+        btnLarge3.setIconPosition(IconPosition.RIGHT);
+    }
+
+    private void buildFlat() {
+        btnFlat1.setType(ButtonType.FLAT);
+        btnFlat1.setText("Button");
+        btnFlat1.setWaves(WavesType.DEFAULT);
+
+        btnFlat2.setType(ButtonType.FLAT);
+        btnFlat2.setText("Primary (No Waves)");
+        btnFlat2.setTextColor("blue");
+
+        btnFlat3.setType(ButtonType.FLAT);
+        btnFlat3.setText("Disabled");
+        btnFlat3.setWaves(WavesType.DEFAULT);
+        btnFlat3.setEnabled(false);
+
+        btnFlat4.setType(ButtonType.FLAT);
+        btnFlat4.setText("Warn");
+        btnFlat4.setTextColor("red");
+        btnFlat4.setWaves(WavesType.RED);
     }
 
     private void buildFloating() {

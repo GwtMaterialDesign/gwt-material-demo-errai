@@ -1,15 +1,14 @@
 package gwt.material.demo.errai.client.local.page.components;
 
+import com.google.gwt.dom.client.Style;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.constants.Position;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
@@ -23,6 +22,9 @@ public class BadgePage extends PageBase {
     @Inject
     @DataField
     MaterialLink icon;
+
+    @Inject
+    MaterialLink icon2;
 
     @Inject
     @DataField
@@ -42,10 +44,7 @@ public class BadgePage extends PageBase {
     @Inject
     MaterialNavSection navSection;
 
-    @Inject
-    MaterialIcon icon2;
-
-    @PostConstruct
+    @Override
     public void init() {
         initPage("Badges", "Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.", COMPONENTS_COLOR);
         buildLinkAndIcon();
@@ -56,6 +55,7 @@ public class BadgePage extends PageBase {
 
     private void buildNavBar() {
         icon2.setIconType(IconType.NOTIFICATIONS);
+        icon2.setLayoutPosition(Style.Position.RELATIVE);
         MaterialBadge badge = new MaterialBadge();
         badge.setText("1");
         badge.setRight(0);
