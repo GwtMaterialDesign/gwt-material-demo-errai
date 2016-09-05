@@ -1,7 +1,7 @@
 <div>
     <div class="code">
-        <div>Floating</div>
-        <label>The floating circular action button is meant for very important functions.</label>
+        <div>Autocomplete</div>
+        <label>Use GWT Autocomplete to search for matches from local or remote data sources. We used MultiWordSuggestOracle to populate the list to be added on the autocomplete values</label>
         <i class="material-icons waves-default waves-effect circle code">code</i>
         <pre>
             <div class="lang">HTML</div>
@@ -15,6 +15,18 @@
 
             </code>
         </pre>
-        <div data-field="ac1"></div>
+        <div class="row">
+            <div data-field="ac1" class="col s12"></div>
+            <div data-field="btnGetAllStates" style="margin-left: 16px;"></div>
+            <div data-field="btnClear"></div>
+        </div>
+        <blockquote>
+            You can click the chips to select it.<br/>
+            Perform any keyboard actions like pressing KEY DELETE and KEY BACKSPACE to remove it from the autocomplete values<br/>
+            By calling automcomplte.getItemValues() you will retrieve all the items that is currently on the Autocomplete Field<br/>
+            If the value is already exist, we automatically remove it when adding<br/>
+            You can add an unknown value by typing new one then PRESS ENTER<br/>
+            To disable , add enabled="false" parameter on the autocomplete widget<br/>
+        </blockquote>
     </div>
 </div>

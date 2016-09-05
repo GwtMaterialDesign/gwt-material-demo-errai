@@ -14,8 +14,8 @@ public class DataHelper {
         components.addSubLink(new Link("Badges", "#badge"));
         components.addSubLink(new Link("Buttons", "#button"));
         components.addSubLink(new Link("Breadcrumb", "#breadcrumb"));
-        components.addSubLink(new Link("Cards", "#cards"));
-        components.addSubLink(new Link("Chips", "#chips"));
+        components.addSubLink(new Link("Cards", "#card"));
+        components.addSubLink(new Link("Chips", "#chip"));
         components.addSubLink(new Link("Collapsible", "#collapsible"));
         components.addSubLink(new Link("Collections", "#collection"));
         components.addSubLink(new Link("DatePicker", "#datepicker"));
@@ -69,5 +69,28 @@ public class DataHelper {
         links.add(animations);
         links.add(addins);
         return links;
+    }
+
+    public static List<TimeZone> getTimeZones() {
+        List<TimeZone> timeZones = new ArrayList<>();
+        timeZones.add(new TimeZone("Alaskan/Hawaiian Time Zone", getHawaiianTimeZone()));
+        timeZones.add(new TimeZone("Pacific Time Zone", getPacificTimeZone()));
+        return timeZones;
+    }
+
+    protected static List<State> getHawaiianTimeZone() {
+        List<State> states = new ArrayList<>();
+        states.add(new State("Alaska", "AK"));
+        states.add(new State("Hawaii", "HI"));
+        return states;
+    }
+
+    protected static List<State> getPacificTimeZone() {
+        List<State> states = new ArrayList<>();
+        states.add(new State("California", "CA"));
+        states.add(new State("Nevada", "NV"));
+        states.add(new State("Oregon", "OR"));
+        states.add(new State("Washington", "WA"));
+        return states;
     }
 }

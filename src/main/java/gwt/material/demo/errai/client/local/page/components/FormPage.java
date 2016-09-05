@@ -1,7 +1,10 @@
 package gwt.material.demo.errai.client.local.page.components;
 
+import com.google.gwt.uibinder.client.UiField;
 import gwt.material.demo.errai.client.local.page.PageBase;
+import gwt.material.design.client.constants.CheckBoxType;
 import gwt.material.design.client.constants.IconType;
+import gwt.material.design.client.constants.RadioButtonType;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -48,7 +51,31 @@ public class FormPage extends PageBase {
 
     @Inject
     @DataField
-    MaterialListBox lstBox1;
+    MaterialListBox lstBox1, lstBoxDisabled;
+
+    @Inject
+    @DataField
+    MaterialListBox lstBox2;
+
+    @Inject
+    @DataField
+    MaterialButton btnAddItem, btnInsertItem, btnClear, btnSetSelected, btnGetSelected, btnRemoveItem;
+
+    @Inject
+    @DataField
+    MaterialRadioButton rb1, rb2, rb3, rb4;
+
+    @Inject
+    @DataField
+    MaterialCheckBox cb1, cb2, cb3, cb4, cb5, cb6, cbAll, cb7, cb8, cb9, cb10, cb11;
+
+    @Inject
+    @DataField
+    MaterialSwitch switch1, switch2, switch3, switch4;
+
+    @Inject
+    @DataField
+    MaterialRange range;
 
     @PostConstruct
     public void init() {
@@ -60,13 +87,158 @@ public class FormPage extends PageBase {
         buildDisabledValueBox();
         buildEventsValueBox();
         buildListBox();
+        buildDynamicListBox();
+        buildRadioButton();
+        buildCheckBox();
+        buildSwitch();
+        buildRange();
+    }
+
+    private void buildRange() {
+        range.setMin(10);
+        range.setMax(50);
+        range.setValue(25);
+        range.setHelperText("Min : " + range.getMin() + ", Max : " + range.getMax() + ", Value : " + range.getValue());
+        range.addChangeHandler(changeEvent -> {
+            range.setHelperText("Min : " + range.getMin() + ", Max : " + range.getMax() + ", Value : " + range.getValue());
+        });
+    }
+
+    private void buildSwitch() {
+        switch1.setValue(true);
+
+        switch2.setValue(false);
+        switch2.setEnabled(false);
+
+        switch3.setValue(true);
+        switch3.setOnLabel("Male");
+        switch3.setOffLabel("Female");
+
+        switch4.addValueChangeHandler(valueChangeEvent -> {
+            MaterialToast.fireToast("Value: " + valueChangeEvent.getValue());
+        });
+    }
+
+    private void buildCheckBox() {
+        cb1.setText("Blue");
+        cb1.setValue(true);
+
+        cb2.setText("Red");
+        cb2.setValue(false);
+
+        cb3.setText("Cyan");
+        cb3.setValue(true);
+        cb3.setType(CheckBoxType.FILLED);
+
+        cb4.setText("Green");
+        cb4.setValue(true);
+        cb4.setEnabled(false);
+
+        cb5.setText("Brown");
+        cb5.setValue(false);
+        cb5.setEnabled(false);
+
+        cb6.setText("CheckBox 1: false");
+        cb6.setValue(false);
+        cb6.setType(CheckBoxType.FILLED);
+        cb6.addValueChangeHandler(valueChangeEvent -> {
+            cb6.setText("CheckBox 1: " + valueChangeEvent.getValue());
+        });
+
+        cbAll.setText("Check All");
+        cbAll.setType(CheckBoxType.FILLED);
+
+        cbAll.addValueChangeHandler(valueChangeEvent -> {
+            cb7.setValue(valueChangeEvent.getValue());
+            cb8.setValue(valueChangeEvent.getValue());
+            cb9.setValue(valueChangeEvent.getValue());
+            cb10.setValue(valueChangeEvent.getValue());
+            cb11.setValue(valueChangeEvent.getValue());
+        });
+
+        cb7.setText("Blue");
+        cb7.setType(CheckBoxType.FILLED);
+
+        cb8.setText("Red");
+        cb8.setType(CheckBoxType.FILLED);
+
+        cb9.setText("Cyan");
+        cb9.setType(CheckBoxType.FILLED);
+
+        cb10.setText("Green");
+        cb10.setType(CheckBoxType.FILLED);
+
+        cb11.setText("Brown");
+        cb11.setType(CheckBoxType.FILLED);
+
+    }
+
+    private void buildRadioButton() {
+        rb1.setText("Red");
+        rb1.setName("color");
+        rb1.setType(RadioButtonType.GAP);
+
+        rb2.setText("Yellow");
+        rb2.setName("color");
+
+        rb3.setText("Green");
+        rb3.setName("color");
+
+        rb4.setText("Brown");
+        rb4.setName("color");
+        rb4.setEnabled(false);
+    }
+
+
+    private void buildDynamicListBox() {
+        lstBox2.setPlaceholder("ListBox");
+        lstBox2.addValueChangeHandler(valueChangeEvent -> {
+            MaterialToast.fireToast("Value : " + valueChangeEvent.getValue());
+        });
+        for (int i = 1; i <= 5; i++) {
+            lstBox2.addItem("Option " + i);
+        }
+
+        btnAddItem.setText("Add");
+        btnAddItem.addClickHandler(clickEvent -> {
+            lstBox2.addItem("New Item");
+        });
+
+        btnInsertItem.setText("Insert");
+        btnInsertItem.addClickHandler(clickEvent -> {
+            lstBox2.insertItem("Inserted Item", 2);
+        });
+
+        btnRemoveItem.setText("Remove");
+        btnRemoveItem.addClickHandler(clickEvent1 -> {
+            lstBox2.removeItem(0);
+        });
+
+        btnClear.setText("Clear");
+        btnClear.addClickHandler(clickEvent -> {
+            lstBox2.clear();
+        });
+
+        btnSetSelected.setText("Set Selected");
+        btnSetSelected.addClickHandler(clickEvent -> {
+            lstBox2.setSelectedIndex(2);
+        });
+
+        btnGetSelected.setText("Get Selected");
+        btnGetSelected.addClickHandler(clickEvent -> {
+            MaterialToast.fireToast(lstBox2.getSelectedValue());
+        });
     }
 
     private void buildListBox() {
         lstBox1.setPlaceholder("ListBox");
         for (int i = 1; i <= 5; i++) {
             lstBox1.addItem("Option " + i);
+            lstBoxDisabled.addItem("Option " + i);
         }
+
+        lstBoxDisabled.setPlaceholder("Disabled");
+        lstBoxDisabled.setEnabled(false);
     }
 
     private void buildEventsValueBox() {

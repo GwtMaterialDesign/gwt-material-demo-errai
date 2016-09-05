@@ -39,6 +39,9 @@ main {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     margin-bottom: 20px;
 }
+.code blockquote {
+    font-size: 0.9em;
+}
 .code .lang{
     background: #9a9a9a;
     display: inline;
@@ -68,6 +71,9 @@ main {
 /** Responsive **/
 /* Mobile down */
 @media only screen and (max-width: 600px) {
+    .code {
+        margin: 12px;
+    }
     .titlePanel {
         margin-top: 56px;
     }

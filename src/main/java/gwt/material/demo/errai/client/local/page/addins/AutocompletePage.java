@@ -1,9 +1,12 @@
 package gwt.material.demo.errai.client.local.page.addins;
 
+import com.google.gwt.user.client.ui.SuggestOracle;
 import gwt.material.demo.errai.client.local.dto.User;
 import gwt.material.demo.errai.client.local.dto.UserOracle;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.autocomplete.MaterialAutoComplete;
+import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialToast;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -21,12 +24,33 @@ public class AutocompletePage extends PageBase {
     @DataField
     MaterialAutoComplete ac1;
 
+    @Inject
+    @DataField
+    MaterialButton btnGetAllStates, btnClear;
+
     @PostConstruct
     public void init() {
-        initPage("Autocomplete", "Description", ADDINS_COLOR);
+        initPage("Autocomplete", "Autocompletes are best way for selecting item easily and grouped them into chips for later search based on item values.", ADDINS_COLOR);
+        buildBasic();
+    }
+
+    private void buildBasic() {
         UserOracle oracle = new UserOracle();
         oracle.addContacts(getAllUsers());
+        ac1.setPlaceholder("Contacts");
         ac1.setSuggestions(oracle);
+        btnGetAllStates.setText("Get All States");
+        btnGetAllStates.addClickHandler(clickEvent -> {
+            for(SuggestOracle.Suggestion user : ac1.getValue()){
+                MaterialToast.fireToast("Value : " + user.getDisplayString());
+            }
+        });
+        btnClear.setText("Clear");
+        btnClear.setTextColor("black");
+        btnClear.setBackgroundColor("white");
+        btnClear.addClickHandler(clickEvent -> {
+            ac1.clear();
+        });
     }
 
     public List<User> getAllUsers() {
