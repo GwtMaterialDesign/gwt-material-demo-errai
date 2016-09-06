@@ -5,6 +5,8 @@ import java.util.List;
 
 public class DataHelper {
 
+    public DataHelper() {}
+
     public static List<Link> getAppLinks() {
         List<Link> links = new ArrayList<>();
 
@@ -71,21 +73,21 @@ public class DataHelper {
         return links;
     }
 
-    public static List<TimeZone> getTimeZones() {
+    public List<TimeZone> getTimeZones() {
         List<TimeZone> timeZones = new ArrayList<>();
         timeZones.add(new TimeZone("Alaskan/Hawaiian Time Zone", getHawaiianTimeZone()));
         timeZones.add(new TimeZone("Pacific Time Zone", getPacificTimeZone()));
         return timeZones;
     }
 
-    protected static List<State> getHawaiianTimeZone() {
+    protected List<State> getHawaiianTimeZone() {
         List<State> states = new ArrayList<>();
         states.add(new State("Alaska", "AK"));
         states.add(new State("Hawaii", "HI"));
         return states;
     }
 
-    protected static List<State> getPacificTimeZone() {
+    protected List<State> getPacificTimeZone() {
         List<State> states = new ArrayList<>();
         states.add(new State("California", "CA"));
         states.add(new State("Nevada", "NV"));
