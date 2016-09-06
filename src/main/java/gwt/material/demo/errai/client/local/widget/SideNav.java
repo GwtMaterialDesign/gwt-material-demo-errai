@@ -46,6 +46,12 @@ public class SideNav extends Composite {
                     MaterialLink subLink = new MaterialLink();
                     subLink.setText(sub.getName());
                     subLink.setHref(sub.getHref());
+                    if (sub.isReady()) {
+                        MaterialBadge badge = new MaterialBadge();
+                        badge.setText("Ready");
+                        badge.setBackgroundColor("green");
+                        subLink.add(badge);
+                    }
                     list.add(subLink);
                 }
 
@@ -59,7 +65,7 @@ public class SideNav extends Composite {
             } else {
                 MaterialLink link = new MaterialLink();
                 link.setText(l.getName());
-                if(l.getHref() != null) {
+                if (l.getHref() != null) {
                     link.setHref(l.getHref());
                 }
                 sideNav.add(link);
