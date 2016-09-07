@@ -59,7 +59,7 @@ public class DataHelper {
         addins.addSubLink(new Link("Scroll Fire", "#scrollfire"));
         addins.addSubLink(new Link("Split Panel", "#splitpanel"));
         addins.addSubLink(new Link("Subheader", "#subheader"));
-        addins.addSubLink(new Link("Steppers", "#stepper"));
+        addins.addSubLink(new Link("Steppers", "#stepper", true));
         addins.addSubLink(new Link("Swipeable", "#swipeable"));
         addins.addSubLink(new Link("Time Picker", "#timepicker"));
         addins.addSubLink(new Link("Tree View", "#treeview"));

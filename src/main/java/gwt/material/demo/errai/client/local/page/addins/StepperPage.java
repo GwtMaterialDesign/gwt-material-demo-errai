@@ -20,6 +20,10 @@ import javax.inject.Inject;
 @Page(path = "stepper")
 public class StepperPage extends PageBase {
 
+    private static final int BASIC = 0;
+    private static final int FEEDBACK = 1;
+    private static final int ERROR = 2;
+
     @Inject
     @DataField
     MaterialStepper stepper;
@@ -50,6 +54,10 @@ public class StepperPage extends PageBase {
     @DataField
     MaterialStepper stepper5;
 
+    @Inject
+    @DataField
+    MaterialStepper stepper6;
+
     @PostConstruct
     public void init() {
         initPage("Stepper", "Steppers convey progress through numbered steps. They may also be used for navigation.", ADDINS_COLOR);
@@ -58,6 +66,16 @@ public class StepperPage extends PageBase {
         buildModal();
         buildEvents();
         buildFeedback();
+        buildError();
+    }
+
+    private void buildError() {
+        stepper6.setAxis(Axis.HORIZONTAL);
+        stepper6.addCompleteHandler(event -> {
+            MaterialToast.fireToast("All done");
+            stepper6.reset();
+        });
+        buildStepper(stepper6, ERROR);
     }
 
     private void buildFeedback() {
@@ -66,16 +84,28 @@ public class StepperPage extends PageBase {
             MaterialToast.fireToast("All done");
             stepper5.reset();
         });
-        buildStepper(stepper5, true);
+        buildStepper(stepper5, FEEDBACK);
     }
 
     private void buildEvents() {
         stepper4.setAxis(Axis.HORIZONTAL);
+        stepper4.addStartHandler(event -> {
+            MaterialToast.fireToast("Start Event Fired");
+        });
+
+        stepper4.addNextHandler(event -> {
+            MaterialToast.fireToast("Next Event Fired");
+        });
+
+        stepper4.addPreviousHandler(event -> {
+            MaterialToast.fireToast("Previous Event Fired");
+        });
+
         stepper4.addCompleteHandler(event -> {
             MaterialToast.fireToast("Complete Event: " + event.getLastStep());
             stepper4.reset();
         });
-        buildStepper(stepper4, false);
+        buildStepper(stepper4, BASIC);
     }
 
     private void buildModal() {
@@ -91,7 +121,7 @@ public class StepperPage extends PageBase {
         stepper3.setAxis(Axis.HORIZONTAL);
         modal.add(content);
         content.add(stepper3);
-        buildStepper(stepper3, false);
+        buildStepper(stepper3, BASIC);
     }
 
     private void buildHorizontal() {
@@ -100,18 +130,18 @@ public class StepperPage extends PageBase {
             MaterialToast.fireToast("All done");
             stepper2.reset();
         });
-        buildStepper(stepper2, false);
+        buildStepper(stepper2, BASIC);
     }
 
     private void buildVertical() {
-        buildStepper(stepper, false);
+        buildStepper(stepper, BASIC);
         stepper.addCompleteHandler(event -> {
             MaterialToast.fireToast("All done");
             stepper.reset();
         });
     }
 
-    private void buildStepper(MaterialStepper stepper, boolean withFeedback) {
+    private void buildStepper(MaterialStepper stepper, int type) {
         for (int i = 1; i <= 3; i++) {
             MaterialStep step = new MaterialStep();
             step.setStep(i);
@@ -129,7 +159,7 @@ public class StepperPage extends PageBase {
             MaterialButton btnNext = new MaterialButton();
             btnNext.setText("Next");
             btnNext.addClickHandler(clickEvent -> {
-                if (withFeedback) {
+                if (type == FEEDBACK) {
                     stepper.showFeedback("Waiting for next step");
                     Timer t = new Timer() {
                         @Override
@@ -148,9 +178,16 @@ public class StepperPage extends PageBase {
             MaterialButton btnPrev = new MaterialButton();
             btnPrev.setText("Previous");
             btnPrev.setType(ButtonType.FLAT);
-            btnPrev.addClickHandler(clickEvent -> {
-                stepper.prevStep();
-            });
+            if (type == ERROR) {
+                btnPrev.setText("Set Error");
+                btnPrev.addClickHandler(clickEvent -> {
+                    stepper.setError("Alert Error");
+                });
+            } else {
+                btnPrev.addClickHandler(clickEvent -> {
+                    stepper.prevStep();
+                });
+            }
 
             if (i != 1) {
                 step.add(btnPrev);
