@@ -13,18 +13,18 @@ public class DataHelper {
         Link about = new Link("About", "#about");
 
         Link components = new Link("Components");
-        components.addSubLink(new Link("Badges", "#badge"));
-        components.addSubLink(new Link("Buttons", "#button"));
+        components.addSubLink(new Link("Badges", "#badge", true));
+        components.addSubLink(new Link("Buttons", "#button", true));
         components.addSubLink(new Link("Breadcrumb", "#breadcrumb"));
         components.addSubLink(new Link("Cards", "#card"));
-        components.addSubLink(new Link("Chips", "#chip"));
+        components.addSubLink(new Link("Chips", "#chip", true));
         components.addSubLink(new Link("Collapsible", "#collapsible"));
         components.addSubLink(new Link("Collections", "#collection"));
         components.addSubLink(new Link("DatePicker", "#datepicker"));
         components.addSubLink(new Link("Dialogs", "#dialogs"));
         components.addSubLink(new Link("Dropdown", "#dropdown"));
         components.addSubLink(new Link("Errors", "#errors"));
-        components.addSubLink(new Link("Forms", "#forms"));
+        components.addSubLink(new Link("Forms", "#forms", true));
         components.addSubLink(new Link("FAB", "#fab"));
         components.addSubLink(new Link("Footer", "#footer"));
         components.addSubLink(new Link("Loaders", "#loaders"));
@@ -41,11 +41,11 @@ public class DataHelper {
         animations.addSubLink(new Link("Meaningful", "#meaningful"));
 
         Link addins = new Link("Addins");
-        addins.addSubLink(new Link("Autocomplete", "#autocomplete"));
-        addins.addSubLink(new Link("Avatar", "#avatar"));
+        addins.addSubLink(new Link("Autocomplete", "#autocomplete", true));
+        addins.addSubLink(new Link("Avatar", "#avatar", true));
         addins.addSubLink(new Link("Bubble", "#bubble"));
         addins.addSubLink(new Link("Camera", "#camera"));
-        addins.addSubLink(new Link("ComboBox", "#combobox"));
+        addins.addSubLink(new Link("ComboBox", "#combobox", true));
         addins.addSubLink(new Link("CutOut", "#cutout"));
         addins.addSubLink(new Link("Data Table", "#datatable"));
         addins.addSubLink(new Link("Doc Viewer", "#docviewer"));
@@ -59,7 +59,7 @@ public class DataHelper {
         addins.addSubLink(new Link("Scroll Fire", "#scrollfire"));
         addins.addSubLink(new Link("Split Panel", "#splitpanel"));
         addins.addSubLink(new Link("Subheader", "#subheader"));
-        addins.addSubLink(new Link("Steppers", "#steppers"));
+        addins.addSubLink(new Link("Steppers", "#stepper", true));
         addins.addSubLink(new Link("Swipeable", "#swipeable"));
         addins.addSubLink(new Link("Time Picker", "#timepicker"));
         addins.addSubLink(new Link("Tree View", "#treeview"));

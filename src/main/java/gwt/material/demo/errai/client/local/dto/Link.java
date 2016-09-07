@@ -8,6 +8,7 @@ public class Link implements Serializable {
 
     private String name;
     private String href;
+    private boolean ready;
     private List<Link> subLinks = new ArrayList<>();
 
     public Link() {
@@ -20,6 +21,12 @@ public class Link implements Serializable {
     public Link(String name, String href) {
         this.name = name;
         this.href = href;
+    }
+
+    public Link(String name, String href, boolean ready) {
+        this.name = name;
+        this.href = href;
+        this.ready = ready;
     }
 
     public Link(String name, List<Link> subLinks) {
@@ -59,5 +66,13 @@ public class Link implements Serializable {
 
     public void addSubLink(Link link) {
         subLinks.add(link);
+    }
+
+    public boolean isReady() {
+        return ready;
+    }
+
+    public void setReady(boolean ready) {
+        this.ready = ready;
     }
 }
