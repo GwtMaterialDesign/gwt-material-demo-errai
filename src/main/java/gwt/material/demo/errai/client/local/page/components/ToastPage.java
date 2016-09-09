@@ -44,13 +44,19 @@ public class ToastPage extends PageBase {
     }
 
     private void buildCallback() {
-        new MaterialToast(() -> {
-            MaterialToast.fireToast("BANG!");
-        }).toast("Explosion in: 5, 4, 3, 2, 1", 5000);
+        btnCallback.setText("Open Toast");
+        btnCallback.addClickHandler(clickEvent -> {
+            new MaterialToast(() -> {
+                MaterialToast.fireToast("BANG!");
+            }).toast("Explosion in: 5, 4, 3, 2, 1", 5000);
+        });
     }
 
     private void buildStyle() {
-        MaterialToast.fireToast("I Love Material Design", "rounded");
+        btnStyle.setText("Open Toast");
+        btnStyle.addClickHandler(clickEvent -> {
+            MaterialToast.fireToast("I love Material Design", "rounded");
+        });
     }
 
     private void buildWithAction() {
