@@ -51,6 +51,7 @@ public class DataHelper {
         components.addSubLink(new Link("Sidenavs", "#sidenavs"));
         components.addSubLink(new Link("Scrollspy", "#scrollspy"));
         components.addSubLink(new Link("Tabs", "#tabs"));
+        components.addSubLink(new Link("Toast", "#toast", true));
 
         Link animations = new Link("Animations");
         animations.addSubLink(new Link("Core", "#core"));
