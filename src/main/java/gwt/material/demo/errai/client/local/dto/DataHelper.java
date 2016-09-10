@@ -43,7 +43,7 @@ public class DataHelper {
         components.addSubLink(new Link("Forms", "#forms", true));
         components.addSubLink(new Link("FAB", "#fab"));
         components.addSubLink(new Link("Footer", "#footer"));
-        components.addSubLink(new Link("Loaders", "#loaders"));
+        components.addSubLink(new Link("Loaders", "#loaders", true));
         components.addSubLink(new Link("Media", "#media"));
         components.addSubLink(new Link("NavBar", "#navbar"));
         components.addSubLink(new Link("Pushpin", "#pushpin"));
