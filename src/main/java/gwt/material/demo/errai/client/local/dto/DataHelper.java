@@ -38,12 +38,12 @@ public class DataHelper {
         components.addSubLink(new Link("Collections", "#collection", true));
         components.addSubLink(new Link("DatePicker", "#datepicker", true));
         components.addSubLink(new Link("Modals", "#modals", true));
-        components.addSubLink(new Link("Dropdown", "#dropdown"));
+        components.addSubLink(new Link("Dropdown", "#dropdown", true));
         components.addSubLink(new Link("Errors", "#errors"));
         components.addSubLink(new Link("Forms", "#forms", true));
         components.addSubLink(new Link("FAB", "#fab"));
         components.addSubLink(new Link("Footer", "#footer"));
-        components.addSubLink(new Link("Loaders", "#loaders"));
+        components.addSubLink(new Link("Loaders", "#loaders", true));
         components.addSubLink(new Link("Media", "#media"));
         components.addSubLink(new Link("NavBar", "#navbar"));
         components.addSubLink(new Link("Pushpin", "#pushpin"));
@@ -51,6 +51,8 @@ public class DataHelper {
         components.addSubLink(new Link("Sidenavs", "#sidenavs"));
         components.addSubLink(new Link("Scrollspy", "#scrollspy"));
         components.addSubLink(new Link("Tabs", "#tabs"));
+        components.addSubLink(new Link("Toast", "#toast", true));
+        components.addSubLink(new Link("Tooltip", "#tooltip", true));
 
         Link animations = new Link("Animations");
         animations.addSubLink(new Link("Core", "#core"));
