@@ -84,6 +84,7 @@ public class LoaderPage extends PageBase {
                     MaterialLoader.showProgress(false);
                 }
             };
+            timer.schedule(2000);
         });
     }
 
