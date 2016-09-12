@@ -4,6 +4,7 @@ import com.google.gwt.user.client.Timer;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.constants.LoaderSize;
 import gwt.material.design.client.constants.ProgressType;
+import gwt.material.design.client.constants.SpinnerColor;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
@@ -52,15 +53,15 @@ public class LoaderPage extends PageBase {
 
     private void buildStandAlone() {
         loader1.setSize(LoaderSize.BIG);
-        spinner1.setColor("blue-only");
+        spinner1.setColor(SpinnerColor.BLUE_ONLY);
         loader1.add(spinner1);
 
         loader2.setSize(LoaderSize.MEDIUM);
-        spinner2.setColor("red-only");
+        spinner2.setColor(SpinnerColor.RED_ONLY);
         loader2.add(spinner2);
 
         loader3.setSize(LoaderSize.SMALL);
-        spinner3.setColor("yellow-only");
+        spinner3.setColor(SpinnerColor.YELLOW_ONLY);
         loader3.add(spinner3);
     }
 
