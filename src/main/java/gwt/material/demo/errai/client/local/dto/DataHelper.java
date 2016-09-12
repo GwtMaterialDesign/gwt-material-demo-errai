@@ -47,10 +47,10 @@ public class DataHelper {
         components.addSubLink(new Link("Media", "#media"));
         components.addSubLink(new Link("NavBar", "#navbar"));
         components.addSubLink(new Link("Pushpin", "#pushpin"));
-        components.addSubLink(new Link("Search", "#search"));
+        components.addSubLink(new Link("Search", "#search", true));
         components.addSubLink(new Link("Sidenavs", "#sidenavs"));
         components.addSubLink(new Link("Scrollspy", "#scrollspy"));
-        components.addSubLink(new Link("Tabs", "#tabs"));
+        components.addSubLink(new Link("Tabs", "#tabs", true));
         components.addSubLink(new Link("Toast", "#toast", true));
         components.addSubLink(new Link("Tooltip", "#tooltip", true));
 
