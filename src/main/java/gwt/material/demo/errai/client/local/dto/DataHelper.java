@@ -34,7 +34,7 @@ public class DataHelper {
         components.addSubLink(new Link("Breadcrumb", "#breadcrumbs", true));
         components.addSubLink(new Link("Cards", "#card", true));
         components.addSubLink(new Link("Chips", "#chip", true));
-        components.addSubLink(new Link("Collapsible", "#collapsible"));
+        components.addSubLink(new Link("Collapsible", "#collapsible", true));
         components.addSubLink(new Link("Collections", "#collection", true));
         components.addSubLink(new Link("DatePicker", "#datepicker", true));
         components.addSubLink(new Link("Modals", "#modals", true));
