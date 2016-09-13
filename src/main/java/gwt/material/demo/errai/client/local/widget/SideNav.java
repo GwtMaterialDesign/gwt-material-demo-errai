@@ -25,7 +25,7 @@ public class SideNav extends Composite {
     @PostConstruct
     public void init() {
         sideNav.setId("sideNav");
-        sideNav.setType(SideNavType.PUSH);
+        sideNav.setType(SideNavType.FIXED);
         sideNav.setWidth(280);
         sideNav.reinitialize();
 

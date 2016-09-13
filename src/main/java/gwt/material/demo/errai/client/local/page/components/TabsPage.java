@@ -108,13 +108,9 @@ public class TabsPage extends PageBase {
     }
 
     private void buildTab(MaterialTab tab, MaterialRow row, int type) {
+        row.add(tab);
         for (int i = 1; i <= 3; i++) {
             String id = "tab" + index;
-            // Build tab panel
-            MaterialLabel label = new MaterialLabel();
-            label.setText("Panel " + i);
-            label.setId(id);
-            row.add(label);
 
             MaterialTabItem item = new MaterialTabItem();
             item.setGrid("s4 m4 l4");
@@ -130,9 +126,13 @@ public class TabsPage extends PageBase {
 
             item.add(link);
             tab.add(item);
+
+            // Build tab panel
+            MaterialLabel label = new MaterialLabel();
+            label.setText("Panel " + i);
+            label.setId(id);
+            row.add(label);
             index ++;
         }
-
-        row.add(tab);
     }
 }
