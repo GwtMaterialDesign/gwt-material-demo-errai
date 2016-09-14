@@ -66,7 +66,7 @@ public class DataHelper {
         addins.addSubLink(new Link("ComboBox", "#combobox", true));
         addins.addSubLink(new Link("CutOut", "#cutout", true));
         addins.addSubLink(new Link("Data Table", "#datatable"));
-        addins.addSubLink(new Link("Doc Viewer", "#docviewer"));
+        addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
         addins.addSubLink(new Link("Drag and Drop", "#dnd"));
         addins.addSubLink(new Link("File Uploader", "#fileuploader"));
         addins.addSubLink(new Link("Icon Morph", "#iconmorph"));

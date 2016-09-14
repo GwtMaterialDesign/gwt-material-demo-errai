@@ -128,7 +128,7 @@ public class ComboBoxPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("ComboBox", "", ADDINS_COLOR);
+        initPage("ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", ADDINS_COLOR);
         buildBasic();
         buildLabelAndPlaceholder();
         buildAllowClear();
