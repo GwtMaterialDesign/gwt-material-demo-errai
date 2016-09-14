@@ -9,12 +9,14 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import static gwt.material.design.client.constants.ButtonType.FLAT;
 
 @Templated
 @Page(path = "modals")
+@ApplicationScoped
 public class ModalPage extends PageBase {
 
     @Inject

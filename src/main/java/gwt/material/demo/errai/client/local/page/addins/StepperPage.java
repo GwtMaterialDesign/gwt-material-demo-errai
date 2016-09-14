@@ -14,10 +14,12 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "stepper")
+@ApplicationScoped
 public class StepperPage extends PageBase {
 
     private static final int BASIC = 0;

@@ -1,21 +1,21 @@
 package gwt.material.demo.errai.client.local.page.components;
 
-import com.google.gwt.i18n.client.DateTimeFormat;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialDatePicker;
 import gwt.material.design.client.ui.MaterialToast;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.Date;
 
 @Templated
 @Page(path = "datepicker")
+@ApplicationScoped
 public class DatePickerPage extends PageBase {
 
     @Inject

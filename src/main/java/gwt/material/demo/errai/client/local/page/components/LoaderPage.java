@@ -12,10 +12,12 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "loader")
+@ApplicationScoped
 public class LoaderPage extends PageBase {
 
     @Inject

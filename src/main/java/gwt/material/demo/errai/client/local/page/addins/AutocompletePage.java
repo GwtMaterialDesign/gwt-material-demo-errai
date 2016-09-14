@@ -15,12 +15,14 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
 @Templated
 @Page(path = "autocomplete")
+@ApplicationScoped
 public class AutocompletePage extends PageBase {
 
     @Inject
