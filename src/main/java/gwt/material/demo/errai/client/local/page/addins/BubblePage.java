@@ -32,7 +32,7 @@ public class BubblePage extends PageBase {
     }
 
     private void buildPosition() {
-        bubble3.setBackgroundColor("blue");
+        bubble2.setBackgroundColor("blue");
         bubble2.setPosition(Position.LEFT);
         buildBubble(bubble2);
 
