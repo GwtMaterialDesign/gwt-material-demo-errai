@@ -13,10 +13,12 @@ import org.jboss.errai.ui.shared.api.annotations.Templated;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "search")
+@ApplicationScoped
 public class SearchPage extends PageBase {
 
     @Inject
