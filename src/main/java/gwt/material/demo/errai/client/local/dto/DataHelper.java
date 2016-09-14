@@ -61,7 +61,7 @@ public class DataHelper {
         Link addins = new Link("Addins");
         addins.addSubLink(new Link("Autocomplete", "#autocomplete", true));
         addins.addSubLink(new Link("Avatar", "#avatar", true));
-        addins.addSubLink(new Link("Bubble", "#bubble"));
+        addins.addSubLink(new Link("Bubble", "#bubble", true));
         addins.addSubLink(new Link("Camera", "#camera"));
         addins.addSubLink(new Link("ComboBox", "#combobox", true));
         addins.addSubLink(new Link("CutOut", "#cutout"));
