@@ -64,7 +64,7 @@ public class DataHelper {
         addins.addSubLink(new Link("Bubble", "#bubble", true));
         addins.addSubLink(new Link("Camera", "#camera"));
         addins.addSubLink(new Link("ComboBox", "#combobox", true));
-        addins.addSubLink(new Link("CutOut", "#cutout"));
+        addins.addSubLink(new Link("CutOut", "#cutout", true));
         addins.addSubLink(new Link("Data Table", "#datatable"));
         addins.addSubLink(new Link("Doc Viewer", "#docviewer"));
         addins.addSubLink(new Link("Drag and Drop", "#dnd"));
