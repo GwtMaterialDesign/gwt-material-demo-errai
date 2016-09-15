@@ -61,12 +61,12 @@ public class DataHelper {
         Link addins = new Link("Addins");
         addins.addSubLink(new Link("Autocomplete", "#autocomplete", true));
         addins.addSubLink(new Link("Avatar", "#avatar", true));
-        addins.addSubLink(new Link("Bubble", "#bubble"));
+        addins.addSubLink(new Link("Bubble", "#bubble", true));
         addins.addSubLink(new Link("Camera", "#camera"));
         addins.addSubLink(new Link("ComboBox", "#combobox", true));
-        addins.addSubLink(new Link("CutOut", "#cutout"));
+        addins.addSubLink(new Link("CutOut", "#cutout", true));
         addins.addSubLink(new Link("Data Table", "#datatable"));
-        addins.addSubLink(new Link("Doc Viewer", "#docviewer"));
+        addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
         addins.addSubLink(new Link("Drag and Drop", "#dnd"));
         addins.addSubLink(new Link("File Uploader", "#fileuploader"));
         addins.addSubLink(new Link("Icon Morph", "#iconmorph"));
@@ -79,8 +79,8 @@ public class DataHelper {
         addins.addSubLink(new Link("Subheader", "#subheader"));
         addins.addSubLink(new Link("Steppers", "#stepper", true));
         addins.addSubLink(new Link("Swipeable", "#swipeable"));
-        addins.addSubLink(new Link("Time Picker", "#timepicker"));
-        addins.addSubLink(new Link("Tree View", "#treeview"));
+        addins.addSubLink(new Link("Time Picker", "#timepicker", true));
+        addins.addSubLink(new Link("Tree View", "#treeview", true));
         addins.addSubLink(new Link("Waterfall", "#waterfall"));
         addins.addSubLink(new Link("Window", "#window"));
 
