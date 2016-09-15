@@ -69,13 +69,13 @@ public class DataHelper {
         addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
         addins.addSubLink(new Link("Drag and Drop", "#dnd"));
         addins.addSubLink(new Link("File Uploader", "#fileuploader"));
-        addins.addSubLink(new Link("Icon Morph", "#iconmorph"));
+        addins.addSubLink(new Link("Icon Morph", "#iconmorph", true));
         addins.addSubLink(new Link("Masonry", "#masonry"));
         addins.addSubLink(new Link("Path Animator", "#pathanimator"));
         addins.addSubLink(new Link("Rating", "#rating", true));
         addins.addSubLink(new Link("Rich Editor", "#richeditor", true));
         addins.addSubLink(new Link("Scroll Fire", "#scrollfire"));
-        addins.addSubLink(new Link("Split Panel", "#splitpanel"));
+        addins.addSubLink(new Link("Split Panel", "#splitpanel", true));
         addins.addSubLink(new Link("Subheader", "#subheader"));
         addins.addSubLink(new Link("Steppers", "#stepper", true));
         addins.addSubLink(new Link("Swipeable", "#swipeable"));
