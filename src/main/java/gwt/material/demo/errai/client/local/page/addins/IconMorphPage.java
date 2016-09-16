@@ -34,11 +34,11 @@ public class IconMorphPage extends PageBase {
     private void buildSizes() {
         iconMorphTiny.setIconSize(IconSize.TINY);
         buildBasic(iconMorphTiny);
-        iconMorphTiny.setIconSize(IconSize.SMALL);
+        iconMorphSmall.setIconSize(IconSize.SMALL);
         buildBasic(iconMorphSmall);
-        iconMorphTiny.setIconSize(IconSize.MEDIUM);
+        iconMorphMedium.setIconSize(IconSize.MEDIUM);
         buildBasic(iconMorphMedium);
-        iconMorphTiny.setIconSize(IconSize.LARGE);
+        iconMorphLarge.setIconSize(IconSize.LARGE);
         buildBasic(iconMorphLarge);
     }
 
