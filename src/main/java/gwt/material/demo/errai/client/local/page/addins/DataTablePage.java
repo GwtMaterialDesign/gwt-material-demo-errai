@@ -4,7 +4,6 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.Panel;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.demo.errai.client.local.page.addins.table.factory.CustomCategoryFactory;
 import gwt.material.demo.errai.client.local.page.addins.table.factory.PersonRowFactory;
@@ -35,7 +34,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Templated
-@Page(path = "datatable", role = DefaultPage.class)
+@Page(path = "datatable")
 public class DataTablePage extends PageBase {
 
     @Inject
@@ -143,8 +142,9 @@ public class DataTablePage extends PageBase {
             @Override
             public MaterialImage getValue(Person object) {
                 MaterialImage image = new MaterialImage(object.getPicture());
-                image.setWidth("50px");
-                image.setHeight("50px");
+                image.setWidth("28px");
+                image.setHeight("28px");
+                image.setMarginTop(8);
                 image.setCircle(true);
                 return image;
             }
@@ -186,6 +186,20 @@ public class DataTablePage extends PageBase {
                 return object.getLastName();
             }
         }, "Last Name");
+
+        Column<Person, ?> buttonCol = new WidgetColumn<Person, MaterialButton>() {
+            @Override
+            public MaterialButton getValue(Person object) {
+                MaterialButton btnAction = new MaterialButton();
+                btnAction.setText("Update");
+                btnAction.setIconType(IconType.UPDATE);
+                btnAction.addClickHandler(clickEvent -> {
+                    MaterialToast.fireToast("Clicked");
+                });
+                return btnAction;
+            }
+        };
+        table.addColumn(buttonCol, "Action");
 
         table.setVisibleRange(0, 1000);
         table.setRowData(0, getAllPersons());
