@@ -81,7 +81,7 @@ public class FormPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Forms", "Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.", COMPONENTS_COLOR);
+        initPage("Forms", "Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.", COMPONENTS);
         buildTextBox();
         buildTextArea();
         buildCharCounter();

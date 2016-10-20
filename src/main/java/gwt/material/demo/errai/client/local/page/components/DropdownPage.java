@@ -2,10 +2,7 @@ package gwt.material.demo.errai.client.local.page.components;
 
 import com.google.gwt.dom.client.Style;
 import gwt.material.demo.errai.client.local.page.PageBase;
-import gwt.material.design.client.constants.ButtonType;
-import gwt.material.design.client.constants.IconPosition;
-import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.constants.WavesType;
+import gwt.material.design.client.constants.*;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
@@ -64,7 +61,7 @@ public class DropdownPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Dropdown", "You can add dropdown easily by specifying it's item content and add a UiHandler on it to implement any event.", COMPONENTS_COLOR);
+        initPage("Dropdown", "You can add dropdown easily by specifying it's item content and add a UiHandler on it to implement any event.", COMPONENTS);
         buildBasic();
         buildDesign();
         buildIconDropdown();
@@ -77,7 +74,7 @@ public class DropdownPage extends PageBase {
         navSection.setFloat(Style.Float.RIGHT);
 
         btnDropdown5.add(dropdown5);
-        btnDropdown5.setTextColor("white");
+        btnDropdown5.setTextColor(Color.WHITE);
         btnDropdown5.setText("Dropdown");
         btnDropdown5.setType(ButtonType.FLAT);
         btnDropdown5.setIconPosition(IconPosition.RIGHT);
@@ -113,7 +110,7 @@ public class DropdownPage extends PageBase {
         btnDropdown3.setIconType(IconType.DIRECTIONS_BIKE);
         for (int i = 1; i <= 3; i++) {
             MaterialLink link = new MaterialLink("Sample " + i);
-            link.setIconColor("pink");
+            link.setIconColor(Color.PINK);
             link.setIconType(IconType.POLYMER);
             link.setIconPosition(IconPosition.RIGHT);
             dropdown3.add(link);
@@ -127,7 +124,7 @@ public class DropdownPage extends PageBase {
         btnDropdown2.setIconType(IconType.ARROW_DROP_DOWN);
         for (int i = 1; i <= 3; i++) {
             MaterialLink link = new MaterialLink("Sample " + i);
-            link.setIconColor("pink");
+            link.setIconColor(Color.PINK);
             link.setIconType(IconType.POLYMER);
             link.setIconPosition(IconPosition.RIGHT);
             dropdown2.add(link);

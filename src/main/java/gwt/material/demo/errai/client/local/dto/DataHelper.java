@@ -1,5 +1,7 @@
 package gwt.material.demo.errai.client.local.dto;
 
+import gwt.material.design.client.constants.IconType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +28,10 @@ public class DataHelper {
     public static List<Link> getAppLinks() {
         List<Link> links = new ArrayList<>();
 
-        Link about = new Link("About", "#about");
+        Link about = new Link(IconType.INFO_OUTLINE, "About", "#about");
+        Link gettingStarted = new Link(IconType.CLOUD_DOWNLOAD, "Getting Started", "#getting_started");
 
-        Link components = new Link("Components");
+        Link components = new Link(IconType.POLYMER, "Components");
         components.addSubLink(new Link("Badges", "#badge", true));
         components.addSubLink(new Link("Buttons", "#button", true));
         components.addSubLink(new Link("Breadcrumb", "#breadcrumbs", true));
@@ -50,24 +53,24 @@ public class DataHelper {
         components.addSubLink(new Link("Search", "#search", true));
         components.addSubLink(new Link("Sidenavs", "#sidenav", true));
         components.addSubLink(new Link("Scrollspy", "#scrollspy", true));
-        components.addSubLink(new Link("Tabs", "#tab", true));
+        components.addSubLink(new Link("Tabs", "#tab", false));
         components.addSubLink(new Link("Toast", "#toast", true));
         components.addSubLink(new Link("Tooltip", "#tooltip", true));
 
-        Link animations = new Link("Animations");
-        animations.addSubLink(new Link("Core", "#core"));
-        animations.addSubLink(new Link("Meaningful", "#meaningful"));
+        Link animations = new Link(IconType.PLAY_CIRCLE_OUTLINE,"Animations");
+        animations.addSubLink(new Link("Core", "#core_animation"));
+        animations.addSubLink(new Link("Meaningful", "#meaningful_animation"));
 
-        Link addins = new Link("Addins");
+        Link addins = new Link(IconType.STYLE, "Addins");
         addins.addSubLink(new Link("Autocomplete", "#autocomplete", true));
         addins.addSubLink(new Link("Avatar", "#avatar", true));
         addins.addSubLink(new Link("Bubble", "#bubble", true));
-        addins.addSubLink(new Link("Camera", "#camera"));
+        addins.addSubLink(new Link("Camera", "#camera", true));
         addins.addSubLink(new Link("ComboBox", "#combobox", true));
-        addins.addSubLink(new Link("CutOut", "#cutout", true));
+        addins.addSubLink(new Link("CutOut", "#cutout", false));
         addins.addSubLink(new Link("Data Table", "#datatable"));
-        addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
         addins.addSubLink(new Link("Drag and Drop", "#dnd"));
+        addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
         addins.addSubLink(new Link("File Uploader", "#fileuploader"));
         addins.addSubLink(new Link("Icon Morph", "#iconmorph", true));
         addins.addSubLink(new Link("Masonry", "#masonry"));
@@ -75,16 +78,17 @@ public class DataHelper {
         addins.addSubLink(new Link("Rating", "#rating", true));
         addins.addSubLink(new Link("Rich Editor", "#richeditor", true));
         addins.addSubLink(new Link("Scroll Fire", "#scrollfire"));
-        addins.addSubLink(new Link("Split Panel", "#splitpanel", true));
-        addins.addSubLink(new Link("Subheader", "#subheader"));
+        addins.addSubLink(new Link("Split Panel", "#splitpanel"));
         addins.addSubLink(new Link("Steppers", "#stepper", true));
+        addins.addSubLink(new Link("Subheader", "#subheader"));
         addins.addSubLink(new Link("Swipeable", "#swipeable", true));
         addins.addSubLink(new Link("Time Picker", "#timepicker", true));
-        addins.addSubLink(new Link("Tree View", "#treeview"));
-        addins.addSubLink(new Link("Waterfall", "#waterfall"));
-        addins.addSubLink(new Link("Window", "#window"));
+        addins.addSubLink(new Link("Tree View", "#tree"));
+        addins.addSubLink(new Link("Waterfall", "#waterfall", true));
+        addins.addSubLink(new Link("Window", "#window", true));
 
         links.add(about);
+        links.add(gettingStarted);
         links.add(components);
         links.add(animations);
         links.add(addins);

@@ -61,7 +61,7 @@ public class ModalPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Modals", "Modal component allows for verification of user actions, simple data input, and alerts to provide extra information to users.", COMPONENTS_COLOR);
+        initPage("Modals", "Modal component allows for verification of user actions, simple data input, and alerts to provide extra information to users.", COMPONENTS);
         buildBasic();
         buildFixedFooter();
         buildBottomSheet();
@@ -81,7 +81,7 @@ public class ModalPage extends PageBase {
     }
 
     private void buildAutoHide() {
-        modalAutoHide.setDismissable(true);
+        modalAutoHide.setDismissible(true);
         buildModal(modalAutoHide, btnAutoHide);
     }
 

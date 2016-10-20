@@ -27,7 +27,7 @@ public class ScrollspyPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Scrollspy", "Scrollspy is a jQuery plugin that tracks certain elements and which element the user's screen is currently centered on. Our main demo of this is our table of contents on every documentation page to the right. Clicking on these links will also scroll the page to that element.", COMPONENTS_COLOR);
+        initPage("Scrollspy", "Scrollspy is a jQuery plugin that tracks certain elements and which element the user's screen is currently centered on. Our main demo of this is our table of contents on every documentation page to the right. Clicking on these links will also scroll the page to that element.", COMPONENTS);
         buildScrollspy();
     }
 

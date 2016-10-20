@@ -38,7 +38,7 @@ public class ToastPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Toast", "Toast provides brief feedback about an operation through a message at the bottom of the screen.", COMPONENTS_COLOR);
+        initPage("Toast", "Toast provides brief feedback about an operation through a message at the bottom of the screen.", COMPONENTS);
         buildBasic();
         buildWithAction();
         buildStyle();

@@ -2,6 +2,7 @@ package gwt.material.demo.errai.client.local.page.addins;
 
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.rating.MaterialRating;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.MaterialToast;
 import org.jboss.errai.ui.nav.client.local.Page;
@@ -41,7 +42,7 @@ public class RatingPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Rating", "MaterialRating is the component used by the 5-star rating system, for example, allowing users to easily express their opinion about a product, review, video and so on.", ADDINS_COLOR);
+        initPage("Rating", "MaterialRating is the component used by the 5-star rating system, for example, allowing users to easily express their opinion about a product, review, video and so on.", ADDINS);
         buildBasic();
         buildIcon();
         buildValueChangeEvent();
@@ -51,27 +52,27 @@ public class RatingPage extends PageBase {
     }
 
     private void buildBasic() {
-        ratingBasic.setTextColor("amber");
+        ratingBasic.setTextColor(Color.AMBER);
     }
 
     private void buildMaxRating() {
-        ratingMaxRating.setTextColor("amber");
+        ratingMaxRating.setTextColor(Color.AMBER);
         ratingMaxRating.setMaxRating(10);
     }
 
     private void buildEditable() {
-        ratingEditable.setTextColor("amber");
+        ratingEditable.setTextColor(Color.AMBER);
         ratingEditable.setValue(2);
         ratingEditable.setEditable(false);
     }
 
     private void buildValueSettingValue() {
-        ratingSettingValue.setTextColor("amber");
+        ratingSettingValue.setTextColor(Color.AMBER);
         ratingSettingValue.setValue(3);
     }
 
     private void buildValueChangeEvent() {
-        ratingValueChange.setTextColor("amber");
+        ratingValueChange.setTextColor(Color.AMBER);
         ratingValueChange.addValueChangeHandler(event -> {
             MaterialToast.fireToast(event.getValue() + " Value");
         });
@@ -80,6 +81,6 @@ public class RatingPage extends PageBase {
     private void buildIcon() {
         ratingIcon.setSelectedRatingIcon(IconType.FAVORITE);
         ratingIcon.setUnselectedRatingIcon(IconType.FAVORITE_BORDER);
-        ratingIcon.setTextColor("red");
+        ratingIcon.setTextColor(Color.RED);
     }
 }

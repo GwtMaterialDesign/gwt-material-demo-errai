@@ -3,6 +3,8 @@ package gwt.material.demo.errai.client.local.widget;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.Composite;
 import gwt.material.demo.errai.client.local.events.PageChangeEvent;
+import gwt.material.design.client.base.helper.EnumHelper;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.HideOn;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.constants.NavBarType;
@@ -13,6 +15,8 @@ import org.jboss.errai.ui.shared.api.annotations.Templated;
 import javax.annotation.PostConstruct;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
+
+import static gwt.material.design.jquery.client.api.JQuery.$;
 
 @Templated
 public class Header extends Composite {
@@ -80,9 +84,10 @@ public class Header extends Composite {
     }
 
     public void onPageChange(@Observes PageChangeEvent event) {
+        $("body").scrollTop(0);
         lblTitle.setText(event.getTitle());
         lblDescription.setText(event.getDescription());
-        navBar.setBackgroundColor(event.getColor() + " darken-1");
+        navBar.setBackgroundColor(event.getSecondaryColor());
         titlePanel.setBackgroundColor(event.getColor());
     }
 }

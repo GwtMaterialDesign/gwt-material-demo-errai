@@ -11,20 +11,17 @@ import gwt.material.design.client.ui.MaterialModalContent;
 import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.client.ui.html.OptGroup;
 import gwt.material.design.client.ui.html.Option;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
 @Templated
 @Page(path = "combobox")
-@ApplicationScoped
 public class ComboBoxPage extends PageBase {
 
     @Inject
@@ -128,7 +125,7 @@ public class ComboBoxPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", ADDINS_COLOR);
+        initPage("ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", ADDINS);
         buildBasic();
         buildLabelAndPlaceholder();
         buildAllowClear();
@@ -152,7 +149,7 @@ public class ComboBoxPage extends PageBase {
         combo21.setLabel("Please provide your timezone");
         addStateItemsWithGroup(combo21);
         modal.add(modalContent);
-        modal.setDismissable(true);
+        modal.setDismissible(true);
         modalContent.add(combo21);
 
         btnOpenModal.setText("Open Modal");
@@ -273,7 +270,9 @@ public class ComboBoxPage extends PageBase {
         combo10.setMultiple(true);
         combo10.setPlaceholder("Time Zone");
         combo10.addValueChangeHandler(valueChangeEvent -> {
-            MaterialToast.fireToast("State: " + valueChangeEvent.getValue().getName() + " Value: " + valueChangeEvent.getValue().getValue());
+            for (State state : combo10.getSelectedValues()) {
+                MaterialToast.fireToast(state.getValue());
+            }
         });
         addStateItemsWithGroup(combo10);
     }

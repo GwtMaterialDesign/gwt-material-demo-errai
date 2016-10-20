@@ -31,7 +31,7 @@ public class BreadcrumbsPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Breadcrumbs", "Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.", COMPONENTS_COLOR);
+        initPage("Breadcrumbs", "Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.", COMPONENTS);
         buildTextOnly();
         buildOnlyIcons();
         buildWithIcons();

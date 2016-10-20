@@ -1,11 +1,14 @@
 package gwt.material.demo.errai.client.local.dto;
 
+import gwt.material.design.client.constants.IconType;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Link implements Serializable {
 
+    private IconType icon;
     private String name;
     private String href;
     private boolean ready;
@@ -19,6 +22,17 @@ public class Link implements Serializable {
     }
 
     public Link(String name, String href) {
+        this.name = name;
+        this.href = href;
+    }
+
+    public Link(IconType icon, String name) {
+        this.icon = icon;
+        this.name = name;
+    }
+
+    public Link(IconType icon, String name, String href) {
+        this.icon = icon;
         this.name = name;
         this.href = href;
     }
@@ -74,5 +88,13 @@ public class Link implements Serializable {
 
     public void setReady(boolean ready) {
         this.ready = ready;
+    }
+
+    public IconType getIcon() {
+        return icon;
+    }
+
+    public void setIcon(IconType icon) {
+        this.icon = icon;
     }
 }

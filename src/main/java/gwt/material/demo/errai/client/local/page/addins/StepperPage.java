@@ -6,20 +6,18 @@ import gwt.material.design.addins.client.stepper.MaterialStep;
 import gwt.material.design.addins.client.stepper.MaterialStepper;
 import gwt.material.design.client.constants.Axis;
 import gwt.material.design.client.constants.ButtonType;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.Display;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "stepper")
-@ApplicationScoped
 public class StepperPage extends PageBase {
 
     private static final int BASIC = 0;
@@ -62,7 +60,7 @@ public class StepperPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Stepper", "Steppers convey progress through numbered steps. They may also be used for navigation.", ADDINS_COLOR);
+        initPage("Stepper", "Steppers convey progress through numbered steps. They may also be used for navigation.", ADDINS);
         buildVertical();
         buildHorizontal();
         buildModal();
@@ -155,7 +153,7 @@ public class StepperPage extends PageBase {
             panel.setWidth("100%");
             panel.setHeight("200px");
             panel.setMarginBottom(20);
-            panel.setBackgroundColor("grey lighten-2");
+            panel.setBackgroundColor(Color.GREY_LIGHTEN_2);
             step.add(panel);
 
             MaterialButton btnNext = new MaterialButton();

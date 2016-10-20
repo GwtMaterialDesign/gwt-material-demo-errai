@@ -38,7 +38,7 @@ public class CardPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Cards", "Cards are a convenient means of displaying content composed of different types of objects. They are also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.", COMPONENTS_COLOR);
+        initPage("Cards", "Cards are a convenient means of displaying content composed of different types of objects. They are also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.", COMPONENTS);
         buildBasic();
         buildCardImage();
         buildHorizontalCard();

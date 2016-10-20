@@ -4,6 +4,7 @@ import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.splitpanel.MaterialSplitPanel;
 import gwt.material.design.addins.client.splitpanel.constants.Dock;
 import gwt.material.design.client.constants.Axis;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.TextAlign;
 import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialTitle;
@@ -13,6 +14,8 @@ import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+
+import static gwt.material.design.client.constants.Color.BLUE_LIGHTEN_3;
 
 @Templated
 @Page(path = "splitpanel")
@@ -44,7 +47,7 @@ public class SplitPanelPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Split Panel", "A high performance content splitter compatible with touch events", ADDINS_COLOR);
+        initPage("Split Panel", "A high performance content splitter compatible with touch events", ADDINS);
         buildBasic();
         buildStyle();
     }
@@ -58,11 +61,11 @@ public class SplitPanelPage extends PageBase {
     }
 
     private void buildSplitPanel(MaterialSplitPanel splitPanel) {
-        splitPanel.setBackgroundColor("black");
+        splitPanel.setBackgroundColor(Color.BLACK);
         splitPanel.setHeight("500px");
         MaterialPanel leftPanel = new MaterialPanel();
         leftPanel.setGrid("l6 m6 s6");
-        leftPanel.setBackgroundColor("grey lighten-2");
+        leftPanel.setBackgroundColor(Color.GREY_LIGHTEN_2);
         MaterialTitle leftTitle = new MaterialTitle();
         leftTitle.setTextAlign(TextAlign.CENTER);
         leftTitle.setTitle("Left Zone");
@@ -72,7 +75,7 @@ public class SplitPanelPage extends PageBase {
 
         MaterialPanel rightPanel = new MaterialPanel();
         rightPanel.setGrid("l6 m6 s6");
-        rightPanel.setBackgroundColor("grey lighten-3");
+        rightPanel.setBackgroundColor(Color.GREY_LIGHTEN_3);
         MaterialTitle rightTitle = new MaterialTitle();
         rightTitle.setTextAlign(TextAlign.CENTER);
         rightTitle.setTitle("Right Zone");
@@ -81,9 +84,9 @@ public class SplitPanelPage extends PageBase {
         splitPanel.add(rightPanel);
 
         if (splitPanel == splitPanelStyling) {
-            splitPanel.setBackgroundColor("blue");
-            leftPanel.setBackgroundColor("blue lighten-2");
-            rightPanel.setBackgroundColor("blue lighten-3");
+            splitPanel.setBackgroundColor(Color.BLUE);
+            leftPanel.setBackgroundColor(Color.BLUE_LIGHTEN_2);
+            rightPanel.setBackgroundColor(BLUE_LIGHTEN_3);
         } else if (splitPanel == splitPanelVertical) {
             splitPanel.setAxis(Axis.VERTICAL);
         } else if (splitPanel == splitPanelDock) {

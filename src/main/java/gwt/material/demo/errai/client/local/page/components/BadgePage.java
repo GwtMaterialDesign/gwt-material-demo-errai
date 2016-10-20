@@ -2,6 +2,7 @@ package gwt.material.demo.errai.client.local.page.components;
 
 import com.google.gwt.dom.client.Style;
 import gwt.material.demo.errai.client.local.page.PageBase;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
@@ -49,7 +50,7 @@ public class BadgePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Badges", "Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.", COMPONENTS_COLOR);
+        initPage("Badges", "Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.", COMPONENTS);
         buildLinkAndIcon();
         buildCollection();
         buildDropdown();
@@ -63,7 +64,7 @@ public class BadgePage extends PageBase {
         badge.setText("1");
         badge.setRight(0);
         badge.setCircle(true);
-        badge.setBackgroundColor("pink");
+        badge.setBackgroundColor(Color.PINK);
         icon2.add(badge);
         navBar.add(navSection);
         navSection.add(icon2);
@@ -74,7 +75,7 @@ public class BadgePage extends PageBase {
         MaterialBadge badge = new MaterialBadge();
         badge.setText("1 new");
         badge.setRight(-70);
-        badge.setBackgroundColor("pink");
+        badge.setBackgroundColor(Color.PINK);
         link.add(badge);
 
         icon.setIconType(IconType.NOTIFICATIONS);
@@ -82,7 +83,7 @@ public class BadgePage extends PageBase {
         badge2.setText("1");
         badge2.setRight(0);
         badge2.setCircle(true);
-        badge2.setBackgroundColor("pink");
+        badge2.setBackgroundColor(Color.PINK);
         icon.add(badge2);
     }
 
@@ -95,7 +96,7 @@ public class BadgePage extends PageBase {
             MaterialLink link = new MaterialLink("Sample " + i);
             MaterialBadge badge = new MaterialBadge();
             badge.setText("1 new");
-            badge.setBackgroundColor("blue");
+            badge.setBackgroundColor(Color.BLUE);
             link.add(badge);
             dp.add(link);
         }
@@ -107,7 +108,7 @@ public class BadgePage extends PageBase {
             MaterialLink link = new MaterialLink("Sample " + i);
             MaterialBadge badge = new MaterialBadge();
             badge.setText("1 new");
-            badge.setBackgroundColor("blue");
+            badge.setBackgroundColor(Color.BLUE);
             link.add(badge);
             item.add(link);
             collection.add(item);
