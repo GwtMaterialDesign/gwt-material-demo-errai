@@ -58,7 +58,7 @@ public class DataHelper {
         components.addSubLink(new Link("Tooltip", "#tooltip", true));
 
         Link animations = new Link(IconType.PLAY_CIRCLE_OUTLINE,"Animations");
-        animations.addSubLink(new Link("Core", "#core_animation"));
+        animations.addSubLink(new Link("Core", "#core_animation", true));
         animations.addSubLink(new Link("Meaningful", "#meaningful_animation"));
 
         Link addins = new Link(IconType.STYLE, "Addins");

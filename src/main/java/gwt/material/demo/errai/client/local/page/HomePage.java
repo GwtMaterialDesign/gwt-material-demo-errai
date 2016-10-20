@@ -33,7 +33,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
-@Page(path = "about")
+@Page(path = "about", role = DefaultPage.class)
 public class HomePage extends PageBase {
 
     @Inject

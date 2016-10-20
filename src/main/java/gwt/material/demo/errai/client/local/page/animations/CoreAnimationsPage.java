@@ -19,7 +19,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
-@Page(path = "core_animation", role = DefaultPage.class)
+@Page(path = "core_animation")
 public class CoreAnimationsPage extends PageBase {
 
     @Inject
