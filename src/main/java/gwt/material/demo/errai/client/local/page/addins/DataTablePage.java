@@ -4,25 +4,31 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import gwt.material.demo.errai.client.local.page.PageBase;
+import gwt.material.demo.errai.client.local.page.addins.table.datasource.PersonDataSource;
 import gwt.material.demo.errai.client.local.page.addins.table.factory.CustomCategoryFactory;
 import gwt.material.demo.errai.client.local.page.addins.table.factory.PersonRowFactory;
 import gwt.material.demo.errai.client.local.page.addins.table.model.Person;
 import gwt.material.demo.errai.client.local.page.addins.table.renderer.CustomRenderer;
+import gwt.material.demo.errai.client.local.page.addins.table.service.FakePersonService;
+import gwt.material.demo.errai.client.local.page.addins.table.service.PersonServiceAsync;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.constants.*;
 import gwt.material.design.client.data.ListDataSource;
 import gwt.material.design.client.data.SelectionType;
+import gwt.material.design.client.data.component.CategoryComponent;
 import gwt.material.design.client.data.component.RowComponent;
+import gwt.material.design.client.data.infinite.InfiniteDataView;
 import gwt.material.design.client.ui.*;
 import gwt.material.design.client.ui.pager.MaterialDataPager;
 import gwt.material.design.client.ui.table.MaterialDataTable;
+import gwt.material.design.client.ui.table.MaterialInfiniteDataTable;
 import gwt.material.design.client.ui.table.cell.Column;
 import gwt.material.design.client.ui.table.cell.TextColumn;
 import gwt.material.design.client.ui.table.cell.WidgetColumn;
 import gwt.material.design.jquery.client.api.JQueryElement;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -40,6 +46,13 @@ public class DataTablePage extends PageBase {
     @Inject
     @DataField
     MaterialDataTable<Person> standardTable, pageTable;
+
+    @Inject
+    @DataField
+    MaterialPanel infiniteTablePanel;
+
+    private PersonServiceAsync personService = GWT.create(FakePersonService.class);
+    private MaterialInfiniteDataTable<Person> infiniteTable;
 
     @Inject
     @DataField
@@ -62,6 +75,111 @@ public class DataTablePage extends PageBase {
         super.page();
         buildStandardTable();
         buildPageTable();
+        buildInfiniteTable();
+    }
+
+    public void buildInfiniteTable() {
+        infiniteTable = new MaterialInfiniteDataTable<>(20, InfiniteDataView.DYNAMIC_VIEW, new PersonDataSource(personService));
+        infiniteTable.setShadow(1);
+        infiniteTable.setUseLoadOverlay(false);
+        infiniteTable.setUseStickyHeader(true);
+        infiniteTable.setUseCategories(true);
+        infiniteTable.setIndexOffset(20);
+        infiniteTable.setSelectionType(SelectionType.MULTIPLE);
+
+        infiniteTablePanel.add(infiniteTable);
+
+        infiniteTable.setLoadMask(true);
+        personService.getCategories(new AsyncCallback<List<String>>() {
+            @Override
+            public void onSuccess(List<String> categories) {
+                for (String category : categories) {
+                    infiniteTable.addCategory(new CategoryComponent(category));
+                }
+                infiniteTable.setLoadMask(false);
+            }
+
+            @Override
+            public void onFailure(Throwable throwable) {
+                GWT.log("Getting people categories async call failed.", throwable);
+            }
+        });
+
+        // Add an image profile on each category rows
+        infiniteTable.addColumn(new WidgetColumn<Person, MaterialImage>() {
+            @Override
+            public MaterialImage getValue(Person object) {
+                MaterialImage profile = new MaterialImage();
+                profile.setUrl(object.getPicture());
+                profile.setWidth("40px");
+                profile.setHeight("40px");
+                profile.setPadding(4);
+                profile.setMarginTop(8);
+                profile.setBackgroundColor(Color.GREY_LIGHTEN_2);
+                profile.setCircle(true);
+                return profile;
+            }
+        });
+
+        // Add the tables columns
+        infiniteTable.addColumn(new TextColumn<Person>() {
+            @Override
+            public boolean isSortable() {
+                return true;
+            }
+
+            @Override
+            public String getValue(Person object) {
+                return object.getFirstName();
+            }
+        }, "First Name");
+
+        infiniteTable.addColumn(new TextColumn<Person>() {
+            @Override
+            public boolean isSortable() {
+                return true;
+            }
+
+            @Override
+            public String getValue(Person object) {
+                return object.getLastName();
+            }
+        }, "Last Name");
+
+        infiniteTable.addColumn(new TextColumn<Person>() {
+            @Override
+            public boolean isSortable() {
+                return true;
+            }
+
+            @Override
+            public String getValue(Person object) {
+                return object.getPhone();
+            }
+        }, "Phone");
+
+        infiniteTable.addRowSelectHandler((e, model, elem, selected) -> {
+            GWT.log(model.getId() + ": " + selected);
+            return true;
+        });
+
+        infiniteTable.addSortColumnHandler((e, sortContext, columnIndex) -> {
+            GWT.log("Sorted: " + sortContext.getSortDir() + ", columnIndex: " + columnIndex);
+            infiniteTable.refreshView();
+            return true;
+        });
+
+        infiniteTable.addSelectAllHandler((e, models, elems, selected) -> {
+            GWT.log("Selected[" + selected + "]: " + models.size() + " models");
+            return true;
+        });
+
+        if (!infiniteTable.isUseCategories()) {
+            // Since we aren't using categories for this table
+            // we will forcefully invoke a table refresh that
+            // sends a request for data.
+            infiniteTable.refreshView();
+        }
     }
 
     public void buildPageTable() {
@@ -139,6 +257,7 @@ public class DataTablePage extends PageBase {
             public TextAlign getTextAlign() {
                 return TextAlign.CENTER;
             }
+
             @Override
             public MaterialImage getValue(Person object) {
                 MaterialImage image = new MaterialImage(object.getPicture());
@@ -209,7 +328,7 @@ public class DataTablePage extends PageBase {
         table.addRowExpandHandler((e, rowExpand) -> {
             JQueryElement section = rowExpand.getOverlay();
 
-            if(rowExpand.isExpand()) {
+            if (rowExpand.isExpand()) {
                 // Fake Async Task
                 // This is demonstrating a fake asynchronous call to load
                 // the data inside the expansion element.
@@ -312,7 +431,7 @@ public class DataTablePage extends PageBase {
         for (int j = 1; j <= 5; j++) {
             String category = "Category " + j;
             for (int i = 1; i <= 5; i++) {
-                people.add(new Person(i, "UserName " + i , "https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png", "First Name " + j + "." + i, "Last Name " + j + "." + i, "Phone " + j + "." + i, category));
+                people.add(new Person(i, "UserName " + i, "https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png", "First Name " + j + "." + i, "Last Name " + j + "." + i, "Phone " + j + "." + i, category));
             }
         }
 
