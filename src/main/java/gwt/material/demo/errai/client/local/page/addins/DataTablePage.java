@@ -14,6 +14,7 @@ import gwt.material.demo.errai.client.local.page.addins.table.renderer.CustomRen
 import gwt.material.demo.errai.client.local.page.addins.table.service.FakePersonService;
 import gwt.material.demo.errai.client.local.page.addins.table.service.PersonServiceAsync;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
+import gwt.material.design.addins.client.popupmenu.MaterialPopupMenu;
 import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.constants.*;
 import gwt.material.design.client.data.ListDataSource;
@@ -39,13 +40,15 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import static gwt.material.design.jquery.client.api.JQuery.$;
+
 @Templated
 @Page(path = "datatable")
 public class DataTablePage extends PageBase {
 
     @Inject
     @DataField
-    MaterialDataTable<Person> standardTable, pageTable;
+    MaterialDataTable<Person> standardTable, pageTable, contextMenuTable;
 
     @Inject
     @DataField
@@ -62,6 +65,10 @@ public class DataTablePage extends PageBase {
     @DataField
     MaterialComboBox<SelectionType> comboSelection;
 
+    @Inject
+    @DataField
+    MaterialPopupMenu popupMenu;
+
     private MaterialDataPager pager;
     private ListDataSource<Person> dataSource;
 
@@ -76,6 +83,7 @@ public class DataTablePage extends PageBase {
         buildStandardTable();
         buildPageTable();
         buildInfiniteTable();
+        buildContextMenuTable();
     }
 
     public void buildInfiniteTable() {
@@ -88,6 +96,8 @@ public class DataTablePage extends PageBase {
         infiniteTable.setSelectionType(SelectionType.MULTIPLE);
 
         infiniteTablePanel.add(infiniteTable);
+        infiniteTable.getScaffolding().getTopPanel().addStyleName(Color.RED.getCssName());
+        infiniteTable.getTableTitle().setText("Infinite Table");
 
         infiniteTable.setLoadMask(true);
         personService.getCategories(new AsyncCallback<List<String>>() {
@@ -180,6 +190,46 @@ public class DataTablePage extends PageBase {
             // sends a request for data.
             infiniteTable.refreshView();
         }
+    }
+
+    public void buildContextMenuTable() {
+        contextMenuTable.getTableTitle().setText("Table with Context Menu");
+        contextMenuTable.getScaffolding().getTopPanel().addStyleName(Color.RED.getCssName());
+        contextMenuTable.setShadow(1);
+        contextMenuTable.setHeight("400px");
+        contextMenuTable.setUseStickyHeader(false);
+        contextMenuTable.setUseCategories(false);
+        contextMenuTable.setUseRowExpansion(false);
+        contextMenuTable.setSelectionType(SelectionType.SINGLE);
+        contextMenuTable.addRowContextMenuHandler((e, mouseEvent, model, row) -> {
+            // Firing Row Context will automatically select the row where it was right clicked
+            contextMenuTable.selectRow($(row).asElement(), true);
+            popupMenu.setSelected(model);
+            // Get the PageX and getPageY
+            popupMenu.setPopupPosition(mouseEvent.getPageX(), mouseEvent.getPageY());
+            popupMenu.open();
+            return true;
+        });
+        buildContextMenu();
+        buildTable(contextMenuTable);
+    }
+
+    protected void buildContextMenu() {
+        MaterialLink linkCopy = new MaterialLink("Copy", new MaterialIcon(IconType.CONTENT_COPY));
+        linkCopy.setPadding(12);
+        linkCopy.setTextColor(Color.BLACK);
+        MaterialLink linkPaste = new MaterialLink("Paste", new MaterialIcon(IconType.CONTENT_COPY));
+        linkPaste.setPadding(12);
+        linkPaste.setTextColor(Color.BLACK);
+        MaterialLink linkRename = new MaterialLink("Rename", new MaterialIcon(IconType.CONTENT_COPY));
+        popupMenu.add(linkCopy);
+        linkRename.setPadding(12);
+        linkRename.setTextColor(Color.BLACK);
+        popupMenu.add(linkPaste);
+        popupMenu.add(linkRename);
+        popupMenu.addSelectionHandler(selectionEvent -> {
+            popupMenu.close();
+        });
     }
 
     public void buildPageTable() {

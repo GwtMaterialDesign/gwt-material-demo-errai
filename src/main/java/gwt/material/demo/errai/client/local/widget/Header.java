@@ -2,13 +2,16 @@ package gwt.material.demo.errai.client.local.widget;
 
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.Composite;
+import gwt.material.demo.errai.client.local.ThemeManager;
 import gwt.material.demo.errai.client.local.events.PageChangeEvent;
-import gwt.material.design.client.base.helper.EnumHelper;
-import gwt.material.design.client.constants.Color;
+import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.client.constants.HideOn;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.constants.NavBarType;
+import gwt.material.design.client.events.SideNavClosedEvent;
+import gwt.material.design.client.events.SideNavOpenedEvent;
 import gwt.material.design.client.ui.*;
+import gwt.material.design.themes.client.ThemeLoader;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
@@ -48,6 +51,12 @@ public class Header extends Composite {
     @Inject
     MaterialLabel lblDescription;
 
+    @Inject
+    MaterialComboBox<ThemeLoader.ThemeBundle> comboBox;
+
+    @Inject
+    ThemeSwitcher themeSwitcher;
+
     @PostConstruct
     public void init() {
         navBar.setActivates("sideNav");
@@ -59,6 +68,7 @@ public class Header extends Composite {
         iconSearch.addClickHandler(clickEvent -> {
             changeNav(searchNav);
         });
+        navSection.add(themeSwitcher);
         navSection.add(iconSearch);
         navBar.add(navSection);
 
@@ -87,7 +97,19 @@ public class Header extends Composite {
         $("body").scrollTop(0);
         lblTitle.setText(event.getTitle());
         lblDescription.setText(event.getDescription());
-        navBar.setBackgroundColor(event.getSecondaryColor());
-        titlePanel.setBackgroundColor(event.getColor());
+        ThemeManager.register(navBar, ThemeManager.DARKER_SHADE);
+        ThemeManager.register(titlePanel);
+    }
+
+    public void onSideNavOpened(@Observes SideNavOpenedEvent event) {
+        navBar.getElement().getStyle().setProperty("transition", "none");
+        navBar.getElement().getStyle().setProperty("width", "calc(100% - 280px)");
+        searchNav.getElement().getStyle().setProperty("width", "calc(100% - 280px)");
+    }
+
+    public void onSideNavClosed(@Observes SideNavClosedEvent event) {
+        navBar.getElement().getStyle().setProperty("transition", "none");
+        navBar.getElement().getStyle().setProperty("width", "100%");
+        searchNav.getElement().getStyle().setProperty("width", "calc(100% - 280px)");
     }
 }
