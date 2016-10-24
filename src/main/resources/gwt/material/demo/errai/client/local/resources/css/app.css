@@ -11,6 +11,9 @@ header nav .button-collapse i {
 header nav ul {
     float: right;
 }
+[data-title="Picture"] {
+    width: 60px;
+}
 .titlePanel {
     width: 100%;
     margin-top: 64px;

@@ -45,7 +45,7 @@ public class FABPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("FAB", "FAB or Floating action buttons are used for a promoted action. They are distinguished by a circled icon floating above the UI and have motion behaviors that include morphing, launching, and a transferring anchor point.", COMPONENTS_COLOR);
+        initPage("FAB", "FAB or Floating action buttons are used for a promoted action. They are distinguished by a circled icon floating above the UI and have motion behaviors that include morphing, launching, and a transferring anchor point.", COMPONENTS);
         buildFABBasic();
         buildFABOpenClose();
         buildFABAxis();
@@ -93,21 +93,21 @@ public class FABPage extends PageBase {
         MaterialButton btn2 = new MaterialButton();
         btn2.setIconType(IconType.POLYMER);
         btn2.setType(ButtonType.FLOATING);
-        btn2.setBackgroundColor("purple");
+        btn2.setBackgroundColor(Color.PURPLE);
         btn2.setWaves(WavesType.LIGHT);
         fabList.add(btn2);
 
         MaterialButton btn3 = new MaterialButton();
         btn3.setIconType(IconType.POLYMER);
         btn3.setType(ButtonType.FLOATING);
-        btn3.setBackgroundColor("red");
+        btn3.setBackgroundColor(Color.RED);
         btn3.setWaves(WavesType.LIGHT);
         fabList.add(btn3);
 
         MaterialButton btn4 = new MaterialButton();
         btn4.setIconType(IconType.POLYMER);
         btn4.setType(ButtonType.FLOATING);
-        btn4.setBackgroundColor("green");
+        btn4.setBackgroundColor(Color.GREEN);
         btn4.setWaves(WavesType.LIGHT);
         fabList.add(btn4);
         fab.add(fabList);

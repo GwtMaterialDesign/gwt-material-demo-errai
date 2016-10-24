@@ -1,6 +1,7 @@
 package gwt.material.demo.errai.client.local.page.components;
 
 import gwt.material.demo.errai.client.local.page.PageBase;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -24,7 +25,7 @@ public class FooterPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Footer", "Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website.", COMPONENTS_COLOR);
+        initPage("Footer", "Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website.", COMPONENTS);
         buildFooter();
     }
 
@@ -32,7 +33,7 @@ public class FooterPage extends PageBase {
         MaterialTitle title = new MaterialTitle();
         title.setTitle("Footer");
         title.setDescription("This is description");
-        title.setTextColor("white");
+        title.setTextColor(Color.WHITE);
 
         MaterialButton button = new MaterialButton();
         button.setText("Link 1");

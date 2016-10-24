@@ -46,7 +46,7 @@ public class HomePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("GWT Material Errai", "A GWT Material Demo built with Errai", ABOUT_COLOR);
+        initPage("GWT Material Errai", "A GWT Material Demo built with Errai", ABOUT);
         icon.setIconType(IconType.POLYMER);
         label.setText("GWT Material Errai");
     }

@@ -5,11 +5,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.overlay.MaterialOverlay;
 import gwt.material.design.addins.client.pathanimator.MaterialPathAnimator;
-import gwt.material.design.client.base.MaterialWidget;
-import gwt.material.design.client.constants.ButtonSize;
-import gwt.material.design.client.constants.IconPosition;
-import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.constants.TextAlign;
+import gwt.material.design.client.constants.*;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -56,7 +52,7 @@ public class PathAnimatorPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Path Animator", "Custom component that provides meaningfull transition between two elements to show visual continuity.", ADDINS_COLOR);
+        initPage("Path Animator", "Custom component that provides meaningfull transition between two elements to show visual continuity.", ADDINS);
         buildButtonToOverlay();
         buildCardToOverlay();
         buildButtonCard();
@@ -157,7 +153,7 @@ public class PathAnimatorPage extends PageBase {
 
     private void buildCard(MaterialCard card, ClickHandler handler) {
         MaterialCardContent content = new MaterialCardContent();
-        content.setTextColor("white");
+        content.setTextColor(Color.WHITE);
         MaterialCardTitle title = new MaterialCardTitle();
         title.setText("Sample");
         title.setIconType(IconType.POLYMER);
@@ -183,7 +179,7 @@ public class PathAnimatorPage extends PageBase {
         title.setGrid("s12 l6 m6");
         title.setOffset("s0 l3 m3");
         title.setMarginBottom(80);
-        title.setTextColor("white");
+        title.setTextColor(Color.WHITE);
         title.setTitle("Meaningful transitions");
         title.setDescription("Motion design can effectively guide the user’s attention in ways that both inform and delight. Use motion to smoothly transport users between navigational contexts, explain changes in the arrangement of elements on a screen, and reinforce element hierarchy.");
 
@@ -192,8 +188,8 @@ public class PathAnimatorPage extends PageBase {
         column.setTextAlign(TextAlign.CENTER);
         column.setGrid("s12");
         btnClose.setText("Back to Main Page");
-        btnClose.setBackgroundColor("blue lighten-2");
-        btnClose.setTextColor("white");
+        btnClose.setBackgroundColor(Color.BLUE_LIGHTEN_2);
+        btnClose.setTextColor(Color.WHITE);
         btnClose.setSize(ButtonSize.LARGE);
         btnClose.addClickHandler(handler);
         column.add(btnClose);

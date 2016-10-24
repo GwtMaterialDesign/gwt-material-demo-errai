@@ -51,7 +51,7 @@ public class CollectionPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Collections", "Collections allow you to group list objects together.", COMPONENTS_COLOR);
+        initPage("Collections", "Collections allow you to group list objects together.", COMPONENTS);
         buildBasic();
         buildPreSelection();
         buildHeader();
@@ -72,8 +72,8 @@ public class CollectionPage extends PageBase {
             link.setDisplay(Display.INLINE_BLOCK);
             link.setIconPosition(IconPosition.LEFT);
             link.setIconType(IconType.POLYMER);
-            link.setIconColor("black");
-            link.setTextColor("black");
+            link.setIconColor(Color.BLACK);
+            link.setTextColor(Color.BLACK);
             item.add(link);
 
             MaterialCollectionSecondary secondary = new MaterialCollectionSecondary();
@@ -111,7 +111,7 @@ public class CollectionPage extends PageBase {
         for (int i = 1; i <= 5; i++) {
             MaterialCollectionItem item = new MaterialCollectionItem();
             item.setType(CollectionType.AVATAR);
-            item.setDismissable(true);
+            item.setDismissible(true);
 
             MaterialImage image = new MaterialImage("http://materializecss.com/images/yuna.jpg");
             image.setType(ImageType.CIRCLE);

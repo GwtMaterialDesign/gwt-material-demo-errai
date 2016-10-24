@@ -53,7 +53,7 @@ public class ButtonPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Button", "There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.", COMPONENTS_COLOR);
+        initPage("Button", "There are 3 main button types described in material design. The raised button is a standard button that signify actions and seek to give depth to a mostly flat page. The floating circular action button is meant for very important functions. Flat buttons are usually used within elements that already have depth like cards or modals.", COMPONENTS);
         buildRaised();
         buildFloating();
         buildFlat();
@@ -66,37 +66,37 @@ public class ButtonPage extends PageBase {
 
     private void buildIconButton() {
         btnIconButton1.setIconType(IconType.MENU);
-        btnIconButton1.setIconColor("blue");
+        btnIconButton1.setIconColor(Color.BLUE);
         btnIconButton1.setWaves(WavesType.DEFAULT);
         btnIconButton1.setCircle(true);
 
         btnIconButton2.setIconType(IconType.FAVORITE);
-        btnIconButton2.setIconColor("red");
+        btnIconButton2.setIconColor(Color.RED);
         btnIconButton2.setEnabled(false);
         btnIconButton2.setWaves(WavesType.DEFAULT);
         btnIconButton2.setCircle(true);
 
         btnIconButton3.setIconType(IconType.MORE_VERT);
-        btnIconButton3.setIconColor("grey");
+        btnIconButton3.setIconColor(Color.GREY);
         btnIconButton3.setWaves(WavesType.DEFAULT);
         btnIconButton3.setCircle(true);
     }
 
     private void buildLinks() {
         btnLink1.setText("Normal Link");
-        btnLink1.setTextColor("red");
+        btnLink1.setTextColor(Color.RED);
         btnLink1.setIconPosition(IconPosition.LEFT);
         btnLink1.setIconType(IconType.POLYMER);
 
         btnLink2.setText("Link with Href");
         btnLink2.setHref("#button");
-        btnLink2.setTextColor("red");
+        btnLink2.setTextColor(Color.RED);
         btnLink2.setIconPosition(IconPosition.LEFT);
         btnLink2.setIconType(IconType.POLYMER);
 
         btnLink3.setText("Link with different color");
-        btnLink3.setTextColor("black");
-        btnLink3.setIconColor("red");
+        btnLink3.setTextColor(Color.BLACK);
+        btnLink3.setIconColor(Color.RED);
         btnLink3.setIconPosition(IconPosition.LEFT);
         btnLink3.setIconType(IconType.POLYMER);
     }
@@ -170,7 +170,7 @@ public class ButtonPage extends PageBase {
 
         btnFlat2.setType(ButtonType.FLAT);
         btnFlat2.setText("Primary (No Waves)");
-        btnFlat2.setTextColor("blue");
+        btnFlat2.setTextColor(Color.BLUE);
 
         btnFlat3.setType(ButtonType.FLAT);
         btnFlat3.setText("Disabled");
@@ -179,7 +179,7 @@ public class ButtonPage extends PageBase {
 
         btnFlat4.setType(ButtonType.FLAT);
         btnFlat4.setText("Warn");
-        btnFlat4.setTextColor("red");
+        btnFlat4.setTextColor(Color.RED);
         btnFlat4.setWaves(WavesType.RED);
     }
 
@@ -187,7 +187,7 @@ public class ButtonPage extends PageBase {
         btnFloating1.setType(ButtonType.FLOATING);
         btnFloating1.setWaves(WavesType.LIGHT);
         btnFloating1.setSize(ButtonSize.LARGE);
-        btnFloating1.setBackgroundColor("red");
+        btnFloating1.setBackgroundColor(Color.RED);
         btnFloating1.setIconType(IconType.CAKE);
 
         btnFloating2.setType(ButtonType.FLOATING);
@@ -209,15 +209,15 @@ public class ButtonPage extends PageBase {
         btnFloating5.setType(ButtonType.FLOATING);
         btnFloating5.setWaves(WavesType.DEFAULT);
         btnFloating5.setSize(ButtonSize.LARGE);
-        btnFloating5.setIconColor("green");
-        btnFloating5.setBackgroundColor("white");
+        btnFloating5.setIconColor(Color.GREEN);
+        btnFloating5.setBackgroundColor(Color.WHITE);
         btnFloating5.setIconType(IconType.ANDROID);
     }
 
     private void buildRaised() {
         btn1.setText("Button");
-        btn1.setBackgroundColor("white");
-        btn1.setTextColor("black");
+        btn1.setBackgroundColor(Color.WHITE);
+        btn1.setTextColor(Color.BLACK);
         btn1.setWaves(WavesType.DEFAULT);
 
         btn2.setText("Primary");
@@ -233,15 +233,15 @@ public class ButtonPage extends PageBase {
         btn4.setText("Warn");
         btn4.setWaves(WavesType.LIGHT);
         btn4.setIconType(IconType.POLYMER);
-        btn4.setBackgroundColor("red");
+        btn4.setBackgroundColor(Color.RED);
         btn4.setIconPosition(IconPosition.RIGHT);
 
         btn5.setText("Icon Color");
         btn5.setWaves(WavesType.RED);
         btn5.setIconType(IconType.POLYMER);
-        btn5.setIconColor("red");
-        btn5.setBackgroundColor("white");
-        btn5.setTextColor("black");
+        btn5.setIconColor(Color.RED);
+        btn5.setBackgroundColor(Color.WHITE);
+        btn5.setTextColor(Color.BLACK);
         btn5.setIconPosition(IconPosition.RIGHT);
     }
 }

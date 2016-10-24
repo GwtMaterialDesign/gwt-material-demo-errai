@@ -64,7 +64,7 @@ public class DatePickerPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Date Picker", "A dialog picker is used to select a single date on mobile. The selected day is indicated by a filled circle. The current day is indicated by a different color and type weight.", COMPONENTS_COLOR);
+        initPage("Date Picker", "A dialog picker is used to select a single date on mobile. The selected day is indicated by a filled circle. The current day is indicated by a different color and type weight.", COMPONENTS);
         buildBasic();
         buildDisabled();
         buildSelection();

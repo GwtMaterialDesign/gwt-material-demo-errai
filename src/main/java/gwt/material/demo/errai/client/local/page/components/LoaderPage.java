@@ -45,7 +45,7 @@ public class LoaderPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Loaders", "If you have content that will take a long time to load, you should give the user feedback. For this reason we provide a number activity + progress indicators.", COMPONENTS_COLOR);
+        initPage("Loaders", "If you have content that will take a long time to load, you should give the user feedback. For this reason we provide a number activity + progress indicators.", COMPONENTS);
         buildCircular();
         buildProgress();
         buildDeterminate();

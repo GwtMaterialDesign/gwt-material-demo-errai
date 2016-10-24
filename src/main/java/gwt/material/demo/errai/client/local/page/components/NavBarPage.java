@@ -34,7 +34,7 @@ public class NavBarPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("NavBar", "The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.", COMPONENTS_COLOR);
+        initPage("NavBar", "The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.", COMPONENTS);
         buildNavBar(navbar1, BASIC);
         buildNavBar(navbar2, ALIGNMENT);
     }

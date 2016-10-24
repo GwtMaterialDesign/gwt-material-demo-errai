@@ -39,7 +39,7 @@ public class SearchPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Search", "Attached to NavBar component or can be used on external panels.", COMPONENTS_COLOR);
+        initPage("Search", "Attached to NavBar component or can be used on external panels.", COMPONENTS);
         navBrand.setText("My App");
         navBrand.setPaddingLeft(20);
         navbar.add(navBrand);

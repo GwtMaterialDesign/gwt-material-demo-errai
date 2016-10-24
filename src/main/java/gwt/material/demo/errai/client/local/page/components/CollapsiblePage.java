@@ -3,6 +3,7 @@ package gwt.material.demo.errai.client.local.page.components;
 import com.google.gwt.dom.client.Style;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.constants.CollapsibleType;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
@@ -50,7 +51,7 @@ public class CollapsiblePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Collapsibles", "Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.", COMPONENTS_COLOR);
+        initPage("Collapsibles", "Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.", COMPONENTS);
         buildAccordion();
         buidExpandable();
         builPopout();
@@ -94,7 +95,7 @@ public class CollapsiblePage extends PageBase {
             link.setText("Item " + i);
             link.setIconType(IconType.POLYMER);
             link.setIconPosition(IconPosition.LEFT);
-            link.setTextColor("black");
+            link.setTextColor(Color.BLACK);
             header.add(link);
 
             if (type == SECONDARY) {
@@ -118,7 +119,7 @@ public class CollapsiblePage extends PageBase {
                 body.add(child);
             } else {
                 MaterialLabel label = new MaterialLabel();
-                label.setTextColor("black");
+                label.setTextColor(Color.BLACK);
                 label.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.");
                 body.add(label);
             }

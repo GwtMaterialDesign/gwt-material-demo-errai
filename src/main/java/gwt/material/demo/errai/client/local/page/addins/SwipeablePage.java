@@ -2,11 +2,11 @@ package gwt.material.demo.errai.client.local.page.addins;
 
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.swipeable.MaterialSwipeablePanel;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.ui.MaterialCard;
 import gwt.material.design.client.ui.MaterialCardContent;
 import gwt.material.design.client.ui.MaterialLabel;
 import gwt.material.design.client.ui.MaterialToast;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -32,7 +32,7 @@ public class SwipeablePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Swipeable", "A panel that allows any of its nested children to be swiped away. This component is only applicable to touch screen devices.", ADDINS_COLOR);
+        initPage("Swipeable", "A panel that allows any of its nested children to be swiped away. This component is only applicable to touch screen devices.", ADDINS);
         buildBasic();
         buildSwipeEvents();
         buildSwipeDisabled();
@@ -54,11 +54,11 @@ public class SwipeablePage extends PageBase {
     }
 
     private void buildSwipeEvents() {
-        swipeEvents.addSwipeLeft(event -> {
+        swipeEvents.addSwipeLeftHandler(event -> {
             MaterialToast.fireToast("Swiped Left");
         });
 
-        swipeEvents.addSwipeRight(event -> {
+        swipeEvents.addSwipeRightHandler(event -> {
             MaterialToast.fireToast("Swiped Right");
         });
         for(int i = 1; i <= 3; i++) {
@@ -73,7 +73,7 @@ public class SwipeablePage extends PageBase {
 
     private void buildBasic() {
         MaterialLabel label = new MaterialLabel("You can swipe native components. This is a plain label");
-        label.setBackgroundColor("yellow");
+        label.setBackgroundColor(Color.YELLOW);
         label.setPadding(12);
         swipe.add(label);
 
@@ -85,8 +85,8 @@ public class SwipeablePage extends PageBase {
         swipe.add(card);
 
         MaterialCard card2 = new MaterialCard();
-        card2.setBackgroundColor("blue");
-        card2.setTextColor("white");
+        card2.setBackgroundColor(Color.BLUE);
+        card2.setTextColor(Color.WHITE);
         MaterialCardContent content2 = new MaterialCardContent();
         MaterialLabel lblCard2 = new MaterialLabel("This is another Card Component that is swipeable.");
         content2.add(lblCard2);

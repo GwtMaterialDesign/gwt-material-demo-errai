@@ -34,7 +34,7 @@ public class MediaPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Media", "Media components include things that have to do with large media objects like Images, Video, Audio, etc.", COMPONENTS_COLOR);
+        initPage("Media", "Media components include things that have to do with large media objects like Images, Video, Audio, etc.", COMPONENTS);
         buildImage();
         buildCircleImage();
         buildVideo();

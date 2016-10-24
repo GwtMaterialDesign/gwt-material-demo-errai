@@ -7,12 +7,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "docviewer")
-@ApplicationScoped
 public class DocViewerPage extends PageBase {
 
     @Inject
@@ -21,7 +19,7 @@ public class DocViewerPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("DocViewer", "A document viewer for your word, excel, powerpoint, pdf and other supported file types Note that this viewer only work with public files.", ADDINS_COLOR);
+        initPage("DocViewer", "A document viewer for your word, excel, powerpoint, pdf and other supported file types Note that this viewer only work with public files.", ADDINS);
         buildDocViewer();
     }
 

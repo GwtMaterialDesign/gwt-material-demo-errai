@@ -1,15 +1,19 @@
 package gwt.material.demo.errai.client.local.events;
 
+import gwt.material.design.client.constants.Color;
+
 public class PageChangeEvent {
 
     private String title;
     private String description;
-    private String color;
+    private Color color;
+    private Color secondaryColor;
 
-    public PageChangeEvent(String title, String description, String color) {
+    public PageChangeEvent(String title, String description, Color color, Color secondaryColor) {
         this.title = title;
         this.description = description;
         this.color = color;
+        this.secondaryColor = secondaryColor;
     }
 
     public String getTitle() {
@@ -28,11 +32,19 @@ public class PageChangeEvent {
         this.description = description;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
+    }
+
+    public Color getSecondaryColor() {
+        return secondaryColor;
+    }
+
+    public void setSecondaryColor(Color secondaryColor) {
+        this.secondaryColor = secondaryColor;
     }
 }

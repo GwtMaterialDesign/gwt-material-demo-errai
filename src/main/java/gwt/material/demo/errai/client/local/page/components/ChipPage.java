@@ -1,6 +1,7 @@
 package gwt.material.demo.errai.client.local.page.components;
 
 import gwt.material.demo.errai.client.local.page.PageBase;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.MaterialChip;
 import gwt.material.design.client.ui.MaterialToast;
@@ -39,7 +40,7 @@ public class ChipPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Chips", "Chips represent complex entities in small blocks, such as a contact. They can contain a photo, short title string, and brief information. Chips are manipulated through drag-and-drop. Touching them invokes the full view in a card or full screen view or invokes a menu of options related to that chip's entity.", COMPONENTS_COLOR);
+        initPage("Chips", "Chips represent complex entities in small blocks, such as a contact. They can contain a photo, short title string, and brief information. Chips are manipulated through drag-and-drop. Touching them invokes the full view in a card or full screen view or invokes a menu of options related to that chip's entity.", COMPONENTS);
         buildChips();
         buildLetterChips();
         buildStaticChips();
@@ -80,26 +81,26 @@ public class ChipPage extends PageBase {
     private void buildLetterChips() {
         letterChip1.setText("Apple");
         letterChip1.setLetter("A");
-        letterChip1.setLetterColor("white");
-        letterChip1.setLetterBackgroundColor("red");
+        letterChip1.setLetterColor(Color.WHITE);
+        letterChip1.setLetterBackgroundColor(Color.RED);
         letterChip1.setIconType(IconType.CLOSE);
 
         letterChip2.setText("Grapes");
         letterChip2.setLetter("G");
-        letterChip2.setLetterColor("pink accent-1");
-        letterChip2.setLetterBackgroundColor("purple");
+        letterChip2.setLetterColor(Color.PINK_ACCENT_1);
+        letterChip2.setLetterBackgroundColor(Color.PURPLE);
         letterChip2.setIconType(IconType.CLOSE);
 
         letterChip3.setText("Dalandan");
         letterChip3.setLetter("D");
-        letterChip3.setLetterColor("white");
-        letterChip3.setLetterBackgroundColor("green");
+        letterChip3.setLetterColor(Color.WHITE);
+        letterChip3.setLetterBackgroundColor(Color.GREEN);
         letterChip3.setIconType(IconType.CLOSE);
 
         letterChip4.setText("Mango");
         letterChip4.setLetter("M");
-        letterChip4.setLetterColor("orange");
-        letterChip4.setLetterBackgroundColor("yellow");
+        letterChip4.setLetterColor(Color.ORANGE);
+        letterChip4.setLetterBackgroundColor(Color.YELLOW);
         letterChip4.setIconType(IconType.CLOSE);
     }
 
@@ -107,19 +108,19 @@ public class ChipPage extends PageBase {
         chip1.setText("Default");
 
         chip2.setText("Apple");
-        chip2.setBackgroundColor("red");
+        chip2.setBackgroundColor(Color.RED);
         chip2.setIconType(IconType.CLOSE);
 
         chip3.setText("Orange");
-        chip3.setBackgroundColor("orange");
+        chip3.setBackgroundColor(Color.ORANGE);
         chip3.setIconType(IconType.CLOSE);
 
         chip4.setText("Banana");
-        chip4.setBackgroundColor("amber");
+        chip4.setBackgroundColor(Color.AMBER);
         chip4.setIconType(IconType.CLOSE);
 
         chip5.setText("Mango");
-        chip5.setBackgroundColor("green");
+        chip5.setBackgroundColor(Color.GREEN);
         chip5.setIconType(IconType.CLOSE);
     }
 }
