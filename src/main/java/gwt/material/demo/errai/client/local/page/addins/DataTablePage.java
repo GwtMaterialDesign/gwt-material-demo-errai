@@ -96,7 +96,6 @@ public class DataTablePage extends PageBase {
         infiniteTable.setSelectionType(SelectionType.MULTIPLE);
 
         infiniteTablePanel.add(infiniteTable);
-        infiniteTable.getScaffolding().getTopPanel().addStyleName(Color.RED.getCssName());
         infiniteTable.getTableTitle().setText("Infinite Table");
 
         infiniteTable.setLoadMask(true);
@@ -194,7 +193,6 @@ public class DataTablePage extends PageBase {
 
     public void buildContextMenuTable() {
         contextMenuTable.getTableTitle().setText("Table with Context Menu");
-        contextMenuTable.getScaffolding().getTopPanel().addStyleName(Color.RED.getCssName());
         contextMenuTable.setShadow(1);
         contextMenuTable.setHeight("400px");
         contextMenuTable.setUseStickyHeader(false);
@@ -234,7 +232,6 @@ public class DataTablePage extends PageBase {
 
     public void buildPageTable() {
         pageTable.getTableTitle().setText("Page Table");
-        pageTable.getScaffolding().getTopPanel().addStyleName(Color.RED.getCssName());
         pageTable.setShadow(1);
         pageTable.setHeight("400px");
         pageTable.setUseStickyHeader(false);
@@ -275,7 +272,6 @@ public class DataTablePage extends PageBase {
         buildSelection();
 
         standardTable.getTableTitle().setText("Standard Table");
-        standardTable.getScaffolding().getTopPanel().addStyleName(Color.RED.getCssName());
         standardTable.setShadow(1);
         standardTable.setHeight("400px");
         standardTable.setUseStickyHeader(false);
