@@ -90,6 +90,6 @@ main {
     height: 45px !important;
 }
 
-.select2-selection__rendered {
+.themes .select2-selection__rendered {
     color: white !important;
 }
