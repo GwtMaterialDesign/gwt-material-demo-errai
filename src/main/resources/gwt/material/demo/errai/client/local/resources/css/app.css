@@ -85,3 +85,7 @@ main {
 @media screen and (min-width: 768px) {
 
 }
+
+.followWrap {
+    height: 45px !important;
+}
