@@ -39,7 +39,7 @@ public class SubheaderPage extends PageBase {
     }
 
     protected void buildSimple() {
-        subheaderContainerStatic.setType(SubHeaderType.PINNED);
+        subheaderContainer.setType(SubHeaderType.PINNED);
         buildSubheader(subheaderContainer);
     }
 

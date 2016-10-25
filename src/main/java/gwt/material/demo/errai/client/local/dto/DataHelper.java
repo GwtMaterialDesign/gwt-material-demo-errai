@@ -53,7 +53,7 @@ public class DataHelper {
         components.addSubLink(new Link("Search", "#search", true));
         components.addSubLink(new Link("Sidenavs", "#sidenav", true));
         components.addSubLink(new Link("Scrollspy", "#scrollspy", true));
-        components.addSubLink(new Link("Tabs", "#tab", false));
+        components.addSubLink(new Link("Tabs", "#tab", true));
         components.addSubLink(new Link("Toast", "#toast", true));
         components.addSubLink(new Link("Tooltip", "#tooltip", true));
 
@@ -73,12 +73,12 @@ public class DataHelper {
         addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
         addins.addSubLink(new Link("File Uploader", "#fileuploader", true));
         addins.addSubLink(new Link("Icon Morph", "#iconmorph", true));
-        addins.addSubLink(new Link("Masonry", "#masonry"));
+        addins.addSubLink(new Link("Masonry", "#masonry", true));
         addins.addSubLink(new Link("Path Animator", "#pathanimator", true));
         addins.addSubLink(new Link("Rating", "#rating", true));
         addins.addSubLink(new Link("Rich Editor", "#richeditor", true));
-        addins.addSubLink(new Link("Scroll Fire", "#scrollfire"));
-        addins.addSubLink(new Link("Split Panel", "#splitpanel"));
+        addins.addSubLink(new Link("Scroll Fire", "#scrollfire", true));
+        addins.addSubLink(new Link("Split Panel", "#splitpanel", true));
         addins.addSubLink(new Link("Steppers", "#stepper", true));
         addins.addSubLink(new Link("Subheader", "#subheader", true));
         addins.addSubLink(new Link("Swipeable", "#swipeable", true));

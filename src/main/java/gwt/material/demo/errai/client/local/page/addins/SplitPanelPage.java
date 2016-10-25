@@ -7,6 +7,7 @@ import gwt.material.design.client.constants.Axis;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.TextAlign;
 import gwt.material.design.client.ui.MaterialPanel;
+import gwt.material.design.client.ui.MaterialRow;
 import gwt.material.design.client.ui.MaterialTitle;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -16,6 +17,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import static gwt.material.design.client.constants.Color.BLUE_LIGHTEN_3;
+import static gwt.material.design.client.constants.Color.GREY_LIGHTEN_3;
 
 @Templated
 @Page(path = "splitpanel")
@@ -23,49 +25,32 @@ public class SplitPanelPage extends PageBase {
 
     @Inject
     @DataField
-    MaterialSplitPanel splitPanel;
-
-    @Inject
-    @DataField
-    MaterialSplitPanel splitPanelStyling;
-
-    @Inject
-    @DataField
-    MaterialSplitPanel splitPanelVertical;
-
-    @Inject
-    @DataField
-    MaterialSplitPanel splitPanelDock;
-
-    @Inject
-    @DataField
-    MaterialSplitPanel splitPanelMinMax;
-
-    @Inject
-    @DataField
-    MaterialSplitPanel splitPanelBarPosition;
+    MaterialRow splitPanelContainer, splitPanelStylingContainer, splitPanelVerticalContainer, splitPanelDockContainer, splitPanelMinMaxContainer, splitPanelBarPositionContainer;
 
     @PostConstruct
     public void init() {
         initPage("Split Panel", "A high performance content splitter compatible with touch events", ADDINS);
-        buildBasic();
-        buildStyle();
     }
 
-    private void buildStyle() {
-        buildSplitPanel(splitPanelStyling);
+    @Override
+    public void page() {
+        super.page();
+        buildSplitPanel(splitPanelContainer);
+        buildSplitPanel(splitPanelStylingContainer);
+        buildSplitPanel(splitPanelVerticalContainer);
+        buildSplitPanel(splitPanelDockContainer);
+        buildSplitPanel(splitPanelMinMaxContainer);
+        buildSplitPanel(splitPanelBarPositionContainer);
     }
 
-    private void buildBasic() {
-        buildSplitPanel(splitPanel);
-    }
+    private void buildSplitPanel(MaterialRow splitPanelContainer) {
+        MaterialSplitPanel splitPanel = new MaterialSplitPanel();
 
-    private void buildSplitPanel(MaterialSplitPanel splitPanel) {
-        splitPanel.setBackgroundColor(Color.BLACK);
         splitPanel.setHeight("500px");
         MaterialPanel leftPanel = new MaterialPanel();
+        leftPanel.setPadding(0);
+        leftPanel.setBackgroundColor(GREY_LIGHTEN_3);
         leftPanel.setGrid("l6 m6 s6");
-        leftPanel.setBackgroundColor(Color.GREY_LIGHTEN_2);
         MaterialTitle leftTitle = new MaterialTitle();
         leftTitle.setTextAlign(TextAlign.CENTER);
         leftTitle.setTitle("Left Zone");
@@ -74,30 +59,35 @@ public class SplitPanelPage extends PageBase {
         splitPanel.add(leftPanel);
 
         MaterialPanel rightPanel = new MaterialPanel();
+        rightPanel.setPadding(0);
         rightPanel.setGrid("l6 m6 s6");
-        rightPanel.setBackgroundColor(Color.GREY_LIGHTEN_3);
         MaterialTitle rightTitle = new MaterialTitle();
+        rightPanel.setBackgroundColor(GREY_LIGHTEN_3);
         rightTitle.setTextAlign(TextAlign.CENTER);
         rightTitle.setTitle("Right Zone");
         rightTitle.setDescription("Content must be added here");
         rightPanel.add(rightTitle);
         splitPanel.add(rightPanel);
 
-        if (splitPanel == splitPanelStyling) {
+        if (splitPanelContainer == splitPanelStylingContainer) {
             splitPanel.setBackgroundColor(Color.BLUE);
             leftPanel.setBackgroundColor(Color.BLUE_LIGHTEN_2);
             rightPanel.setBackgroundColor(BLUE_LIGHTEN_3);
-        } else if (splitPanel == splitPanelVertical) {
+        } else if (splitPanelContainer == splitPanelVerticalContainer) {
             splitPanel.setAxis(Axis.VERTICAL);
-        } else if (splitPanel == splitPanelDock) {
+            leftPanel.setGrid("s12");
+            rightPanel.setGrid("s12");
+        } else if (splitPanelContainer == splitPanelDockContainer) {
             splitPanel.setDock(Dock.RIGHT);
-        } else if (splitPanel == splitPanelMinMax) {
+        } else if (splitPanelContainer == splitPanelMinMaxContainer) {
             splitPanel.setLeftMin(100);
             splitPanel.setLeftMax(400);
             splitPanel.setRightMin(100);
             splitPanel.setRightMax(300);
-        } else if (splitPanel == splitPanelBarPosition) {
+        } else if (splitPanelContainer == splitPanelBarPositionContainer) {
             splitPanel.setBarPosition(10);
         }
+
+        splitPanelContainer.add(splitPanel);
     }
 }
