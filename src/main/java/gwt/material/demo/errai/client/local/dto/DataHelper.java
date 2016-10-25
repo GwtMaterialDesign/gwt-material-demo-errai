@@ -68,10 +68,10 @@ public class DataHelper {
         addins.addSubLink(new Link("Camera", "#camera", true));
         addins.addSubLink(new Link("ComboBox", "#combobox", true));
         addins.addSubLink(new Link("CutOut", "#cutout", false));
-        addins.addSubLink(new Link("Data Table", "#datatable"));
+        addins.addSubLink(new Link("Data Table", "#datatable", true));
         addins.addSubLink(new Link("Drag and Drop", "#dnd"));
         addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
-        addins.addSubLink(new Link("File Uploader", "#fileuploader"));
+        addins.addSubLink(new Link("File Uploader", "#fileuploader", true));
         addins.addSubLink(new Link("Icon Morph", "#iconmorph", true));
         addins.addSubLink(new Link("Masonry", "#masonry"));
         addins.addSubLink(new Link("Path Animator", "#pathanimator", true));
@@ -80,7 +80,7 @@ public class DataHelper {
         addins.addSubLink(new Link("Scroll Fire", "#scrollfire"));
         addins.addSubLink(new Link("Split Panel", "#splitpanel"));
         addins.addSubLink(new Link("Steppers", "#stepper", true));
-        addins.addSubLink(new Link("Subheader", "#subheader"));
+        addins.addSubLink(new Link("Subheader", "#subheader", true));
         addins.addSubLink(new Link("Swipeable", "#swipeable", true));
         addins.addSubLink(new Link("Time Picker", "#timepicker", true));
         addins.addSubLink(new Link("Tree View", "#tree"));

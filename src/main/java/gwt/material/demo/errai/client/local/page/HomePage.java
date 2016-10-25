@@ -21,33 +21,19 @@ package gwt.material.demo.errai.client.local.page;
  */
 
 
-import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.ui.MaterialIcon;
-import gwt.material.design.client.ui.MaterialLabel;
+import gwt.material.design.client.ui.MaterialToast;
 import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
-import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 
 @Templated
 @Page(path = "about", role = DefaultPage.class)
 public class HomePage extends PageBase {
 
-    @Inject
-    @DataField
-    MaterialIcon icon;
-
-    @Inject
-    @DataField
-    MaterialLabel label;
-
     @PostConstruct
     public void init() {
-        initPage("GWT Material Errai", "A GWT Material Demo built with Errai", ABOUT);
-        icon.setIconType(IconType.POLYMER);
-        label.setText("GWT Material Errai");
+        initPage("GMD Errai", "A gwt-material showcase integration with Errai", ABOUT);
     }
 }

@@ -5,6 +5,7 @@ import com.google.gwt.dom.client.StyleInjector;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.RootPanel;
 import gwt.material.demo.errai.client.local.resources.AppResources;
+import gwt.material.demo.errai.client.local.widget.Footer;
 import gwt.material.demo.errai.client.local.widget.Header;
 import gwt.material.demo.errai.client.local.widget.Main;
 import gwt.material.demo.errai.client.local.widget.SideNav;
@@ -30,6 +31,9 @@ public class Client extends Composite {
     @Inject
     Main content;
 
+    @Inject
+    Footer footer;
+
     @PostConstruct
     public void init() {
         StyleInjector.inject(AppResources.INSTANCE.appCss().getText());
@@ -37,5 +41,6 @@ public class Client extends Composite {
         RootPanel.get().add(header);
         RootPanel.get().add(sideNav);
         RootPanel.get().add(content);
+        RootPanel.get().add(footer);
     }
 }

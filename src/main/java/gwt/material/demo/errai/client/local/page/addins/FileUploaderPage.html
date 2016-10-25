@@ -1,3 +1,91 @@
 <div>
-    File Uploader
+    <div class="code">
+        <div>Basic</div>
+        <label>The File Upload Addin component is just a Client UI, you can pass the Form url by adding url='/fileupload'. The server side must be developed by users, why? because some uses different Server Configs e.g GAE, Servlet or Commons API.</label>
+        <i class="material-icons waves-default waves-effect circle code">code</i>
+        <pre>
+                <div class="lang">HTML</div>
+                <code>
+
+                </code>
+            </pre>
+        <pre>
+                <div class="lang">Java</div>
+                <code>
+
+                </code>
+            </pre>
+        <div class="row" style="margin-top: 20px">
+            <div data-field="uploadPanel"></div>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Properties</div>
+        <div class="row" style="margin-top: 20px">
+            <blockquote>
+                <b>url</b>- Has to be specified on elements other than form (or when the form doesn't have an action attribute). <br/><br/>
+                <b>method</b>- Does not change width of dropdown to that of the activator <br/><br/>
+                <b>maxFilesize </b>-  in MB, if it exceeded it will fire the maxfilesreached event. <br/><br/>
+                <b>acceptedFiles</b>- The default implementation of accept checks the file's mime type or extension against this list. This is a comma separated list of mime types or file extensions. Eg.: image/*,application/pdf,.psd. <br/><br/>
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Events</div>
+        <div class="row" style="margin-top: 20px">
+            <blockquote>
+                <b>Drop</b>- The user dropped something onto the dropzone. <br/><br/>
+                <b>Drag Start </b>- The user started to drag anywhere. <br/><br/>
+                <b>Drag End</b>-  Dragging has ended. <br/><br/>
+                <b>Drag Enter</b>- The user dragged a file onto the Dropzone. <br/><br/>
+                <b>Drag Over</b>-  The user is dragging a file over the Dropzone. <br/><br/>
+                <b>Drag Leave</b>-  The user is dragging a file over the Dropzone. <br/><br/>
+                <b>Added File</b>-  When a file is added to the list. <br/><br/>
+                <b>Removed File</b>-  Called whenever a file is removed from the list. You can listen to this and delete the file from your server if you want to. <br/><br/>
+                <b>Error</b>-  An error occured. Receives the errorMessage as second parameter and if the error was due to the XMLHttpRequest the xhr object as third. <br/><br/>
+                <b>Sending</b>-  Called just before each file is sent. <br/><br/>
+                <b>Success</b>-  The file has been uploaded successfully. Gets the server response as second argument. (This event was called finished previously). <br/><br/>
+                <b>Complete</b>-  Called when the upload was either successful or erroneous. <br/><br/>
+                <b>Cancel</b>-  Called when a file upload gets canceled. <br/><br/>
+                <b>Max File Reach</b>-  Called when the number of files accepted reaches the maxFiles limit. <br/><br/>
+                <b>Max File Exceeded</b>-  Called for each file that has been rejected because the number of files exceeds the maxFiles limit. <br/><br/>
+
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Server</div>
+        <label>Take note that we provide only Cient UI for the uploader, but you can configure the server side by the following guidelines.</label>
+        <div class="row" style="margin-top: 20px">
+            <a class="btn" href="https://gist.github.com/kevzlou7979/2d97b81437760016cad8ecc9d74b8f7a" target="_blank">File Upload Servlet</a>
+            <br/><br/>
+            <div>Servlet Definition</div><br/>
+            <label>You must set your form url provided on gwt-material File Upload url inside the web.xml</label>
+            <pre style="max-height: 1400px !important;">
+                &lt;servlet>
+                     &lt;servlet-name>
+                    fileUploaderServlet&lt;/servlet-name>
+                     &lt;servlet-class>
+                    gwt.material.design.demo.server.FileUploadServlet&lt;/servlet-class>
+                &lt;/servlet>
+                &lt;servlet-mapping>
+                     &lt;servlet-name>
+                    fileUploaderServlet&lt;/servlet-name>
+                     &lt;url-pattern>
+                    /fileupload&lt;/url-pattern>
+                &lt;/servlet-mapping>
+            </pre>
+        </div>
+    </div>
+
+    <div class="code">
+        <div>Flexible Integration</div>
+        <label>MaterialFileUploader can be use on any widgets to control the upload process.</label>
+        <div class="row" style="margin-top: 20px">
+            <img src="http://i.imgur.com/GrM6eIz.gif"/>
+        </div>
+    </div>
 </div>
