@@ -47,5 +47,6 @@ public class TreePage extends PageBase {
                 }*/
             }
         }
+        tree.collapse();
     }
 }
