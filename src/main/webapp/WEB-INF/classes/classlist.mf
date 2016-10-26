@@ -1,0 +1,2 @@
+gwt.material.demo.errai.client.local.page.addins.DndPage
+gwt.material.demo.errai.client.local.widget.Footer
