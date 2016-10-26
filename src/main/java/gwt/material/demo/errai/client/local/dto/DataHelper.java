@@ -83,7 +83,7 @@ public class DataHelper {
         addins.addSubLink(new Link("Subheader", "#subheader", true));
         addins.addSubLink(new Link("Swipeable", "#swipeable", true));
         addins.addSubLink(new Link("Time Picker", "#timepicker", true));
-        addins.addSubLink(new Link("Tree View", "#tree"));
+        addins.addSubLink(new Link("Tree View", "#tree", true));
         addins.addSubLink(new Link("Waterfall", "#waterfall", true));
         addins.addSubLink(new Link("Window", "#window", true));
 

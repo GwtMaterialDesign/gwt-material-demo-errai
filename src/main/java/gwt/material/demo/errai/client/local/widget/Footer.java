@@ -47,7 +47,7 @@ public class Footer extends Composite{
         col2.add(btn2);
 
         MaterialColumn col3 = new MaterialColumn(12, 4, 4);
-        MaterialTitle title3 = new MaterialTitle("Community", "We created GPlus community for prior announcement and updates of GMD.");
+        MaterialTitle title3 = new MaterialTitle("Community", "We created GPlus community for prior announcement and updates on GMD.");
         title3.setTextColor(Color.WHITE);
         title3.setMarginBottom(20);
         MaterialAnchorButton btn3 = new MaterialAnchorButton("G Plus");
