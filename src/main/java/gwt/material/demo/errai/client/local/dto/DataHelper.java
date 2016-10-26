@@ -42,7 +42,7 @@ public class DataHelper {
         components.addSubLink(new Link("DatePicker", "#datepicker", true));
         components.addSubLink(new Link("Modals", "#modals", true));
         components.addSubLink(new Link("Dropdown", "#dropdown", true));
-        components.addSubLink(new Link("Errors", "#errors"));
+        components.addSubLink(new Link("Errors", "#errors", true));
         components.addSubLink(new Link("Forms", "#forms", true));
         components.addSubLink(new Link("FAB", "#fab", true));
         components.addSubLink(new Link("Footer", "#footer", true));
