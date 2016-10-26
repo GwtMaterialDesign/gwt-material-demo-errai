@@ -39,6 +39,7 @@ public class Client extends Composite {
     public void init() {
         StyleInjector.inject(AppResources.INSTANCE.appCss().getText());
         content.getContainer().add(navigation.getContentPanel());
+        ThemeManager.initialize();
         RootPanel.get().add(header);
         RootPanel.get().add(sideNav);
         RootPanel.get().add(content);
