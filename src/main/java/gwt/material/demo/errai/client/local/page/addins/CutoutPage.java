@@ -1,5 +1,6 @@
 package gwt.material.demo.errai.client.local.page.addins;
 
+import gwt.material.demo.errai.client.local.ThemeManager;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.cutout.MaterialCutOut;
 import gwt.material.design.client.constants.Color;
@@ -38,7 +39,7 @@ public class CutoutPage extends PageBase {
     }
 
     private void buildCutout(MaterialCutOut cutout, MaterialIcon button) {
-        cutout.setBackgroundColor(Color.BLUE);
+        ThemeManager.register(cutout);
         cutout.setOpacity(0.8);
         cutout.setCircle(true);
         cutout.setTextAlign(TextAlign.CENTER);

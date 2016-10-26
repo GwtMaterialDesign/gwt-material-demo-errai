@@ -19,6 +19,7 @@
   <inherits name="gwt.material.design.themes.ThemeYellowResources"/>
   <inherits name="gwt.material.design.addins.GwtMaterialAddins"/>
   <inherits name="gwt.material.design.GwtMaterialTableDebug"/>
+
   <inherits name="org.jboss.errai.enterprise.All" />
 
   <set-property name="gwt.logging.enabled" value="TRUE" />
