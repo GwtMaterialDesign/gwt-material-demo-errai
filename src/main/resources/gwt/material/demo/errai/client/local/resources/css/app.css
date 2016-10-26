@@ -89,3 +89,7 @@ main {
 .followWrap {
     height: 45px !important;
 }
+
+.themes .select2-selection__rendered {
+    color: white !important;
+}

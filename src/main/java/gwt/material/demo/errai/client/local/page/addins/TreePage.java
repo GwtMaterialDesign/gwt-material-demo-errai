@@ -76,5 +76,6 @@ public class TreePage extends PageBase {
         btnCollapse.addClickHandler(clickEvent -> {
             tree.collapse();
         });
+        tree.collapse();
     }
 }
