@@ -42,7 +42,7 @@ public class RatingPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Rating", "MaterialRating is the component used by the 5-star rating system, for example, allowing users to easily express their opinion about a product, review, video and so on.", ADDINS);
+        initPage(this, "Rating", "MaterialRating is the component used by the 5-star rating system, for example, allowing users to easily express their opinion about a product, review, video and so on.", ADDINS);
         buildBasic();
         buildIcon();
         buildValueChangeEvent();

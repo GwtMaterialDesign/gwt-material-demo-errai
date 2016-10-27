@@ -13,6 +13,6 @@ public class GettingStartedPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Getting Started", "Learn how to easily start using GWT Material + Errai in to your app.", GETTING_STARTED);
+        initPage(this, "Getting Started", "Learn how to easily start using GWT Material + Errai in to your app.", GETTING_STARTED);
     }
 }

@@ -7,18 +7,15 @@ import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "collapsible")
-@ApplicationScoped
 public class CollapsiblePage extends PageBase {
 
     private final int BASIC = 0;
@@ -51,7 +48,7 @@ public class CollapsiblePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Collapsibles", "Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.", COMPONENTS);
+        initPage(this, "Collapsibles", "Collapsibles are accordion elements that expand when clicked on. They allow you to hide content that is not immediately relevant to the user.", COMPONENTS);
         buildAccordion();
         buidExpandable();
         builPopout();

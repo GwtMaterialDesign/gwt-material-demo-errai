@@ -30,7 +30,7 @@ public class TreePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Tree", "Tree is a component that wraps all the tree items that provide lists of event handlers like open/close and selection event.", ADDINS);
+        initPage(this, "Tree", "Tree is a component that wraps all the tree items that provide lists of event handlers like open/close and selection event.", ADDINS);
         buildSimple();
     }
 

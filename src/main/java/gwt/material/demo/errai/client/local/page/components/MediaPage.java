@@ -8,12 +8,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "media")
-@ApplicationScoped
 public class MediaPage extends PageBase {
 
     @Inject
@@ -34,7 +32,7 @@ public class MediaPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Media", "Media components include things that have to do with large media objects like Images, Video, Audio, etc.", COMPONENTS);
+        initPage(this, "Media", "Media components include things that have to do with large media objects like Images, Video, Audio, etc.", COMPONENTS);
         buildImage();
         buildCircleImage();
         buildVideo();
@@ -42,7 +40,7 @@ public class MediaPage extends PageBase {
     }
 
     private void buildSlider() {
-        for(int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             MaterialSlideItem item = new MaterialSlideItem();
             MaterialImage image = new MaterialImage();
             image.setUrl("http://mayastepien.nl/googlecalendar/google-drinks.jpg");

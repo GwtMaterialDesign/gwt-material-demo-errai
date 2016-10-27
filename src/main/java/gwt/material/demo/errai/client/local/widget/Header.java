@@ -1,11 +1,14 @@
 package gwt.material.demo.errai.client.local.widget;
 
 import com.google.gwt.dom.client.Style;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import gwt.material.demo.errai.client.local.ThemeManager;
 import gwt.material.demo.errai.client.local.events.PageChangeEvent;
+import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.client.base.SearchObject;
+import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.HideOn;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.constants.NavBarType;
@@ -13,15 +16,14 @@ import gwt.material.design.client.events.SideNavClosedEvent;
 import gwt.material.design.client.events.SideNavOpenedEvent;
 import gwt.material.design.client.ui.*;
 import gwt.material.design.themes.client.ThemeLoader;
-
-import java.util.ArrayList;
-import java.util.List;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 import static gwt.material.design.jquery.client.api.JQuery.$;
 
@@ -61,6 +63,11 @@ public class Header extends Composite {
     @Inject
     ThemeSwitcher themeSwitcher;
 
+    @Inject
+    MaterialChip chipHtml, chipJava;
+
+    private PageChangeEvent pageChangeEvent;
+
     @PostConstruct
     public void init() {
         navBar.setActivates("sideNav");
@@ -79,7 +86,29 @@ public class Header extends Composite {
         // Title Panel
         lblTitle.setFontSize(2.3, Style.Unit.EM);
         titlePanel.add(lblTitle);
+        lblDescription.setMarginBottom(20);
         titlePanel.add(lblDescription);
+
+        chipHtml.setText("HTML");
+        chipHtml.setLetter("<>");
+        chipHtml.setMarginRight(12);
+        chipHtml.setTextColor(Color.WHITE);
+        ThemeManager.register(chipHtml.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
+        ThemeManager.register(chipHtml, ThemeManager.DARKER_SHADE);
+
+        chipJava.setText("JAVA");
+        chipJava.setLetter("<>");
+        chipJava.setTextColor(Color.WHITE);
+        ThemeManager.register(chipJava.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
+        ThemeManager.register(chipJava, ThemeManager.DARKER_SHADE);
+
+        chipHtml.addClickHandler(clickEvent -> {
+            Window.open(getPageChangeEvent().getHtmlCodeLink(), "_blank", "");
+        });
+
+        chipJava.addClickHandler(clickEvent -> {
+            Window.open(getPageChangeEvent().getJavaCodeLink(), "_blank", "");
+        });
 
         // Search Navbar
         search.setPlaceholder("Search");
@@ -99,6 +128,14 @@ public class Header extends Composite {
     }
 
     public void onPageChange(@Observes PageChangeEvent event) {
+        setPageChangeEvent(event);
+        if (pageChangeEvent.getType() == PageBase.ADDINS || pageChangeEvent.getType() == PageBase.COMPONENTS || pageChangeEvent.getType() == PageBase.ANIMATIONS) {
+            titlePanel.add(chipHtml);
+            titlePanel.add(chipJava);
+        } else {
+            chipHtml.removeFromParent();
+            chipJava.removeFromParent();
+        }
         $("body").scrollTop(0);
         lblTitle.setText(event.getTitle());
         lblDescription.setText(event.getDescription());
@@ -184,5 +221,13 @@ public class Header extends Composite {
         listSearches.add(new SearchObject(IconType.EXTENSION, "Window", "#window"));
 
         search.setListSearches(listSearches);
+    }
+
+    public PageChangeEvent getPageChangeEvent() {
+        return pageChangeEvent;
+    }
+
+    public void setPageChangeEvent(PageChangeEvent pageChangeEvent) {
+        this.pageChangeEvent = pageChangeEvent;
     }
 }

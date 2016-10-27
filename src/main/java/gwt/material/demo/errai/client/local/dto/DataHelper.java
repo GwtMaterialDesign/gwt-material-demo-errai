@@ -7,7 +7,8 @@ import java.util.List;
 
 public class DataHelper {
 
-    public DataHelper() {}
+    public DataHelper() {
+    }
 
     public static List<User> getAllUsers() {
         List<User> list = new ArrayList<>();
@@ -32,60 +33,60 @@ public class DataHelper {
         Link gettingStarted = new Link(IconType.CLOUD_DOWNLOAD, "Getting Started", "#getting_started");
 
         Link components = new Link(IconType.POLYMER, "Components");
-        components.addSubLink(new Link("Badges", "#badge", true));
-        components.addSubLink(new Link("Buttons", "#button", true));
-        components.addSubLink(new Link("Breadcrumb", "#breadcrumbs", true));
-        components.addSubLink(new Link("Cards", "#card", true));
-        components.addSubLink(new Link("Chips", "#chip", true));
-        components.addSubLink(new Link("Collapsible", "#collapsible", true));
-        components.addSubLink(new Link("Collections", "#collection", true));
-        components.addSubLink(new Link("DatePicker", "#datepicker", true));
-        components.addSubLink(new Link("Modals", "#modals", true));
-        components.addSubLink(new Link("Dropdown", "#dropdown", true));
-        components.addSubLink(new Link("Errors", "#errors", true));
-        components.addSubLink(new Link("Forms", "#forms", true));
-        components.addSubLink(new Link("FAB", "#fab", true));
-        components.addSubLink(new Link("Footer", "#footer", true));
-        components.addSubLink(new Link("Loaders", "#loader", true));
-        components.addSubLink(new Link("Media", "#media", true));
-        components.addSubLink(new Link("NavBar", "#navbar", true));
-        components.addSubLink(new Link("Pushpin", "#pushpin", true));
-        components.addSubLink(new Link("Search", "#search", true));
-        components.addSubLink(new Link("Sidenavs", "#sidenav", true));
-        components.addSubLink(new Link("Scrollspy", "#scrollspy", true));
-        components.addSubLink(new Link("Tabs", "#tab", true));
-        components.addSubLink(new Link("Toast", "#toast", true));
-        components.addSubLink(new Link("Tooltip", "#tooltip", true));
+        components.addSubLink(new Link("Badges", "#badge"));
+        components.addSubLink(new Link("Buttons", "#button"));
+        components.addSubLink(new Link("Breadcrumb", "#breadcrumbs"));
+        components.addSubLink(new Link("Cards", "#card"));
+        components.addSubLink(new Link("Chips", "#chip"));
+        components.addSubLink(new Link("Collapsible", "#collapsible"));
+        components.addSubLink(new Link("Collections", "#collection"));
+        components.addSubLink(new Link("DatePicker", "#datepicker"));
+        components.addSubLink(new Link("Modals", "#modals"));
+        components.addSubLink(new Link("Dropdown", "#dropdown"));
+        components.addSubLink(new Link("Errors", "#errors"));
+        components.addSubLink(new Link("Forms", "#forms"));
+        components.addSubLink(new Link("FAB", "#fab"));
+        components.addSubLink(new Link("Footer", "#footer"));
+        components.addSubLink(new Link("Loaders", "#loader"));
+        components.addSubLink(new Link("Media", "#media"));
+        components.addSubLink(new Link("NavBar", "#navbar"));
+        components.addSubLink(new Link("Pushpin", "#pushpin"));
+        components.addSubLink(new Link("Search", "#search"));
+        components.addSubLink(new Link("Sidenavs", "#sidenav"));
+        components.addSubLink(new Link("Scrollspy", "#scrollspy"));
+        components.addSubLink(new Link("Tabs", "#tab"));
+        components.addSubLink(new Link("Toast", "#toast"));
+        components.addSubLink(new Link("Tooltip", "#tooltip"));
 
-        Link animations = new Link(IconType.PLAY_CIRCLE_OUTLINE,"Animations");
-        animations.addSubLink(new Link("Core", "#core_animation", true));
+        Link animations = new Link(IconType.PLAY_CIRCLE_OUTLINE, "Animations");
+        animations.addSubLink(new Link("Core", "#core_animation"));
         animations.addSubLink(new Link("Meaningful", "#meaningful_animation"));
 
         Link addins = new Link(IconType.STYLE, "Addins");
-        addins.addSubLink(new Link("Autocomplete", "#autocomplete", true));
-        addins.addSubLink(new Link("Avatar", "#avatar", true));
-        addins.addSubLink(new Link("Bubble", "#bubble", true));
-        addins.addSubLink(new Link("Camera", "#camera", true));
-        addins.addSubLink(new Link("ComboBox", "#combobox", true));
-        addins.addSubLink(new Link("CutOut", "#cutout", false));
-        addins.addSubLink(new Link("Data Table", "#datatable", true));
+        addins.addSubLink(new Link("Autocomplete", "#autocomplete"));
+        addins.addSubLink(new Link("Avatar", "#avatar"));
+        addins.addSubLink(new Link("Bubble", "#bubble"));
+        addins.addSubLink(new Link("Camera", "#camera"));
+        addins.addSubLink(new Link("ComboBox", "#combobox"));
+        addins.addSubLink(new Link("CutOut", "#cutout"));
+        addins.addSubLink(new Link("Data Table", "#datatable"));
         addins.addSubLink(new Link("Drag and Drop", "#dnd"));
-        addins.addSubLink(new Link("Doc Viewer", "#docviewer", true));
-        addins.addSubLink(new Link("File Uploader", "#fileuploader", true));
-        addins.addSubLink(new Link("Icon Morph", "#iconmorph", true));
-        addins.addSubLink(new Link("Masonry", "#masonry", true));
-        addins.addSubLink(new Link("Path Animator", "#pathanimator", true));
-        addins.addSubLink(new Link("Rating", "#rating", true));
-        addins.addSubLink(new Link("Rich Editor", "#richeditor", true));
-        addins.addSubLink(new Link("Scroll Fire", "#scrollfire", true));
-        addins.addSubLink(new Link("Split Panel", "#splitpanel", true));
-        addins.addSubLink(new Link("Steppers", "#stepper", true));
-        addins.addSubLink(new Link("Subheader", "#subheader", true));
-        addins.addSubLink(new Link("Swipeable", "#swipeable", true));
-        addins.addSubLink(new Link("Time Picker", "#timepicker", true));
-        addins.addSubLink(new Link("Tree View", "#tree", true));
-        addins.addSubLink(new Link("Waterfall", "#waterfall", true));
-        addins.addSubLink(new Link("Window", "#window", true));
+        addins.addSubLink(new Link("Doc Viewer", "#docviewer"));
+        addins.addSubLink(new Link("File Uploader", "#fileuploader"));
+        addins.addSubLink(new Link("Icon Morph", "#iconmorph"));
+        addins.addSubLink(new Link("Masonry", "#masonry"));
+        addins.addSubLink(new Link("Path Animator", "#pathanimator"));
+        addins.addSubLink(new Link("Rating", "#rating"));
+        addins.addSubLink(new Link("Rich Editor", "#richeditor"));
+        addins.addSubLink(new Link("Scroll Fire", "#scrollfire"));
+        addins.addSubLink(new Link("Split Panel", "#splitpanel"));
+        addins.addSubLink(new Link("Steppers", "#stepper"));
+        addins.addSubLink(new Link("Subheader", "#subheader"));
+        addins.addSubLink(new Link("Swipeable", "#swipeable"));
+        addins.addSubLink(new Link("Time Picker", "#timepicker"));
+        addins.addSubLink(new Link("Tree View", "#tree"));
+        addins.addSubLink(new Link("Waterfall", "#waterfall"));
+        addins.addSubLink(new Link("Window", "#window"));
 
         links.add(about);
         links.add(gettingStarted);

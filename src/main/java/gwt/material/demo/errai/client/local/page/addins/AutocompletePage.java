@@ -49,7 +49,7 @@ public class AutocompletePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Autocomplete", "Autocompletes are best way for selecting item easily and grouped them into chips for later search based on item values.", ADDINS);
+        initPage(this, "Autocomplete", "Autocompletes are best way for selecting item easily and grouped them into chips for later search based on item values.", ADDINS);
         buildBasic();
         buildEvents();
         buildItemLimit();
@@ -92,7 +92,7 @@ public class AutocompletePage extends PageBase {
         });
 
         ac2.addValueChangeHandler(valueChangeEvent -> {
-            for(SuggestOracle.Suggestion user : valueChangeEvent.getValue()) {
+            for (SuggestOracle.Suggestion user : valueChangeEvent.getValue()) {
                 MaterialToast.fireToast(user.getDisplayString());
             }
         });
@@ -105,7 +105,7 @@ public class AutocompletePage extends PageBase {
         ac1.setSuggestions(oracle);
         btnGetAllStates.setText("Get All States");
         btnGetAllStates.addClickHandler(clickEvent -> {
-            for(SuggestOracle.Suggestion user : ac1.getValue()){
+            for (SuggestOracle.Suggestion user : ac1.getValue()) {
                 MaterialToast.fireToast("Value : " + user.getDisplayString());
             }
         });

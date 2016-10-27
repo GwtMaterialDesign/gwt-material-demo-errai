@@ -74,7 +74,7 @@ public class DataTablePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Data Table", "Data tables display sets of raw data. They usually appear in desktop enterprise products. Material DataTable supports Standard, Infinite Table, Pager and Context Menu.", ADDINS);
+        initPage(this, "Data Table", "Data tables display sets of raw data. They usually appear in desktop enterprise products. Material DataTable supports Standard, Infinite Table, Pager and Context Menu.", ADDINS);
     }
 
     @Override

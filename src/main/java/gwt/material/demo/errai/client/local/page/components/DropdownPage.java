@@ -2,20 +2,20 @@ package gwt.material.demo.errai.client.local.page.components;
 
 import com.google.gwt.dom.client.Style;
 import gwt.material.demo.errai.client.local.page.PageBase;
-import gwt.material.design.client.constants.*;
+import gwt.material.design.client.constants.ButtonType;
+import gwt.material.design.client.constants.Color;
+import gwt.material.design.client.constants.IconPosition;
+import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "dropdown")
-@ApplicationScoped
 public class DropdownPage extends PageBase {
 
     @Inject
@@ -61,7 +61,7 @@ public class DropdownPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Dropdown", "You can add dropdown easily by specifying it's item content and add a UiHandler on it to implement any event.", COMPONENTS);
+        initPage(this, "Dropdown", "You can add dropdown easily by specifying it's item content and add a UiHandler on it to implement any event.", COMPONENTS);
         buildBasic();
         buildDesign();
         buildIconDropdown();
@@ -97,7 +97,7 @@ public class DropdownPage extends PageBase {
             dropdown4.add(link);
         }
         dropdown4.addSelectionHandler(selectionEvent -> {
-            MaterialToast.fireToast(((MaterialLink)selectionEvent.getSelectedItem()).getText());
+            MaterialToast.fireToast(((MaterialLink) selectionEvent.getSelectedItem()).getText());
         });
     }
 

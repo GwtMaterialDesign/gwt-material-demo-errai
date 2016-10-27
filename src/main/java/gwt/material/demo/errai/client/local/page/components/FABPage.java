@@ -5,18 +5,16 @@ import gwt.material.design.client.constants.*;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialFAB;
 import gwt.material.design.client.ui.MaterialFABList;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
+import gwt.material.design.client.ui.MaterialToast;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "fab")
-@ApplicationScoped
 public class FABPage extends PageBase {
 
     @Inject
@@ -43,13 +41,30 @@ public class FABPage extends PageBase {
     @DataField
     MaterialFAB fabClickOnly;
 
+    @Inject
+    @DataField
+    MaterialFAB fabEvents;
+
     @PostConstruct
     public void init() {
-        initPage("FAB", "FAB or Floating action buttons are used for a promoted action. They are distinguished by a circled icon floating above the UI and have motion behaviors that include morphing, launching, and a transferring anchor point.", COMPONENTS);
+        initPage(this, "FAB", "FAB or Floating action buttons are used for a promoted action. They are distinguished by a circled icon floating above the UI and have motion behaviors that include morphing, launching, and a transferring anchor point.", COMPONENTS);
         buildFABBasic();
         buildFABOpenClose();
         buildFABAxis();
         buildFABClickOnly();
+        buildFABEvents();
+    }
+
+    private void buildFABEvents() {
+        fabEvents.setAxis(Axis.HORIZONTAL);
+        fabEvents.addOpenHandler(openEvent -> {
+            MaterialToast.fireToast("Open Event Fired");
+        });
+
+        fabEvents.addCloseHandler(closeEvent -> {
+            MaterialToast.fireToast("Close Event Fired");
+        });
+        buildFAB(fabEvents);
     }
 
     private void buildFABClickOnly() {
@@ -68,7 +83,7 @@ public class FABPage extends PageBase {
         buildFAB(fabOpenClose);
         btnOpen.setText("Open");
         btnOpen.addClickHandler(clickEvent -> {
-             fabOpenClose.open();
+            fabOpenClose.open();
         });
 
         btnClose.setText("Close");

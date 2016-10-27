@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
-public class Footer extends Composite{
+public class Footer extends Composite {
 
     @Inject
     @DataField

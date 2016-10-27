@@ -14,13 +14,11 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.List;
 
 @Templated
 @Page(path = "errors")
-@ApplicationScoped
 public class ErrorsPage extends PageBase {
 
     @Inject
@@ -61,7 +59,7 @@ public class ErrorsPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Errors", "Errors occur when an app fails to complete what is expected, such as: 1. The app does not understand user input,2. The system or app fails , 3. A user intends to run incompatible operations concurrently", ADDINS);
+        initPage(this, "Errors", "Errors occur when an app fails to complete what is expected, such as: 1. The app does not understand user input,2. The system or app fails , 3. A user intends to run incompatible operations concurrently", ADDINS);
         buildAutocomplete();
         buildDatePicker();
         buildTimePicker();

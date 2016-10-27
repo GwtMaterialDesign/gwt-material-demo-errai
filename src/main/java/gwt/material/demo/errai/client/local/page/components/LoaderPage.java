@@ -6,18 +6,15 @@ import gwt.material.design.client.constants.LoaderSize;
 import gwt.material.design.client.constants.ProgressType;
 import gwt.material.design.client.constants.SpinnerColor;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "loader")
-@ApplicationScoped
 public class LoaderPage extends PageBase {
 
     @Inject
@@ -45,7 +42,7 @@ public class LoaderPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Loaders", "If you have content that will take a long time to load, you should give the user feedback. For this reason we provide a number activity + progress indicators.", COMPONENTS);
+        initPage(this, "Loaders", "If you have content that will take a long time to load, you should give the user feedback. For this reason we provide a number activity + progress indicators.", COMPONENTS);
         buildCircular();
         buildProgress();
         buildDeterminate();

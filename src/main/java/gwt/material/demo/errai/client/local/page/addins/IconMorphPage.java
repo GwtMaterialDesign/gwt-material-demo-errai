@@ -26,7 +26,7 @@ public class IconMorphPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Icon Morph", "Provides visual continuity by morphing two material icons.", ADDINS);
+        initPage(this, "Icon Morph", "Provides visual continuity by morphing two material icons.", ADDINS);
         buildBasic(iconMorph);
         buildSizes();
     }

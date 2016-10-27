@@ -10,12 +10,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "chip")
-@ApplicationScoped
 public class ChipPage extends PageBase {
 
     @Inject
@@ -40,7 +38,7 @@ public class ChipPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Chips", "Chips represent complex entities in small blocks, such as a contact. They can contain a photo, short title string, and brief information. Chips are manipulated through drag-and-drop. Touching them invokes the full view in a card or full screen view or invokes a menu of options related to that chip's entity.", COMPONENTS);
+        initPage(this, "Chips", "Chips represent complex entities in small blocks, such as a contact. They can contain a photo, short title string, and brief information. Chips are manipulated through drag-and-drop. Touching them invokes the full view in a card or full screen view or invokes a menu of options related to that chip's entity.", COMPONENTS);
         buildChips();
         buildLetterChips();
         buildStaticChips();

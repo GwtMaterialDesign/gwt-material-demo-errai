@@ -5,7 +5,6 @@ import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialScrollspy;
 import gwt.material.design.client.ui.MaterialTitle;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -27,7 +26,7 @@ public class ScrollspyPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Scrollspy", "Scrollspy is a jQuery plugin that tracks certain elements and which element the user's screen is currently centered on. Our main demo of this is our table of contents on every documentation page to the right. Clicking on these links will also scroll the page to that element.", COMPONENTS);
+        initPage(this, "Scrollspy", "Scrollspy is a jQuery plugin that tracks certain elements and which element the user's screen is currently centered on. Our main demo of this is our table of contents on every documentation page to the right. Clicking on these links will also scroll the page to that element.", COMPONENTS);
         buildScrollspy();
     }
 

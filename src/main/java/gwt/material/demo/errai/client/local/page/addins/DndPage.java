@@ -10,7 +10,6 @@ import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.constants.*;
 import gwt.material.design.client.ui.*;
 import gwt.material.design.jquery.client.api.JQueryElement;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -34,7 +33,7 @@ public class DndPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Drag and Drop", "Provides a delightful dragging capability.", ADDINS);
+        initPage(this, "Drag and Drop", "Provides a delightful dragging capability.", ADDINS);
         buildBasic();
         buildEvents();
         buildIgnoreFrom();
@@ -138,7 +137,7 @@ public class DndPage extends PageBase {
         link2.setText("This area is ignored from dragging");
         panel2.add(link2);
 
-        MaterialDnd dndIgnore =  MaterialDnd.draggable(panel);
+        MaterialDnd dndIgnore = MaterialDnd.draggable(panel);
         dndIgnore.ignoreFrom(panel2);
 
         draggableIgnoreContainer.add(panel);

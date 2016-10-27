@@ -93,3 +93,7 @@ main {
 .themes .select2-selection__rendered {
     color: white !important;
 }
+
+.titlePanel .chip {
+    cursor: pointer;
+}

@@ -1,6 +1,5 @@
 package gwt.material.demo.errai.client.local.page.components;
 
-import com.google.gwt.uibinder.client.UiField;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.constants.CheckBoxType;
 import gwt.material.design.client.constants.IconType;
@@ -11,12 +10,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "forms")
-@ApplicationScoped
 public class FormPage extends PageBase {
 
     @Inject
@@ -81,7 +78,7 @@ public class FormPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Forms", "Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.", COMPONENTS);
+        initPage(this, "Forms", "Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.", COMPONENTS);
         buildTextBox();
         buildTextArea();
         buildCharCounter();

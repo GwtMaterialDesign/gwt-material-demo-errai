@@ -60,7 +60,7 @@ public class StepperPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Stepper", "Steppers convey progress through numbered steps. They may also be used for navigation.", ADDINS);
+        initPage(this, "Stepper", "Steppers convey progress through numbered steps. They may also be used for navigation.", ADDINS);
         buildVertical();
         buildHorizontal();
         buildModal();

@@ -9,13 +9,11 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.util.Date;
 
 @Templated
 @Page(path = "datepicker")
-@ApplicationScoped
 public class DatePickerPage extends PageBase {
 
     @Inject
@@ -62,9 +60,17 @@ public class DatePickerPage extends PageBase {
     @DataField
     MaterialDatePicker dpEvents;
 
+    @Inject
+    @DataField
+    MaterialDatePicker dpOpenClose;
+
+    @Inject
+    @DataField
+    MaterialButton btnOpenDp;
+
     @PostConstruct
     public void init() {
-        initPage("Date Picker", "A dialog picker is used to select a single date on mobile. The selected day is indicated by a filled circle. The current day is indicated by a different color and type weight.", COMPONENTS);
+        initPage(this, "Date Picker", "A dialog picker is used to select a single date on mobile. The selected day is indicated by a filled circle. The current day is indicated by a different color and type weight.", COMPONENTS);
         buildBasic();
         buildDisabled();
         buildSelection();
@@ -73,6 +79,21 @@ public class DatePickerPage extends PageBase {
         buildLimits();
         buildClear();
         buildEvents();
+        buildOpenClose();
+    }
+
+    private void buildOpenClose() {
+        dpOpenClose.setPlaceholder("Date");
+        dpOpenClose.addOpenHandler(openEvent -> {
+            MaterialToast.fireToast("Date Picker Opened");
+        });
+        dpOpenClose.addCloseHandler(openEvent -> {
+            MaterialToast.fireToast("Date Picker Close");
+        });
+        btnOpenDp.setText("Open DatePicker");
+        btnOpenDp.addClickHandler(clickEvent -> {
+            dpOpenClose.open();
+        });
     }
 
     private void buildEvents() {

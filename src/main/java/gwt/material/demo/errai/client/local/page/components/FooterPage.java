@@ -8,12 +8,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "footer")
-@ApplicationScoped
 public class FooterPage extends PageBase {
 
     @Inject
@@ -25,7 +23,7 @@ public class FooterPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Footer", "Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website.", COMPONENTS);
+        initPage(this, "Footer", "Footers are a great way to organize a lot of site navigation and information at the end of a page. This is where the user will look once hes finished scrolling through the current page or is looking for additional information about your website.", COMPONENTS);
         buildFooter();
     }
 

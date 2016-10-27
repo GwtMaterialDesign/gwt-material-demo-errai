@@ -27,6 +27,7 @@ import java.util.List;
 
 /**
  * Provides specific timezone for each state.
+ *
  * @author kevzlou7979
  */
 public class TimeZone implements Serializable {
@@ -34,7 +35,8 @@ public class TimeZone implements Serializable {
     private String name;
     private List<State> states = new ArrayList<>();
 
-    public TimeZone() {}
+    public TimeZone() {
+    }
 
     public TimeZone(String name, List<State> states) {
         this.name = name;

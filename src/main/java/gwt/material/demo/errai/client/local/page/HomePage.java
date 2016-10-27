@@ -29,11 +29,11 @@ import org.jboss.errai.ui.shared.api.annotations.Templated;
 import javax.annotation.PostConstruct;
 
 @Templated
-@Page(path = "about", role = DefaultPage.class)
+@Page(path = "about")
 public class HomePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("GMD Errai", "A gwt-material showcase integration with Errai", ABOUT);
+        initPage(this, "GMD Errai", "A gwt-material showcase integration with Errai", ABOUT);
     }
 }

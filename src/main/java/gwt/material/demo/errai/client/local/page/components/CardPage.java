@@ -6,18 +6,15 @@ import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.constants.WavesType;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "card")
-@ApplicationScoped
 public class CardPage extends PageBase {
 
     @Inject
@@ -38,7 +35,7 @@ public class CardPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Cards", "Cards are a convenient means of displaying content composed of different types of objects. They are also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.", COMPONENTS);
+        initPage(this, "Cards", "Cards are a convenient means of displaying content composed of different types of objects. They are also well-suited for presenting similar objects whose size or supported actions can vary considerably, like photos with captions of variable length.", COMPONENTS);
         buildBasic();
         buildCardImage();
         buildHorizontalCard();

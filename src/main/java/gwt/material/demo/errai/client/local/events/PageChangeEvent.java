@@ -4,16 +4,20 @@ import gwt.material.design.client.constants.Color;
 
 public class PageChangeEvent {
 
+    private int type;
     private String title;
     private String description;
     private Color color;
-    private Color secondaryColor;
+    private String htmlCodeLink;
+    private String javaCodeLink;
 
-    public PageChangeEvent(String title, String description, Color color, Color secondaryColor) {
+    public PageChangeEvent(int type, String title, String description, Color color, String htmlCodeLink, String javaCodeLink) {
+        this.type = type;
         this.title = title;
         this.description = description;
         this.color = color;
-        this.secondaryColor = secondaryColor;
+        this.htmlCodeLink = htmlCodeLink;
+        this.javaCodeLink = javaCodeLink;
     }
 
     public String getTitle() {
@@ -40,11 +44,19 @@ public class PageChangeEvent {
         this.color = color;
     }
 
-    public Color getSecondaryColor() {
-        return secondaryColor;
+    public String getHtmlCodeLink() {
+        return htmlCodeLink;
     }
 
-    public void setSecondaryColor(Color secondaryColor) {
-        this.secondaryColor = secondaryColor;
+    public String getJavaCodeLink() {
+        return javaCodeLink;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

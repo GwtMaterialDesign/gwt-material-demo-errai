@@ -10,7 +10,6 @@ import gwt.material.design.client.ui.*;
 import gwt.material.design.client.ui.animate.MaterialAnimation;
 import gwt.material.design.client.ui.animate.MaterialAnimator;
 import gwt.material.design.client.ui.animate.Transition;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -40,7 +39,7 @@ public class CoreAnimationsPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Core Animations", "We used AnimateCSS to built our core animations.", ANIMATIONS);
+        initPage(this, "Core Animations", "We used AnimateCSS to built our core animations.", ANIMATIONS);
         buildBasic();
         buildInfinite();
         buildIconCallback();

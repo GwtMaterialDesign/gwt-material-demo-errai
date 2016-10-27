@@ -43,7 +43,7 @@ public class TimePicker extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Time Pickers", "A dialog picker is used to select a single time (hours:minutes) on mobile. The selected time is indicated by the filled circle at the end of the clock hand.", ADDINS);
+        initPage(this, "Time Pickers", "A dialog picker is used to select a single time (hours:minutes) on mobile. The selected time is indicated by the filled circle at the end of the clock hand.", ADDINS);
         buildBasic();
         buildDisabled();
         buildHour24();

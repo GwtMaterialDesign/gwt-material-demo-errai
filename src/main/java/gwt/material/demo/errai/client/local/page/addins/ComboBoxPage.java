@@ -125,7 +125,7 @@ public class ComboBoxPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", ADDINS);
+        initPage(this, "ComboBox", "Material ComboBox gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.", ADDINS);
         buildBasic();
         buildLabelAndPlaceholder();
         buildAllowClear();
@@ -166,7 +166,7 @@ public class ComboBoxPage extends PageBase {
             State newState = new State("Item " + dynamicIndex, "I" + dynamicIndex);
             combo20.addItem(newState.getName(), newState);
             combo20.setValue(newState);
-            dynamicIndex ++;
+            dynamicIndex++;
         });
     }
 
@@ -339,7 +339,7 @@ public class ComboBoxPage extends PageBase {
     }
 
     protected void addStateItemsWithGroup(MaterialComboBox<State> box) {
-       for (TimeZone tz : dataHelper.getTimeZones()) {
+        for (TimeZone tz : dataHelper.getTimeZones()) {
             OptGroup optGroup = new OptGroup();
             optGroup.setLabel(tz.getName());
             for (State s : tz.getStates()) {

@@ -63,7 +63,7 @@ public class RichEditorPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Rich Editor", "Provides a great Rich Editor with amazing options built with Material Design Look and Feel.", ADDINS);
+        initPage(this, "Rich Editor", "Provides a great Rich Editor with amazing options built with Material Design Look and Feel.", ADDINS);
         buildDefault();
         buildSetGetHtml();
         buildAirmode();
