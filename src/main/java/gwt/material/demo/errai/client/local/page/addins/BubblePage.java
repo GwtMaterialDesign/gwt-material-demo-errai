@@ -27,7 +27,7 @@ public class BubblePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Bubble", "Addin component for chat module, it display a good bubble view of messages withing the chat module.", ADDINS);
+        initPage(this, "Bubble", "Addin component for chat module, it display a good bubble view of messages withing the chat module.", ADDINS);
         buildBasic();
         buildPosition();
     }

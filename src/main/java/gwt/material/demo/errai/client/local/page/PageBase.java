@@ -3,6 +3,7 @@ package gwt.material.demo.errai.client.local.page;
 import com.google.gwt.user.client.ui.Composite;
 import gwt.material.demo.errai.client.local.events.PageChangeEvent;
 import gwt.material.design.client.constants.Color;
+import gwt.material.design.client.ui.MaterialToast;
 import gwt.material.design.jquery.client.api.JQueryElement;
 import org.jboss.errai.ui.nav.client.local.PageShown;
 
@@ -11,9 +12,6 @@ import javax.inject.Inject;
 
 import static gwt.material.design.jquery.client.api.JQuery.$;
 
-/**
- * Created by kevin on 9/1/2016.
- */
 public class PageBase extends Composite {
 
     public static final int ABOUT = 1;
@@ -22,37 +20,36 @@ public class PageBase extends Composite {
     public static final int ADDINS = 4;
     public static final int ANIMATIONS = 5;
 
+    private String CODE_PREFIX = "https://github.com/GwtMaterialDesign/gwt-material-demo-errai/blob/master/src/main/java/gwt/material/demo/errai/client/local/page/";
+
     @Inject
     private Event<PageChangeEvent> pageChangeEvent;
 
-    public void initPage(String title, String description, int type) {
+    public void initPage(PageBase page, String title, String description, int type) {
         Color color = Color.BLUE;
-        Color secondaryColor = Color.BLUE_DARKEN_1;
         switch (type) {
             case ABOUT:
                 color = Color.BLUE;
-                secondaryColor = Color.BLUE_DARKEN_1;
                 break;
             case GETTING_STARTED:
                 color = Color.GREEN;
-                secondaryColor = Color.GREEN_DARKEN_1;
                 break;
             case COMPONENTS:
                 color = Color.INDIGO;
-                secondaryColor = Color.INDIGO_DARKEN_1;
+                CODE_PREFIX = CODE_PREFIX + "components/";
                 break;
             case ADDINS:
                 color = Color.RED;
-                secondaryColor = Color.RED_DARKEN_1;
+                CODE_PREFIX = CODE_PREFIX + "addins/";
                 break;
             case ANIMATIONS:
                 color = Color.ORANGE;
-                secondaryColor = Color.ORANGE_DARKEN_1;
+                CODE_PREFIX = CODE_PREFIX + "animations/";
                 break;
             default:
                 break;
         }
-        pageChangeEvent.fire(new PageChangeEvent(title, description, color, secondaryColor));
+        pageChangeEvent.fire(new PageChangeEvent(type, title, description, color, CODE_PREFIX + page.getClass().getSimpleName() + ".html", CODE_PREFIX + page.getClass().getSimpleName() + ".java"));
     }
 
     @PageShown

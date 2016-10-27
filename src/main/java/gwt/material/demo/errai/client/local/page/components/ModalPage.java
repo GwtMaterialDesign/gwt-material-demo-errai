@@ -3,20 +3,17 @@ package gwt.material.demo.errai.client.local.page.components;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.constants.ModalType;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 import static gwt.material.design.client.constants.ButtonType.FLAT;
 
 @Templated
 @Page(path = "modals")
-@ApplicationScoped
 public class ModalPage extends PageBase {
 
     @Inject
@@ -61,7 +58,7 @@ public class ModalPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Modals", "Modal component allows for verification of user actions, simple data input, and alerts to provide extra information to users.", COMPONENTS);
+        initPage(this, "Modals", "Modal component allows for verification of user actions, simple data input, and alerts to provide extra information to users.", COMPONENTS);
         buildBasic();
         buildFixedFooter();
         buildBottomSheet();

@@ -11,12 +11,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "badge")
-@ApplicationScoped
 public class BadgePage extends PageBase {
 
     @Inject
@@ -50,7 +48,7 @@ public class BadgePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Badges", "Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.", COMPONENTS);
+        initPage(this, "Badges", "Badges can notify you that there are new or unread messages or notifications. Add the new class to the badge to give it the background.", COMPONENTS);
         buildLinkAndIcon();
         buildCollection();
         buildDropdown();

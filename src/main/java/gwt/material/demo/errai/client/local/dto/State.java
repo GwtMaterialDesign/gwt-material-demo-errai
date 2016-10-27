@@ -25,6 +25,7 @@ import java.io.Serializable;
 
 /**
  * State object
+ *
  * @author kevzlou7979
  */
 public class State implements Serializable {
@@ -37,7 +38,8 @@ public class State implements Serializable {
         this.value = value;
     }
 
-    public State() {}
+    public State() {
+    }
 
     public String getName() {
         return name;

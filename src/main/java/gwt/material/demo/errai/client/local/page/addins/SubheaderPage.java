@@ -5,7 +5,6 @@ import gwt.material.design.addins.client.subheader.MaterialSubHeader;
 import gwt.material.design.addins.client.subheader.MaterialSubHeaderContainer;
 import gwt.material.design.addins.client.subheader.constants.SubHeaderType;
 import gwt.material.design.client.constants.CollectionType;
-import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.ImageType;
 import gwt.material.design.client.ui.MaterialCollection;
 import gwt.material.design.client.ui.MaterialCollectionItem;
@@ -28,7 +27,7 @@ public class SubheaderPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("SubHeaders", "SubHeaders are special list tiles that delineate distinct sections of a list or grid list and are typically related to the current filtering or sorting criteria. Subheader tiles are either displayed inline with tiles or can be associated with content, for example, in an adjacent column.", ADDINS);
+        initPage(this, "SubHeaders", "SubHeaders are special list tiles that delineate distinct sections of a list or grid list and are typically related to the current filtering or sorting criteria. Subheader tiles are either displayed inline with tiles or can be associated with content, for example, in an adjacent column.", ADDINS);
         buildSimple();
         buildStatic();
     }

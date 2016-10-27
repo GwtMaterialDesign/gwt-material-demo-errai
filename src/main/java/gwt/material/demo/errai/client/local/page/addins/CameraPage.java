@@ -12,6 +12,6 @@ public class CameraPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Camera", "MaterialCameraCapture is a widget that captures the video stream from the camera, using the MediaDevices.getUserMedia() (Streams API). This widget can capture images from the video, to allow the upload to the server of photos from the camera.", ADDINS);
+        initPage(this, "Camera", "MaterialCameraCapture is a widget that captures the video stream from the camera, using the MediaDevices.getUserMedia() (Streams API). This widget can capture images from the video, to allow the upload to the server of photos from the camera.", ADDINS);
     }
 }

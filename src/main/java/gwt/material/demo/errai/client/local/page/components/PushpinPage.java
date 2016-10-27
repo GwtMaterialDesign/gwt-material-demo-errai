@@ -20,7 +20,7 @@ public class PushpinPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Push Pin", "Pushpin is our fixed positioning plugin. You can check out our live examples: the fixed Table of Contents on the right.", COMPONENTS);
+        initPage(this, "Push Pin", "Pushpin is our fixed positioning plugin. You can check out our live examples: the fixed Table of Contents on the right.", COMPONENTS);
         target.setTitle("Pushpin");
         target.setDescription("This will be pinned on scroll and go out side of the card");
         MaterialPushpin.apply(target, 300, 200, 200);

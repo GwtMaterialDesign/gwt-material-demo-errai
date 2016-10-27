@@ -62,9 +62,10 @@ main {
     background: #f2f2f2;
     max-height: 0px;
     overflow: auto;
-    font-size: 0.7em;
+    font-size: 0.8em;
     transition: 500ms all;
     margin-bottom: 10px;
+    padding-top: 16px;
 }
 
 .code pre.active {
@@ -88,4 +89,12 @@ main {
 
 .followWrap {
     height: 45px !important;
+}
+
+.themes .select2-selection__rendered {
+    color: white !important;
+}
+
+.titlePanel .chip {
+    cursor: pointer;
 }

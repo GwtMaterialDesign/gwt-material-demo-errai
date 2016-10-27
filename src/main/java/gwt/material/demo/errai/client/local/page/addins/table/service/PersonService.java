@@ -30,7 +30,7 @@ import java.util.List;
 @RemoteServiceRelativePath("personService")
 public interface PersonService extends RemoteService {
 
-      People getPeople(int startIndex, int viewSize, List<String> categories);
+    People getPeople(int startIndex, int viewSize, List<String> categories);
 
-      List<String> getCategories();
+    List<String> getCategories();
 }

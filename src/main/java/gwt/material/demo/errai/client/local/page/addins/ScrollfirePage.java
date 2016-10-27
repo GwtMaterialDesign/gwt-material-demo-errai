@@ -37,7 +37,7 @@ public class ScrollfirePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Scrollfire", "Executes callback functions depending on how far into the page you've scrolled.", ADDINS);
+        initPage(this, "Scrollfire", "Executes callback functions depending on how far into the page you've scrolled.", ADDINS);
         MaterialScrollfire.apply(panel.getElement(), () -> {
             MaterialToast.fireToast("Toasted");
         });

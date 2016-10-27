@@ -5,20 +5,17 @@ import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.base.SearchObject;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 
 @Templated
 @Page(path = "search")
-@ApplicationScoped
 public class SearchPage extends PageBase {
 
     @Inject
@@ -39,7 +36,7 @@ public class SearchPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Search", "Attached to NavBar component or can be used on external panels.", COMPONENTS);
+        initPage(this, "Search", "Attached to NavBar component or can be used on external panels.", COMPONENTS);
         navBrand.setText("My App");
         navBrand.setPaddingLeft(20);
         navbar.add(navBrand);

@@ -3,18 +3,15 @@ package gwt.material.demo.errai.client.local.page.components;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.client.constants.*;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "collection")
-@ApplicationScoped
 public class CollectionPage extends PageBase {
 
     @Inject
@@ -51,7 +48,7 @@ public class CollectionPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Collections", "Collections allow you to group list objects together.", COMPONENTS);
+        initPage(this, "Collections", "Collections allow you to group list objects together.", COMPONENTS);
         buildBasic();
         buildPreSelection();
         buildHeader();

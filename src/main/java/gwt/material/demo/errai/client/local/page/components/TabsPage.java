@@ -1,8 +1,6 @@
 package gwt.material.demo.errai.client.local.page.components;
 
-import com.google.gwt.user.client.DOM;
 import gwt.material.demo.errai.client.local.page.PageBase;
-import gwt.material.design.client.base.MaterialWidget;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.constants.TabType;
@@ -13,12 +11,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "tab")
-@ApplicationScoped
 public class TabsPage extends PageBase {
 
     @Inject
@@ -31,7 +27,7 @@ public class TabsPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Tabs", "The tabs structure consists of an unordered list of tabs that have hashes corresponding to tabBasic ids. Then when you click on each tabBasic, only the container with the corresponding tabBasic id will become visible.", COMPONENTS);
+        initPage(this, "Tabs", "The tabs structure consists of an unordered list of tabs that have hashes corresponding to tabBasic ids. Then when you click on each tabBasic, only the container with the corresponding tabBasic id will become visible.", COMPONENTS);
         buildBasic();
         buildDisabled();
         buildIndicator();
@@ -62,7 +58,7 @@ public class TabsPage extends PageBase {
     protected void buildDisabled() {
         buildTabs(tabDisabled, disabledContent, "tabDisabled");
         if (tabDisabled.getWidget(0) instanceof MaterialTabItem) {
-            ((MaterialTabItem)tabDisabled.getWidget(0)).setEnabled(false);
+            ((MaterialTabItem) tabDisabled.getWidget(0)).setEnabled(false);
         }
     }
 

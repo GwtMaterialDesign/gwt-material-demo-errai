@@ -7,7 +7,6 @@ import gwt.material.design.client.constants.IconSize;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.constants.TextAlign;
 import gwt.material.design.client.ui.*;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -29,7 +28,7 @@ public class WindowPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Window", "Window is another kind of Modal but it has a header toolbar for maximizing and close the window. Also you can attached a tab component on its content.", ADDINS);
+        initPage(this, "Window", "Window is another kind of Modal but it has a header toolbar for maximizing and close the window. Also you can attached a tab component on its content.", ADDINS);
         buildSimple();
         buildMaximize();
         buildStyled();

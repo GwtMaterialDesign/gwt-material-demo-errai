@@ -56,7 +56,8 @@ public class User implements Serializable {
 
     private Position position;
 
-    public User() {}
+    public User() {
+    }
 
     public User(String picture, String name, String email) {
         this.picture = picture;

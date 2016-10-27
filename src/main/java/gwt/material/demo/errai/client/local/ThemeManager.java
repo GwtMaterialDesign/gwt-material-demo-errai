@@ -96,6 +96,7 @@ public class ThemeManager {
         if (!map.containsKey(widget)) {
             map.put(widget, shade);
         }
+        initialize();
     }
 
     public static ThemeLoader.ThemeBundle getBundle() {

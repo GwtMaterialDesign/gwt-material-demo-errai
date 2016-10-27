@@ -1,8 +1,8 @@
 package gwt.material.demo.errai.client.local.page.addins;
 
+import gwt.material.demo.errai.client.local.ThemeManager;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.cutout.MaterialCutOut;
-import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.constants.TextAlign;
 import gwt.material.design.client.ui.MaterialButton;
@@ -29,7 +29,7 @@ public class CutoutPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Cutout", "The MaterialCutOut is an excellent component to show users about new features and important components (buttons, labels and so) on the UI.", ADDINS);
+        initPage(this, "Cutout", "The MaterialCutOut is an excellent component to show users about new features and important components (buttons, labels and so) on the UI.", ADDINS);
         buildBasic();
     }
 
@@ -38,7 +38,7 @@ public class CutoutPage extends PageBase {
     }
 
     private void buildCutout(MaterialCutOut cutout, MaterialIcon button) {
-        cutout.setBackgroundColor(Color.BLUE);
+        ThemeManager.register(cutout);
         cutout.setOpacity(0.8);
         cutout.setCircle(true);
         cutout.setTextAlign(TextAlign.CENTER);

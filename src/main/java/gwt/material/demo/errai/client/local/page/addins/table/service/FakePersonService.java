@@ -35,6 +35,7 @@ import java.util.Map;
 public class FakePersonService implements PersonServiceAsync {
     private static List<String> categories = new ArrayList<>();
     private static Map<String, List<Person>> peopleMap = new HashMap<>();
+
     static {
         categories.add("People");
         categories.add("Animal");
@@ -43,10 +44,10 @@ public class FakePersonService implements PersonServiceAsync {
         categories.add("Next");
 
         int index = 0;
-        for(String category : categories) {
-            for(int i = 0; i < 100; i++, index++) {
+        for (String category : categories) {
+            for (int i = 0; i < 100; i++, index++) {
                 List<Person> data = peopleMap.get(category);
-                if(data == null) {
+                if (data == null) {
                     data = new ArrayList<>();
                     peopleMap.put(category, data);
                 }
@@ -58,9 +59,9 @@ public class FakePersonService implements PersonServiceAsync {
     @Override
     public void getPeople(int startIndex, int viewSize, List<String> categories, AsyncCallback<People> async) {
         List<Person> flatData = new ArrayList<>();
-        if(categories == null) {
+        if (categories == null) {
             // Load all data
-            for(String category : FakePersonService.categories) {
+            for (String category : FakePersonService.categories) {
                 flatData.addAll(peopleMap.get(category));
             }
         } else {
@@ -73,7 +74,7 @@ public class FakePersonService implements PersonServiceAsync {
         }
 
         People people = new People();
-        for(int i = startIndex; i < (startIndex + viewSize); i++) {
+        for (int i = startIndex; i < (startIndex + viewSize); i++) {
             try {
                 people.add(flatData.get(i));
             } catch (IndexOutOfBoundsException e) {

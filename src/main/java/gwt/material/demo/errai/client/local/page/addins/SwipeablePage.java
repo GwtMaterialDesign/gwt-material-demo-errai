@@ -32,20 +32,20 @@ public class SwipeablePage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Swipeable", "A panel that allows any of its nested children to be swiped away. This component is only applicable to touch screen devices.", ADDINS);
+        initPage(this, "Swipeable", "A panel that allows any of its nested children to be swiped away. This component is only applicable to touch screen devices.", ADDINS);
         buildBasic();
         buildSwipeEvents();
         buildSwipeDisabled();
     }
 
     private void buildSwipeDisabled() {
-        for(int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             MaterialCard card = new MaterialCard();
             MaterialCardContent content = new MaterialCardContent();
             MaterialLabel lblCard = new MaterialLabel("Item " + i);
             content.add(lblCard);
             card.add(content);
-            if ( i >= 2) {
+            if (i >= 2) {
                 lblCard.setText("Item " + i + " (Disabled)");
             }
             swipeDisabled.add(card);
@@ -61,7 +61,7 @@ public class SwipeablePage extends PageBase {
         swipeEvents.addSwipeRightHandler(event -> {
             MaterialToast.fireToast("Swiped Right");
         });
-        for(int i = 1; i <= 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             MaterialCard card = new MaterialCard();
             MaterialCardContent content = new MaterialCardContent();
             MaterialLabel lblCard = new MaterialLabel("Item " + i);

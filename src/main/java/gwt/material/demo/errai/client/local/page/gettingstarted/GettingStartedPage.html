@@ -1,3 +1,80 @@
 <div>
-    Getting Started
+    <div class="code">
+        <div>Introduction</div>
+        <label style="width: 80%;">Starting GMD (GWT Material Design) 2.0 we have supported Errai 4.0 Framework to build Web & Mobile Applications in order to support html & java code development. This demo represents all core and addin components that are running on errai instance. We chose Errai because of its power on specific features like CDI, Navigation, Messaging, Data Binding, JPA, Jaxrs and Cordova.</label>
+    </div>
+
+    <div class="code">
+        <div>Setting up a new project</div>
+        <label>You can easily setup a new gwt-material-errai project using Maven Archetype which contains a starter template.</label>
+        <pre style="max-height: 1400px;">
+            mvn archetype:generate -DarchetypeGroupId=com.github.gwtmaterialdesign
+            -DarchetypeArtifactId=gwt-material-errai-archetype
+            -DarchetypeVersion=1.0-SNAPSHOT
+        </pre>
+    </div>
+
+    <div class="code">
+        <div>Projects Included</div>
+        <label>Here are the lists of projects included inside the archetype.</label>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material">gwt-material</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material-addins">gwt-material-addins</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material-themes">gwt-material-themes</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material-jquery">gwt-material-jquery</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material-table">gwt-material-table</a></li>
+        <li><a target="_blank" href="https://github.com/errai/errai">errai 4.0</a></li>
+    </div>
+
+    <div class="code">
+        <div>Wiki</div>
+        <label>A brief information about gwt-material using Github Wikis.</label>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material/wiki/Changelog">Changelog</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material/wiki/Contributing">Contributing</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material/wiki/How-to-file-a-bug">How to file a bug</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material/wiki/2.0---API-Changes">GMD 2.0</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material-addins/wiki/2.0-API-Changes">GMD Addins 2.0</a></li>
+        <li><a target="_blank" href="https://github.com/GwtMaterialDesign/gwt-material-themes/wiki/2.0---API-Changes">GMD Themes 2.0</a></li>
+    </div>
+
+    <div class="code">
+        <div>Configuring your module</div>
+        <label>You will have to configure your App.gwt.xml file to inherit the Gwt Material Widget library. You can do it like this:</label>
+        <pre style="max-height: 1400px;">
+            &lt;inherits name="gwt.material.design.GwtMaterialWithJQuery" />
+        </pre>
+    </div>
+
+    <div class="code">
+        <div>List of GMD Modules</div>
+        <pre style="max-height: 1400px;">
+            - GwtMaterialDesign # Standard use with all resources (but will not load jQuery for you).
+            - GwtMaterialDesignDebug # Same as above but will load non-minified js and Source URL included for Chrome debugging
+            - GwtMaterialWithJQuery # Standard use with all resources and will also include loading jQuery
+            - GwtMaterialWithJQueryDebug # Same as but will load non-minified js and Source URL included for Chrome debugging
+            - GwtMaterialDesignBasic # Use without materialize.css file (but will not load jQuery for you).
+            - GwtMaterialBasicWithJQuery # Same as above but will also include loading jQuery
+            - GwtMaterialBasicWithJQueryDebug # Same as above but with non-minified js and Source URL included for Chrome debugging.
+        </pre>
+    </div>
+
+    <div class="code">
+        <div>Setup Theme</div>
+        <label>We created another project for gwt-material themes. Also starting 2.0 we have supported dynamic theming.</label>
+        <pre style="max-height: 1400px;">
+            &lt;inherits name="gwt.material.design.GwtMaterialWithJQuery" />
+            &lt;inherits name="gwt.material.design.themes.ThemeBlue"/>
+        </pre>
+    </div>
+
+    <div class="code">
+        <div>GMD 2.0 Getting Started</div>
+        <label>You can browse GMD Getting started guide here.</label><br/>
+        <a target="_blank" href="http://gwtmaterialdesign.github.io/gwt-material-demo/2.0-SNAPSHOT/#!gettingstarted">http://gwtmaterialdesign.github.io/gwt-material-demo/2.0-SNAPSHOT/#!gettingstarted</a>
+    </div>
+
+    <div class="code">
+        <div>Errai 4.0 Documentation</div>
+        <label>You can browse Errai Getting started guide here.</label><br/>
+        <a target="_blank" href="http://erraiframework.org/getting-started/index.html#SetupPage">http://erraiframework.org/getting-started/index.html#SetupPage</a>
+    </div>
 </div>

@@ -44,7 +44,7 @@ public class PersonDataSource extends InfiniteDataSource<Person> {
     @Override
     public void load(InfiniteDataView<Person> dataView, int startIndex, int viewSize, List<CategoryComponent> categories) {
         List<String> categoryNames = null;
-        if(dataView.isUseCategories()) {
+        if (dataView.isUseCategories()) {
             categoryNames = new ArrayList<>();
             for (CategoryComponent category : categories) {
                 categoryNames.add(category.getCategory());
@@ -55,6 +55,7 @@ public class PersonDataSource extends InfiniteDataSource<Person> {
             public void onSuccess(People people) {
                 dataView.loaded(startIndex, people, people.getAbsoluteTotal(), true);
             }
+
             @Override
             public void onFailure(Throwable throwable) {
                 GWT.log("Getting people async call failed.", throwable);

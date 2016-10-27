@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class UserOracle extends MaterialSuggestionOracle{
+public class UserOracle extends MaterialSuggestionOracle {
 
     private List<User> contacts = new LinkedList<>();
 
@@ -38,7 +38,7 @@ public class UserOracle extends MaterialSuggestionOracle{
     @Override
     public void requestSuggestions(Request request, Callback callback) {
         Response resp = new Response();
-        if(contacts.isEmpty()){
+        if (contacts.isEmpty()) {
             callback.onSuggestionsReady(request, resp);
             return;
         }
@@ -47,8 +47,8 @@ public class UserOracle extends MaterialSuggestionOracle{
 
         List<UserSuggestion> list = new ArrayList<>();
 
-        for(User contact : contacts){
-            if(contact.getName().toLowerCase().contains(text)){
+        for (User contact : contacts) {
+            if (contact.getName().toLowerCase().contains(text)) {
                 list.add(new UserSuggestion(contact));
             }
         }

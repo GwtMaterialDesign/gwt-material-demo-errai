@@ -1,8 +1,12 @@
 package gwt.material.demo.errai.client.local.widget;
 
+import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.Composite;
+import gwt.material.demo.errai.client.local.ThemeManager;
 import gwt.material.demo.errai.client.local.dto.DataHelper;
 import gwt.material.demo.errai.client.local.dto.Link;
+import gwt.material.design.addins.client.avatar.MaterialAvatar;
+import gwt.material.design.addins.client.sideprofile.MaterialSideProfile;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.SideNavType;
 import gwt.material.design.client.events.SideNavClosedEvent;
@@ -24,7 +28,7 @@ public class SideNav extends Composite {
     MaterialSideNav sideNav;
 
     @Inject
-    MaterialNavBrand navBrand;
+    MaterialSideProfile profile;
 
     @Inject
     private Event<SideNavOpenedEvent> sidenavOpenedEvent;
@@ -39,8 +43,24 @@ public class SideNav extends Composite {
         sideNav.setWidth(280);
         sideNav.reinitialize();
 
-        navBrand.setText("gwt-material");
-        sideNav.add(navBrand);
+        ThemeManager.register(profile);
+        MaterialAvatar avatar = new MaterialAvatar("kevzlou7979");
+        avatar.setWidth("50");
+        avatar.setHeight("50");
+        avatar.setCircle(true);
+        avatar.setBackgroundColor(Color.WHITE);
+        avatar.setShadow(1);
+        MaterialLabel label = new MaterialLabel("gwt-material-errai");
+        label.setFontWeight(Style.FontWeight.BOLD);
+        MaterialLabel description = new MaterialLabel("Version 1.0");
+        description.setFontSize(0.8, Style.Unit.EM);
+        description.setMarginTop(20);
+        profile.setTextColor(Color.WHITE);
+        profile.setUrl("https://lh3.googleusercontent.com/-HDNu3zUU0zA/VMSgMzf77OI/AAAAAAAADx4/ZP5sRDbc8ag/w1920-h1080/Google%2BIO%2BPlane%2BDesign_HD.jpg");
+        profile.add(avatar);
+        profile.add(label);
+        profile.add(description);
+        sideNav.add(profile);
 
         sideNav.addOpenedHandler(event -> {
             sidenavOpenedEvent.fire(new SideNavOpenedEvent());

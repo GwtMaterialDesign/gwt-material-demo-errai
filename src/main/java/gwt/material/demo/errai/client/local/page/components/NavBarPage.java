@@ -7,18 +7,15 @@ import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialNavBar;
 import gwt.material.design.client.ui.MaterialNavBrand;
 import gwt.material.design.client.ui.MaterialNavSection;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "navbar")
-@ApplicationScoped
 public class NavBarPage extends PageBase {
 
     private final int BASIC = 0;
@@ -34,7 +31,7 @@ public class NavBarPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("NavBar", "The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.", COMPONENTS);
+        initPage(this, "NavBar", "The navbar is fully contained by an HTML5 Nav tag. Inside a recommended container div, there are 2 main parts of the navbar. A logo or brand link, and the navigations links. You can align these links to the left or right.", COMPONENTS);
         buildNavBar(navbar1, BASIC);
         buildNavBar(navbar2, ALIGNMENT);
     }

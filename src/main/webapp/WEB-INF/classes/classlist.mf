@@ -1,2 +1,0 @@
-gwt.material.demo.errai.client.local.page.components.BadgePage
-gwt.material.demo.errai.client.local.page.components.ButtonPage

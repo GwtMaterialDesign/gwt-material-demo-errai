@@ -19,7 +19,7 @@ public class DocViewerPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("DocViewer", "A document viewer for your word, excel, powerpoint, pdf and other supported file types Note that this viewer only work with public files.", ADDINS);
+        initPage(this, "DocViewer", "A document viewer for your word, excel, powerpoint, pdf and other supported file types Note that this viewer only work with public files.", ADDINS);
         buildDocViewer();
     }
 

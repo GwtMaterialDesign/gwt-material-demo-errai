@@ -28,7 +28,7 @@ public class AvatarPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Avatar", "Generated avatar based on JDenticon that provides a unique avatar based on unique name.", ADDINS);
+        initPage(this, "Avatar", "Generated avatar based on JDenticon that provides a unique avatar based on unique name.", ADDINS);
         buildDefault();
         buildInitialize();
     }

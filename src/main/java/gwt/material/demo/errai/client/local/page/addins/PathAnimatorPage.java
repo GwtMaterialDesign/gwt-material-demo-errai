@@ -52,7 +52,7 @@ public class PathAnimatorPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Path Animator", "Custom component that provides meaningfull transition between two elements to show visual continuity.", ADDINS);
+        initPage(this, "Path Animator", "Custom component that provides meaningfull transition between two elements to show visual continuity.", ADDINS);
         buildButtonToOverlay();
         buildCardToOverlay();
         buildButtonCard();

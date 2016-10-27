@@ -9,12 +9,10 @@ import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
 @Templated
 @Page(path = "breadcrumbs")
-@ApplicationScoped
 public class BreadcrumbsPage extends PageBase {
 
     @Inject
@@ -31,7 +29,7 @@ public class BreadcrumbsPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Breadcrumbs", "Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.", COMPONENTS);
+        initPage(this, "Breadcrumbs", "Breadcrumbs are a good way to display your current location. This is usually used when you have multiple layers of content.", COMPONENTS);
         buildTextOnly();
         buildOnlyIcons();
         buildWithIcons();

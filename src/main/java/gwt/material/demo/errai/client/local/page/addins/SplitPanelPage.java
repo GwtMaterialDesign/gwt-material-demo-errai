@@ -29,7 +29,7 @@ public class SplitPanelPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Split Panel", "A high performance content splitter compatible with touch events", ADDINS);
+        initPage(this, "Split Panel", "A high performance content splitter compatible with touch events", ADDINS);
     }
 
     @Override

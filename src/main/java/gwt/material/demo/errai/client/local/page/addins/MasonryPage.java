@@ -3,9 +3,7 @@ package gwt.material.demo.errai.client.local.page.addins;
 import gwt.material.demo.errai.client.local.page.PageBase;
 import gwt.material.design.addins.client.masonry.MaterialMasonry;
 import gwt.material.design.client.constants.Color;
-import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.MaterialColumn;
-import gwt.material.design.client.ui.MaterialIcon;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -24,7 +22,7 @@ public class MasonryPage extends PageBase {
 
     @PostConstruct
     public void init() {
-        initPage("Masonry", "Masonry works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall.", ADDINS);
+        initPage(this, "Masonry", "Masonry works by placing elements in optimal position based on available vertical space, sort of like a mason fitting stones in a wall.", ADDINS);
         buildBasic();
         buildLeft();
         buildTop();
