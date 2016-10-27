@@ -88,11 +88,14 @@ public class DataHelper {
         addins.addSubLink(new Link("Waterfall", "#waterfall"));
         addins.addSubLink(new Link("Window", "#window"));
 
+        Link themes = new Link(IconType.STYLE, "Themes", "#themes");
+
         links.add(about);
         links.add(gettingStarted);
         links.add(components);
         links.add(animations);
         links.add(addins);
+        links.add(themes);
         return links;
     }
 

@@ -1,0 +1,45 @@
+<div>
+    <div class="code">
+        <div>Introduction</div>
+        <label>First: Make sure you are using GwtMaterialDesignBasic module (This will not load the materialize.css default file allowing you to customize your design.)</label>
+        <pre style="max-height: 1400px;">
+            &lt;inherits name="gwt.material.design.GwtMaterialDesignBasic" />
+        </pre>
+        <label>Second: Checkout the theme project and add it to your build path. And define it on your app.gwt.xml file.</label>
+        <pre style="max-height: 1400px;">
+            &lt;inherits name="gwt.material.design.themes.ThemeBlue"/>
+        </pre>
+    </div>
+
+    <div class="code">
+        <div>Dynamic Theming</div>
+        <label>Starting GMD 2.0 we supported dynamic theming. Import what themes you want to include into your app.</label>
+        <pre style="max-height: 1400px;">
+            &lt;inherits name="gwt.material.design.themes.ThemeAmberResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemeBlueResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemeBrownResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemeGreenResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemeGreyResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemeOrangeResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemePinkResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemePurpleResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemeRedResources"/>
+            &lt;inherits name="gwt.material.design.themes.ThemeYellowResources"/>
+        </pre>
+    </div>
+
+    <div class="code">
+        <div>Theme Switcher</div>
+        <label>A ComboBox widget that contains lists of theme selection.</label>
+        <br/>
+        <a class="btn" href="https://github.com/GwtMaterialDesign/gwt-material-demo-errai/blob/master/src/main/java/gwt/material/demo/errai/client/local/widget/ThemeSwitcher.html" target="_blank">HTML Source File</a>
+        <a class="btn" href="https://github.com/GwtMaterialDesign/gwt-material-demo-errai/blob/master/src/main/java/gwt/material/demo/errai/client/local/widget/ThemeSwitcher.java" target="_blank">Java Source File</a>
+    </div>
+
+    <div class="code">
+        <div>Theme Manager</div>
+        <label>A Custom theme manager to store selected theme to browser’s cache.</label>
+        <br/>
+        <a class="btn" href="https://github.com/GwtMaterialDesign/gwt-material-demo-errai/blob/master/src/main/java/gwt/material/demo/errai/client/local/ThemeManager.java" target="_blank">Theme Manager</a>
+    </div>
+</div>

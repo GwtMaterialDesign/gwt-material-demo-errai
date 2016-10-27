@@ -19,6 +19,7 @@ public class PageBase extends Composite {
     public static final int COMPONENTS = 3;
     public static final int ADDINS = 4;
     public static final int ANIMATIONS = 5;
+    public static final int THEMES = 6;
 
     private String CODE_PREFIX = "https://github.com/GwtMaterialDesign/gwt-material-demo-errai/blob/master/src/main/java/gwt/material/demo/errai/client/local/page/";
 
