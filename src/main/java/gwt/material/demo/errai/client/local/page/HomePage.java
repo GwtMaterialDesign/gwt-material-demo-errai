@@ -29,7 +29,7 @@ import org.jboss.errai.ui.shared.api.annotations.Templated;
 import javax.annotation.PostConstruct;
 
 @Templated
-@Page(path = "about")
+@Page(path = "about", role = DefaultPage.class)
 public class HomePage extends PageBase {
 
     @PostConstruct

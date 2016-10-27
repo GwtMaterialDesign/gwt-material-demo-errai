@@ -9,9 +9,7 @@ import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
 import gwt.material.design.client.ui.animate.MaterialAnimator;
 import gwt.material.design.client.ui.animate.Transition;
-import gwt.material.design.client.ui.html.ListItem;
 import gwt.material.design.client.ui.html.UnorderedList;
-import org.jboss.errai.ui.nav.client.local.DefaultPage;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
@@ -20,7 +18,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 @Templated
-@Page(path = "meaningful_animation", role = DefaultPage.class)
+@Page(path = "meaningful_animation")
 public class MeaningfulAnimationsPage extends PageBase {
 
     @Inject
