@@ -62,7 +62,7 @@ public class CoreAnimationsPage extends PageBase {
         iconCallback.setBackgroundColor(Color.BLUE);
         btnCallback.setText("Animate with Callback");
         btnCallback.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.FLIPINX, iconCallback, 1000, () -> {
+            MaterialAnimator.animate(Transition.FLIPINX, iconCallback, 0, () -> {
                 MaterialToast.fireToast("Callback Fired");
             });
         });
@@ -74,7 +74,7 @@ public class CoreAnimationsPage extends PageBase {
         iconInfinite.setBackgroundColor(Color.PINK);
         btnInfinite.setText("Infinite Animation");
         btnInfinite.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.PULSE, iconInfinite, 1000, true);
+            MaterialAnimator.animate(Transition.PULSE, iconInfinite, 0, true);
         });
 
         btnStopInfinite.setText("Stop Animation");
@@ -103,7 +103,7 @@ public class CoreAnimationsPage extends PageBase {
         card.add(title);
 
         lstAnimations.addValueChangeHandler(event -> {
-            MaterialAnimator.animate(event.getValue(), card, 1000);
+            MaterialAnimator.animate(event.getValue(), card, 0);
         });
         lstAnimations.addItem("bounce", Transition.BOUNCE);
         lstAnimations.addItem("flash", Transition.FLASH);
