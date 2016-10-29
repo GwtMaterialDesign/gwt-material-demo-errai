@@ -1,8 +1,8 @@
 package gwt.material.demo.errai.client.page.animations;
 
-import gwt.material.demo.errai.client.local.ThemeManager;
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.ThemeManager;
+import gwt.material.demo.errai.client.page.AbstractPage;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.constants.ButtonType;

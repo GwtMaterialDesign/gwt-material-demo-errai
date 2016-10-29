@@ -1,6 +1,6 @@
 package gwt.material.demo.errai.client.page.addins.table.factory;
 
-import gwt.material.demo.errai.client.local.page.addins.table.model.Person;
+import gwt.material.demo.errai.client.page.addins.table.model.Person;
 import gwt.material.demo.errai.client.page.addins.table.model.Person;
 import gwt.material.design.client.data.component.RowComponent;
 import gwt.material.design.client.data.factory.RowComponentFactory;

@@ -1,6 +1,6 @@
 package gwt.material.demo.errai.client.events;
 
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.constants.Color;
 

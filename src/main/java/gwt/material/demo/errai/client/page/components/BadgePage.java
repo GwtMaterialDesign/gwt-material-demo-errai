@@ -1,8 +1,8 @@
 package gwt.material.demo.errai.client.page.components;
 
 import com.google.gwt.dom.client.Style;
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.page.AbstractPage;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;

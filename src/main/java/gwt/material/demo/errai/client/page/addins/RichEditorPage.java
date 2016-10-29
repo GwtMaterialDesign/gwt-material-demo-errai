@@ -1,7 +1,7 @@
 package gwt.material.demo.errai.client.page.addins;
 
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.page.AbstractPage;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.richeditor.MaterialRichEditor;
 import gwt.material.design.addins.client.richeditor.base.constants.ToolbarButton;
 import gwt.material.design.client.ui.MaterialButton;

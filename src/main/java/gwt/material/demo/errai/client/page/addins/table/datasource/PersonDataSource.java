@@ -23,9 +23,9 @@ package gwt.material.demo.errai.client.page.addins.table.datasource;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import gwt.material.demo.errai.client.local.page.addins.table.model.People;
-import gwt.material.demo.errai.client.local.page.addins.table.model.Person;
-import gwt.material.demo.errai.client.local.page.addins.table.service.PersonServiceAsync;
+import gwt.material.demo.errai.client.page.addins.table.model.People;
+import gwt.material.demo.errai.client.page.addins.table.model.Person;
+import gwt.material.demo.errai.client.page.addins.table.service.PersonServiceAsync;
 import gwt.material.demo.errai.client.page.addins.table.model.People;
 import gwt.material.demo.errai.client.page.addins.table.model.Person;
 import gwt.material.design.client.data.component.CategoryComponent;

@@ -2,11 +2,11 @@ package gwt.material.demo.errai.client.page.components;
 
 import gwt.material.demo.errai.client.dto.DataHelper;
 import gwt.material.demo.errai.client.dto.UserOracle;
-import gwt.material.demo.errai.client.local.dto.DataHelper;
-import gwt.material.demo.errai.client.local.dto.User;
-import gwt.material.demo.errai.client.local.dto.UserOracle;
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.dto.DataHelper;
+import gwt.material.demo.errai.client.dto.User;
+import gwt.material.demo.errai.client.dto.UserOracle;
+import gwt.material.demo.errai.client.page.AbstractPage;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.autocomplete.MaterialAutoComplete;

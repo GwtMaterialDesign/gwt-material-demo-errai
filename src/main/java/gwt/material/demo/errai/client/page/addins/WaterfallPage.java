@@ -1,7 +1,6 @@
 package gwt.material.demo.errai.client.page.addins;
 
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.Templated;

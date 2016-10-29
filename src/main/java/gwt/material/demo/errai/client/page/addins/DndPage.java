@@ -1,8 +1,8 @@
 package gwt.material.demo.errai.client.page.addins;
 
 import com.google.gwt.dom.client.Style;
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.page.AbstractPage;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.dnd.MaterialDnd;
 import gwt.material.design.addins.client.dnd.constants.Restriction;
 import gwt.material.design.addins.client.dnd.js.JsDragOptions;

@@ -2,7 +2,7 @@ package gwt.material.demo.errai.client.page;
 
 import com.google.gwt.user.client.ui.Composite;
 import gwt.material.demo.errai.client.events.PageChangeEvent;
-import gwt.material.demo.errai.client.local.events.PageChangeEvent;
+import gwt.material.demo.errai.client.events.PageChangeEvent;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.jquery.client.api.JQueryElement;
 import org.jboss.errai.ui.nav.client.local.PageShown;
@@ -15,7 +15,7 @@ import static gwt.material.design.jquery.client.api.JQuery.$;
 
 public abstract class AbstractPage extends Composite {
 
-    private String CODE_PREFIX = "https://github.com/GwtMaterialDesign/gwt-material-demo-errai/blob/master/src/main/java/gwt/material/demo/errai/client/local/page/";
+    private String CODE_PREFIX = "https://github.com/GwtMaterialDesign/gwt-material-demo-errai/blob/master/src/main/java/gwt/material/demo/errai/client/page/";
 
     @Inject
     private Event<PageChangeEvent> pageChangeEvent;

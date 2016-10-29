@@ -1,7 +1,7 @@
 package gwt.material.demo.errai.client.widget;
 
 import com.google.gwt.user.client.ui.Composite;
-import gwt.material.demo.errai.client.local.ThemeManager;
+import gwt.material.demo.errai.client.ThemeManager;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.themes.amber.ThemeAmber;
 import gwt.material.design.themes.blue.ThemeBlue;

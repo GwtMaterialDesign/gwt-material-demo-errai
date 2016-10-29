@@ -1,7 +1,7 @@
 package gwt.material.demo.errai.client.page.components;
 
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.page.AbstractPage;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.constants.CheckBoxType;
 import gwt.material.design.client.constants.IconType;

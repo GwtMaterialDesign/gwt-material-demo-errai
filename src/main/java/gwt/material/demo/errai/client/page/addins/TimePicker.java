@@ -1,8 +1,8 @@
 package gwt.material.demo.errai.client.page.addins;
 
 import com.google.gwt.i18n.client.DateTimeFormat;
-import gwt.material.demo.errai.client.local.page.AbstractPage;
-import gwt.material.demo.errai.client.local.page.PageCategory;
+import gwt.material.demo.errai.client.page.AbstractPage;
+import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.timepicker.MaterialTimePicker;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialToast;

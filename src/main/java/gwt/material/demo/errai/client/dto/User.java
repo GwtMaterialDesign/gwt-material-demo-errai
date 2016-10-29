@@ -20,7 +20,6 @@ package gwt.material.demo.errai.client.dto;
  * #L%
  */
 
-
 import java.io.Serializable;
 
 public class User implements Serializable {

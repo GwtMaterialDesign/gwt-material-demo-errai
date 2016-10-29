@@ -1,7 +1,7 @@
 package gwt.material.demo.errai.client.widget;
 
 import com.google.gwt.user.client.ui.Composite;
-import gwt.material.demo.errai.client.local.ThemeManager;
+import gwt.material.demo.errai.client.ThemeManager;
 import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.shared.api.annotations.DataField;

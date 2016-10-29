@@ -2,9 +2,9 @@ package gwt.material.demo.errai.client.widget;
 
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.Composite;
-import gwt.material.demo.errai.client.local.ThemeManager;
-import gwt.material.demo.errai.client.local.dto.DataHelper;
-import gwt.material.demo.errai.client.local.dto.Link;
+import gwt.material.demo.errai.client.ThemeManager;
+import gwt.material.demo.errai.client.dto.DataHelper;
+import gwt.material.demo.errai.client.dto.Link;
 import gwt.material.design.addins.client.avatar.MaterialAvatar;
 import gwt.material.design.addins.client.sideprofile.MaterialSideProfile;
 import gwt.material.design.client.constants.Color;
