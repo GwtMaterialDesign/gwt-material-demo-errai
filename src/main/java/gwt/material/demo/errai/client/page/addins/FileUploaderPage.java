@@ -39,7 +39,7 @@ public class FileUploaderPage extends AbstractPage {
     }
 
     @Override
-    public void onShown() {
+    protected void onShown() {
         super.onShown();
         MaterialFileUploader fileUploader = new MaterialFileUploader();
         fileUploader.setUrl("/");

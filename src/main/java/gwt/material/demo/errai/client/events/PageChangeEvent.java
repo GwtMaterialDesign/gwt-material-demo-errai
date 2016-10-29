@@ -1,20 +1,19 @@
 package gwt.material.demo.errai.client.events;
 
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.constants.Color;
 
 public class PageChangeEvent {
 
-    private PageCategory type;
+    private PageCategory pageCategory;
     private String title;
     private String description;
     private Color color;
     private String htmlCodeLink;
     private String javaCodeLink;
 
-    public PageChangeEvent(PageCategory type, String title, String description, Color color, String htmlCodeLink, String javaCodeLink) {
-        this.type = type;
+    public PageChangeEvent(PageCategory pageCategory, String title, String description, Color color, String htmlCodeLink, String javaCodeLink) {
+        this.pageCategory = pageCategory;
         this.title = title;
         this.description = description;
         this.color = color;
@@ -54,11 +53,11 @@ public class PageChangeEvent {
         return javaCodeLink;
     }
 
-    public PageCategory getType() {
-        return type;
+    public PageCategory getPageCategory() {
+        return pageCategory;
     }
 
-    public void setType(PageCategory type) {
-        this.type = type;
+    public void setPageCategory(PageCategory pageCategory) {
+        this.pageCategory = pageCategory;
     }
 }

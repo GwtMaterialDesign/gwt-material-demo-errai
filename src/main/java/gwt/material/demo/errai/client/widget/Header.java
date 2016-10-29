@@ -1,19 +1,17 @@
 package gwt.material.demo.errai.client.widget;
 
+import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import gwt.material.demo.errai.client.ThemeManager;
 import gwt.material.demo.errai.client.events.PageChangeEvent;
-import gwt.material.demo.errai.client.page.AbstractPage;
-import gwt.material.demo.errai.client.page.PageCategory;
+import gwt.material.demo.errai.client.events.CodeCutOutEvent;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
+import gwt.material.design.addins.client.cutout.MaterialCutOut;
 import gwt.material.design.client.base.SearchObject;
-import gwt.material.design.client.constants.Color;
-import gwt.material.design.client.constants.HideOn;
-import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.constants.NavBarType;
+import gwt.material.design.client.constants.*;
 import gwt.material.design.client.events.SideNavClosedEvent;
 import gwt.material.design.client.events.SideNavOpenedEvent;
 import gwt.material.design.client.ui.*;
@@ -66,12 +64,22 @@ public class Header extends Composite {
     ThemeSwitcher themeSwitcher;
 
     @Inject
+    MaterialPanel codePanel;
+
+    @Inject
     MaterialChip chipHtml, chipJava;
+
+    @Inject
+    @DataField
+    MaterialCutOut cutout;
 
     private PageChangeEvent pageChangeEvent;
 
     @PostConstruct
     protected void init() {
+        ThemeManager.register(navBar, ThemeManager.DARKER_SHADE);
+        ThemeManager.register(titlePanel);
+
         navBar.setActivates("sideNav");
         navBar.setType(NavBarType.FIXED);
 
@@ -91,10 +99,12 @@ public class Header extends Composite {
         lblDescription.setMarginBottom(20);
         titlePanel.add(lblDescription);
 
+        codePanel.setWidth("190px");
         chipHtml.setText("HTML");
         chipHtml.setLetter("<>");
         chipHtml.setMarginRight(12);
         chipHtml.setTextColor(Color.WHITE);
+
         ThemeManager.register(chipHtml.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
         ThemeManager.register(chipHtml, ThemeManager.DARKER_SHADE);
 
@@ -118,9 +128,34 @@ public class Header extends Composite {
         search.addCloseHandler(closeEvent -> {
             changeNav(navBar);
         });
-        searchNav.add(search);
+        searchNav.add(search.getIcon());
         changeNav(navBar);
         buildSearches();
+
+        // Cutout
+        ThemeManager.register(cutout, ThemeManager.DARKER_SHADE);
+        cutout.setTarget(codePanel);
+        cutout.setOpacity(0.8);
+        cutout.setCircle(true);
+        cutout.setCutOutPadding(10);
+        cutout.setTextAlign(TextAlign.CENTER);
+
+        MaterialPanel detailPanel = new MaterialPanel();
+        detailPanel.setPaddingTop(85);
+        detailPanel.setWidth("1430px");
+        MaterialTitle title = new MaterialTitle();
+        title.setTextColor(Color.WHITE);
+        title.setTitle("Code Samples");
+        title.setDescription("See code examples of the feature here!");
+        detailPanel.add(title);
+
+        MaterialButton btnClose = new MaterialButton();
+        btnClose.setMarginTop(20);
+        btnClose.setText("Close");
+        btnClose.addClickHandler(clickEvent -> cutout.close());
+        detailPanel.add(btnClose);
+
+        cutout.add(detailPanel);
     }
 
     protected void changeNav(MaterialNavBar nav) {
@@ -131,18 +166,27 @@ public class Header extends Composite {
 
     public void onPageChange(@Observes PageChangeEvent event) {
         setPageChangeEvent(event);
-        if (pageChangeEvent.getType() == PageCategory.ADDINS || pageChangeEvent.getType() == PageCategory.COMPONENTS || pageChangeEvent.getType() == PageCategory.ANIMATIONS) {
-            titlePanel.add(chipHtml);
-            titlePanel.add(chipJava);
-        } else {
-            chipHtml.removeFromParent();
-            chipJava.removeFromParent();
+
+        PageCategory pageCategory = pageChangeEvent.getPageCategory();
+        switch (pageCategory) {
+            case ADDINS:
+            case COMPONENTS:
+            case ANIMATIONS:
+                codePanel.add(chipHtml);
+                codePanel.add(chipJava);
+                titlePanel.add(codePanel);
+                break;
+            default:
+                codePanel.removeFromParent();
+                break;
         }
         $("body").scrollTop(0);
         lblTitle.setText(event.getTitle());
         lblDescription.setText(event.getDescription());
-        ThemeManager.register(navBar, ThemeManager.DARKER_SHADE);
-        ThemeManager.register(titlePanel);
+    }
+
+    public void onCodeCutOut(@Observes CodeCutOutEvent event) {
+        Scheduler.get().scheduleDeferred(() -> cutout.open());
     }
 
     public void onSideNavOpened(@Observes SideNavOpenedEvent event) {

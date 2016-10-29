@@ -231,7 +231,7 @@
 					<!-- Exclude GWT client local classes from the deployment, lest
                       classpath scanners such as Hibernate and Weld get confused when the webapp
                       is bootstrapping. -->
-					<packagingExcludes>**/javax/**/*.*,**/client/local/**/*.class</packagingExcludes>
+					<packagingExcludes>**/javax/**/*.*,**/client/**/*.class</packagingExcludes>
 					<warSourceExcludes>WEB-INF/web.xml</warSourceExcludes>
 				</configuration>
 			</plugin>

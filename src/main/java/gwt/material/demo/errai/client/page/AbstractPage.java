@@ -57,7 +57,7 @@ public abstract class AbstractPage extends Composite {
     }
 
     @PageShown
-    public void onShown() {
+    protected void onShown() {
         $(".code i").on("click", e -> {
             JQueryElement el = $(e.getCurrentTarget()).parent().find("pre");
             if (el.hasClass("active")) {

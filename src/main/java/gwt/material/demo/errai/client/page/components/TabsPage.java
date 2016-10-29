@@ -55,7 +55,7 @@ public class TabsPage extends AbstractPage {
     }
 
     @Override
-    public void onShown() {
+    protected void onShown() {
         super.onShown();
         tabIndicator.setIndicatorColor(Color.YELLOW);
     }

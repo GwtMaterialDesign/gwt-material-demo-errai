@@ -1,22 +1,17 @@
 package gwt.material.demo.errai.client.page.addins;
 
-import gwt.material.demo.errai.client.ThemeManager;
-import gwt.material.demo.errai.client.ThemeManager;
+import gwt.material.demo.errai.client.events.CodeCutOutEvent;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.demo.errai.client.page.AbstractPage;
-import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.design.addins.client.cutout.MaterialCutOut;
-import gwt.material.design.client.constants.Color;
+import gwt.material.design.client.constants.IconSize;
 import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.constants.TextAlign;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialIcon;
-import gwt.material.design.client.ui.MaterialTitle;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
+import javax.enterprise.event.Event;
 import javax.inject.Inject;
 
 @Templated
@@ -24,16 +19,15 @@ import javax.inject.Inject;
 public class CutoutPage extends AbstractPage {
 
     @Inject
-    @DataField
-    MaterialIcon btnOpenCutout;
+    private Event<CodeCutOutEvent> searchCutOut;
 
     @Inject
     @DataField
-    MaterialCutOut cutout;
+    MaterialButton btnOpenCutout;
 
     @Override
     public String getName() {
-        return "Cutout";
+        return "Cut Out";
     }
 
     @Override
@@ -51,34 +45,12 @@ public class CutoutPage extends AbstractPage {
     protected void onPostConstruct() {
         super.onPostConstruct();
 
-        ThemeManager.register(cutout);
-        cutout.setOpacity(0.8);
-        cutout.setCircle(true);
-        cutout.setTextAlign(TextAlign.CENTER);
-
-        MaterialTitle title = new MaterialTitle();
-        title.setTextColor(Color.WHITE);
-        title.setTitle("New Feature");
-        title.setDescription("Description of your new Feature");
-        MaterialButton btnClose = new MaterialButton();
-        btnClose.setText("Close");
-        btnClose.addClickHandler(clickEvent -> {
-            cutout.close();
-        });
-        cutout.add(title);
-        cutout.add(btnClose);
-
-        btnOpenCutout.setIconType(IconType.POLYMER);
-        btnOpenCutout.addClickHandler(clickEvent -> {
-            cutout.setTarget(btnOpenCutout);
-            cutout.open();
-        });
+        btnOpenCutout.setText("Show Cut Out");
+        btnOpenCutout.addClickHandler(clickEvent -> searchCutOut.fire(new CodeCutOutEvent()));
     }
 
     @Override
-    public void onShown() {
-        super.onShown();
-
-        cutout.open();
+    protected void onShown() {
+        searchCutOut.fire(new CodeCutOutEvent());
     }
 }

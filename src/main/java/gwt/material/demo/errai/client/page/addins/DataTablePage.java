@@ -97,7 +97,7 @@ public class DataTablePage extends AbstractPage {
     }
 
     @Override
-    public void onShown() {
+    protected void onShown() {
         super.onShown();
         buildStandardTable();
         buildPageTable();

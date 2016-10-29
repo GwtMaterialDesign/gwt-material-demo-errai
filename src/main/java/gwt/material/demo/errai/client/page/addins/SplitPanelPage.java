@@ -46,7 +46,7 @@ public class SplitPanelPage extends AbstractPage {
     }
 
     @Override
-    public void onShown() {
+    protected void onShown() {
         super.onShown();
         buildSplitPanel(splitPanelContainer);
         buildSplitPanel(splitPanelStylingContainer);
