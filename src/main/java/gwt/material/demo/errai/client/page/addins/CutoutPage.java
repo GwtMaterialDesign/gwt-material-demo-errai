@@ -1,6 +1,7 @@
 package gwt.material.demo.errai.client.page.addins;
 
 import gwt.material.demo.errai.client.events.CodeCutOutEvent;
+import gwt.material.demo.errai.client.events.SearchCutOutEvent;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.constants.IconSize;
@@ -19,11 +20,14 @@ import javax.inject.Inject;
 public class CutoutPage extends AbstractPage {
 
     @Inject
-    private Event<CodeCutOutEvent> searchCutOut;
+    private Event<CodeCutOutEvent> codeCutOut;
+
+    @Inject
+    private Event<SearchCutOutEvent> searchCutOut;
 
     @Inject
     @DataField
-    MaterialButton btnOpenCutout;
+    MaterialButton btnCodeCutout, btnSearchCutout;
 
     @Override
     public String getName() {
@@ -45,12 +49,15 @@ public class CutoutPage extends AbstractPage {
     protected void onPostConstruct() {
         super.onPostConstruct();
 
-        btnOpenCutout.setText("Show Cut Out");
-        btnOpenCutout.addClickHandler(clickEvent -> searchCutOut.fire(new CodeCutOutEvent()));
+        btnSearchCutout.setText("Basic Cut Out");
+        btnSearchCutout.addClickHandler(clickEvent -> searchCutOut.fire(new SearchCutOutEvent()));
+
+        btnCodeCutout.setText("Customized Cut Out");
+        btnCodeCutout.addClickHandler(clickEvent -> codeCutOut.fire(new CodeCutOutEvent()));
     }
 
     @Override
     protected void onShown() {
-        searchCutOut.fire(new CodeCutOutEvent());
+        searchCutOut.fire(new SearchCutOutEvent());
     }
 }

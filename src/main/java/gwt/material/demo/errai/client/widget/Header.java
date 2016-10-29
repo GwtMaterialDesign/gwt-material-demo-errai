@@ -4,9 +4,11 @@ import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Widget;
 import gwt.material.demo.errai.client.ThemeManager;
 import gwt.material.demo.errai.client.events.PageChangeEvent;
 import gwt.material.demo.errai.client.events.CodeCutOutEvent;
+import gwt.material.demo.errai.client.events.SearchCutOutEvent;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.addins.client.cutout.MaterialCutOut;
@@ -71,7 +73,7 @@ public class Header extends Composite {
 
     @Inject
     @DataField
-    MaterialCutOut cutout;
+    MaterialCutOut codeCutout, searchCutout;
 
     private PageChangeEvent pageChangeEvent;
 
@@ -128,25 +130,38 @@ public class Header extends Composite {
         search.addCloseHandler(closeEvent -> {
             changeNav(navBar);
         });
-        searchNav.add(search.getIcon());
+        searchNav.add(search);
         changeNav(navBar);
         buildSearches();
 
-        // Cutout
-        ThemeManager.register(cutout, ThemeManager.DARKER_SHADE);
-        cutout.setTarget(codePanel);
-        cutout.setOpacity(0.8);
-        cutout.setCircle(true);
-        cutout.setCutOutPadding(10);
+        ThemeManager.register(codeCutout, ThemeManager.DARKER_SHADE);
+        setupCutout(codeCutout, codePanel, true, 0.8, 10, "1430px", "Code Samples",
+            "See code examples of the feature here!");
+
+        ThemeManager.register(searchCutout, ThemeManager.REGULAR_SHADE);
+        setupCutout(searchCutout, iconSearch.getIcon(), true, 0.8, -3, null, "Search Feature",
+            "Search for any features you are interested in!");
+    }
+
+    protected void setupCutout(MaterialCutOut cutout, Widget target, boolean circle, double opacity, int padding,
+                               String panelWidth, String titleStr, String desc) {
+        // Code Cutout
+        cutout.setTarget(target);
+        cutout.setOpacity(opacity);
+        cutout.setCircle(circle);
+        cutout.setCutOutPadding(padding);
         cutout.setTextAlign(TextAlign.CENTER);
+        cutout.addClickHandler(clickEvent -> cutout.close());
 
         MaterialPanel detailPanel = new MaterialPanel();
         detailPanel.setPaddingTop(85);
-        detailPanel.setWidth("1430px");
+        if(panelWidth != null) {
+            detailPanel.setWidth(panelWidth);
+        }
         MaterialTitle title = new MaterialTitle();
         title.setTextColor(Color.WHITE);
-        title.setTitle("Code Samples");
-        title.setDescription("See code examples of the feature here!");
+        title.setTitle(titleStr);
+        title.setDescription(desc);
         detailPanel.add(title);
 
         MaterialButton btnClose = new MaterialButton();
@@ -154,7 +169,6 @@ public class Header extends Composite {
         btnClose.setText("Close");
         btnClose.addClickHandler(clickEvent -> cutout.close());
         detailPanel.add(btnClose);
-
         cutout.add(detailPanel);
     }
 
@@ -186,7 +200,11 @@ public class Header extends Composite {
     }
 
     public void onCodeCutOut(@Observes CodeCutOutEvent event) {
-        Scheduler.get().scheduleDeferred(() -> cutout.open());
+        Scheduler.get().scheduleDeferred(() -> codeCutout.open());
+    }
+
+    public void onSearchCutOut(@Observes SearchCutOutEvent event) {
+        Scheduler.get().scheduleDeferred(() -> searchCutout.open());
     }
 
     public void onSideNavOpened(@Observes SideNavOpenedEvent event) {
