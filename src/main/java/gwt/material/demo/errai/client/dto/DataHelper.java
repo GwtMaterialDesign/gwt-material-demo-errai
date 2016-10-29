@@ -58,11 +58,7 @@ public class DataHelper {
         components.addSubLink(new Link("Toast", "#toast"));
         components.addSubLink(new Link("Tooltip", "#tooltip"));
 
-        Link animations = new Link(IconType.PLAY_CIRCLE_OUTLINE, "Animations");
-        animations.addSubLink(new Link("Core", "#core_animation"));
-        animations.addSubLink(new Link("Meaningful", "#meaningful_animation"));
-
-        Link addins = new Link(IconType.STYLE, "Addins");
+        Link addins = new Link(IconType.EXTENSION, "Addins");
         addins.addSubLink(new Link("Autocomplete", "#autocomplete"));
         addins.addSubLink(new Link("Avatar", "#avatar"));
         addins.addSubLink(new Link("Bubble", "#bubble"));
@@ -88,14 +84,24 @@ public class DataHelper {
         addins.addSubLink(new Link("Waterfall", "#waterfall"));
         addins.addSubLink(new Link("Window", "#window"));
 
-        Link themes = new Link(IconType.STYLE, "Themes", "#themes");
+        Link styleLayout = new Link(IconType.STYLE, "Style & Layout");
+        styleLayout.addSubLink(new Link("Colors", "#colors"));
+        styleLayout.addSubLink(new Link("Grid", "#grid"));
+        styleLayout.addSubLink(new Link("Helpers", "#helpers"));
+        styleLayout.addSubLink(new Link("Icons", "#icons"));
+        styleLayout.addSubLink(new Link("Shadow", "#shadow"));
+        styleLayout.addSubLink(new Link("Themes", "#themes"));
+
+        Link animations = new Link(IconType.PLAY_CIRCLE_OUTLINE, "Animations");
+        animations.addSubLink(new Link("Core", "#core_animation"));
+        animations.addSubLink(new Link("Meaningful", "#meaningful_animation"));
 
         links.add(about);
         links.add(gettingStarted);
         links.add(components);
-        links.add(animations);
         links.add(addins);
-        links.add(themes);
+        links.add(styleLayout);
+        links.add(animations);
         return links;
     }
 
