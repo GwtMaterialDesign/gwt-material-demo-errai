@@ -6,5 +6,6 @@ public enum PageCategory {
     COMPONENTS,
     ADDINS,
     ANIMATIONS,
-    THEMES;
+    THEMES,
+    STYLES;
 }
