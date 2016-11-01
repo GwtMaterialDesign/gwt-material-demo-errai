@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="shortcut icon" type="image/png" href="errai_favicon.png"/>
+    <script type="text/javascript">
+        erraiBusRemoteCommunicationEnabled = false;
+    </script>
+    <title>GWT Material Errai</title>
+</head>
+<body>
+<script type="text/javascript" src="App/App.nocache.js"></script>
+<style type="text/css">
+    .splash-overlay {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background: #2196f3 !important;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        color: #fff;
+        z-index: 10000;
+    }
+
+    .splash-overlay div {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    .splash-overlay img {
+        width: 80px;
+    }
+
+    .splash-overlay .progress {
+        margin: 0px;
+        position: absolute;
+        bottom: 2px;
+        height: 6px;
+    }
+
+    .splash-overlay span {
+        font-family: Tahoma;
+    }
+</style>
+<div id="splashscreen" class="splash-overlay">
+    <div>
+        <img src="//i.imgur.com/fIi9u7J.png"/>
+        <span style="font-size: 2em; display: block;">gwt-material + errai</span>
+        <span style="font-weight: 200;">A gwt-material showcase integration with Errai</span>
+    </div>
+    <div class="progress">
+        <div class="indeterminate blue"></div>
+    </div>
+</div>
+</body>
+</html>
