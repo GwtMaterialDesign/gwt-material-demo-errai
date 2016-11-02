@@ -2,8 +2,6 @@ package gwt.material.demo.errai.client.page.components;
 
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.demo.errai.client.page.AbstractPage;
-import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.ui.MaterialButton;
 import gwt.material.design.client.ui.MaterialDatePicker;
 import gwt.material.design.client.ui.MaterialToast;
@@ -70,6 +68,10 @@ public class DatePickerPage extends AbstractPage {
     @DataField
     MaterialButton btnOpenDp;
 
+    @Inject
+    @DataField
+    MaterialDatePicker dpAutoClose;
+
     @Override
     public String getName() {
         return "Date Picker";
@@ -99,6 +101,16 @@ public class DatePickerPage extends AbstractPage {
         buildClear();
         buildEvents();
         buildOpenClose();
+        buildAutoClose();
+    }
+
+    private void buildAutoClose() {
+        dpAutoClose.setPlaceholder("Date");
+        dpAutoClose.setAutoClose(true);
+        //dpAutoClose.addValueChangeHandler(valueChangeEvent -> {
+            //dpAutoClose.close();
+            //MaterialToast.fireToast("Date Selected " + valueChangeEvent.getValue());
+        //});
     }
 
     private void buildOpenClose() {
