@@ -13,7 +13,7 @@ Starting GMD (GWT Material Design) 2.0 we have supported Errai 4.0 Framework to 
 ## Setting up a new project
 You can easily setup a new gwt-material-errai project using Maven Archetype which contains a starter template.
 ```
-mvn archetype:generate -DarchetypeGroupId=com.github.gwtmaterialdesign -DarchetypeArtifactId=gwt-material-errai-archetype -DarchetypeVersion=1.0-SNAPSHOT
+mvn archetype:generate -DarchetypeGroupId=com.github.gwtmaterialdesign -DarchetypeArtifactId=gwt-material-errai-archetype -DarchetypeRepository=https://oss.sonatype.org/content/repositories/snapshots/ -DarchetypeVersion=1.0-SNAPSHOT
 ```
 
 ## Projects Included
