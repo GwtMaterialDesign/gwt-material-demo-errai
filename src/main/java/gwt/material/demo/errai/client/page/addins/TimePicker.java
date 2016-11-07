@@ -24,6 +24,10 @@ public class TimePicker extends AbstractPage {
 
     @Inject
     @DataField
+    MaterialTimePicker tpMobile;
+
+    @Inject
+    @DataField
     MaterialTimePicker tpDisabled;
 
     @Inject
@@ -62,6 +66,7 @@ public class TimePicker extends AbstractPage {
     protected void onPostConstruct() {
         super.onPostConstruct();
         buildBasic();
+        buildMobile();
         buildDisabled();
         buildHour24();
         buildEvents();
@@ -110,5 +115,10 @@ public class TimePicker extends AbstractPage {
 
     private void buildBasic() {
         tpBasic.setPlaceholder("Time");
+    }
+
+    private void buildMobile() {
+        tpMobile.setPlaceholder("Supports mobile orientations");
+        tpMobile.setDetectOrientation(true);
     }
 }
