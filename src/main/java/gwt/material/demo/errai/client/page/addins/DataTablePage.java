@@ -97,8 +97,9 @@ public class DataTablePage extends AbstractPage {
     }
 
     @Override
-    protected void onShown() {
-        super.onShown();
+    protected void onPostConstruct() {
+        super.onPostConstruct();
+
         buildStandardTable();
         buildPageTable();
         buildInfiniteTable();
@@ -106,7 +107,7 @@ public class DataTablePage extends AbstractPage {
     }
 
     public void buildInfiniteTable() {
-        infiniteTable = new MaterialInfiniteDataTable<>(20, InfiniteDataView.DYNAMIC_VIEW, new PersonDataSource(personService));
+        infiniteTable = new MaterialInfiniteDataTable<>("InfiniteDataTable", 20, 30, new PersonDataSource(personService));
         infiniteTable.setShadow(1);
         infiniteTable.setUseLoadOverlay(false);
         infiniteTable.setUseStickyHeader(true);
@@ -275,6 +276,7 @@ public class DataTablePage extends AbstractPage {
 
         cbStickyHeader.setText("With Sticky Header");
         cbStickyHeader.setType(CheckBoxType.FILLED);
+        cbStickyHeader.setValue(true);
         cbStickyHeader.addValueChangeHandler(event -> {
             standardTable.setUseStickyHeader(event.getValue());
             standardTable.setRedraw(true);

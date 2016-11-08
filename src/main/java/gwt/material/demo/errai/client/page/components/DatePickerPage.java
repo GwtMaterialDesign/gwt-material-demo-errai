@@ -22,6 +22,10 @@ public class DatePickerPage extends AbstractPage {
 
     @Inject
     @DataField
+    MaterialDatePicker dpMobile;
+
+    @Inject
+    @DataField
     MaterialDatePicker dpDisabled;
 
     @Inject
@@ -93,6 +97,7 @@ public class DatePickerPage extends AbstractPage {
     protected void onPostConstruct() {
         super.onPostConstruct();
         buildBasic();
+        buildMobile();
         buildDisabled();
         buildSelection();
         buildGetSetDate();
@@ -186,5 +191,10 @@ public class DatePickerPage extends AbstractPage {
 
     private void buildBasic() {
         dpBasic.setPlaceholder("Date");
+    }
+
+    private void buildMobile() {
+        dpMobile.setPlaceholder("Supports mobile orientations");
+        dpMobile.setDetectOrientation(true);
     }
 }
