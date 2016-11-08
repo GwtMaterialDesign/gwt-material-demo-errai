@@ -40,6 +40,10 @@ public class TimePicker extends AbstractPage {
 
     @Inject
     @DataField
+    MaterialTimePicker tpAutoClose;
+
+    @Inject
+    @DataField
     MaterialTimePicker tpClear;
 
     @Inject
@@ -71,6 +75,12 @@ public class TimePicker extends AbstractPage {
         buildHour24();
         buildEvents();
         buildClear();
+        buildAutoClose();
+    }
+
+    private void buildAutoClose() {
+        tpAutoClose.setPlaceholder("Time");
+        tpAutoClose.setAutoClose(true);
     }
 
     private void buildClear() {
