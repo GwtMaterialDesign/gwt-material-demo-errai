@@ -202,10 +202,6 @@
 					<hostedWebapp>src/main/webapp/</hostedWebapp>
 					<logLevel>INFO</logLevel>
 					<strict>true</strict>
-					<optimizationLevel>9</optimizationLevel>
-					<style>OBF</style>
-					<disableClassMetadata>true</disableClassMetadata>
-					<disableCastChecking>true</disableCastChecking>
 				</configuration>
 				<executions>
 					<execution>
