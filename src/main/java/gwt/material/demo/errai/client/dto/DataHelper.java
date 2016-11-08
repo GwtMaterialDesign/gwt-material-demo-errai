@@ -71,6 +71,7 @@ public class DataHelper {
         addins.addSubLink(new Link("File Uploader", "#fileuploader"));
         addins.addSubLink(new Link("Icon Morph", "#iconmorph"));
         addins.addSubLink(new Link("Masonry", "#masonry"));
+        addins.addSubLink(new Link("Overlay", "#overlay"));
         addins.addSubLink(new Link("Path Animator", "#pathanimator"));
         addins.addSubLink(new Link("Rating", "#rating"));
         addins.addSubLink(new Link("Rich Editor", "#richeditor"));

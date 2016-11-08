@@ -271,6 +271,7 @@ public class Header extends Composite {
         listSearches.add(new SearchObject(IconType.EXTENSION, "IconMorph", "#iconmorph"));
         listSearches.add(new SearchObject(IconType.EXTENSION, "Masonry", "#masonry"));
         listSearches.add(new SearchObject(IconType.EXTENSION, "MenuBar", "#"));
+        listSearches.add(new SearchObject(IconType.EXTENSION, "Overlay", "#overlay"));
         listSearches.add(new SearchObject(IconType.EXTENSION, "PathAnimator", "#pathanimator"));
         listSearches.add(new SearchObject(IconType.EXTENSION, "Rating", "#rating"));
         listSearches.add(new SearchObject(IconType.EXTENSION, "Rich Editor", "#richeditor"));
