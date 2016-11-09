@@ -59,6 +59,10 @@ public class StepperPage extends AbstractPage {
     @DataField
     MaterialStepper stepper6;
 
+    @Inject
+    @DataField
+    MaterialStepper stepperMobile;
+
     @Override
     public String getName() {
         return "Stepper";
@@ -83,6 +87,16 @@ public class StepperPage extends AbstractPage {
         buildEvents();
         buildFeedback();
         buildError();
+        buildMobile();
+    }
+
+    private void buildMobile() {
+        stepperMobile.setDetectOrientation(true);
+        stepperMobile.addCompleteHandler(event -> {
+            MaterialToast.fireToast("All done");
+            stepperMobile.reset();
+        });
+        buildStepper(stepperMobile, ERROR);
     }
 
     private void buildError() {
