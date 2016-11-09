@@ -3,8 +3,6 @@ package gwt.material.demo.errai.client.page.components;
 import com.google.gwt.dom.client.Style;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.demo.errai.client.page.AbstractPage;
-import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.base.SearchObject;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
@@ -12,7 +10,6 @@ import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,12 +58,17 @@ public class SearchPage extends AbstractPage {
 
         searchIcon.setIconType(IconType.SEARCH);
         searchIcon.addClickHandler(clickEvent -> {
-            navbar.setVisible(false);
-            searchbar.setVisible(true);
+            search.open();
         });
 
         search.setPlaceholder("Search");
-        search.setActive(true);
+
+        search.addOpenHandler(openEvent -> {
+            navbar.setVisible(false);
+            searchbar.setVisible(true);
+            MaterialToast.fireToast("Open Event Fired");
+        });
+
         search.addCloseHandler(closeEvent -> {
             navbar.setVisible(true);
             searchbar.setVisible(false);

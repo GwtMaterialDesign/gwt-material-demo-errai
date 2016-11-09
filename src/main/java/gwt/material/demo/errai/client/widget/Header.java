@@ -6,8 +6,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import gwt.material.demo.errai.client.ThemeManager;
-import gwt.material.demo.errai.client.events.PageChangeEvent;
 import gwt.material.demo.errai.client.events.CodeCutOutEvent;
+import gwt.material.demo.errai.client.events.PageChangeEvent;
 import gwt.material.demo.errai.client.events.SearchCutOutEvent;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
@@ -88,8 +88,9 @@ public class Header extends Composite {
         // Nav section
         navSection.setHideOn(HideOn.NONE);
         iconSearch.setIconType(IconType.SEARCH);
+
         iconSearch.addClickHandler(clickEvent -> {
-            changeNav(searchNav);
+            search.open();
         });
         navSection.add(themeSwitcher);
         navSection.add(iconSearch);
@@ -126,10 +127,8 @@ public class Header extends Composite {
 
         // Search Navbar
         search.setPlaceholder("Search");
-        search.setActive(true);
-        search.addCloseHandler(closeEvent -> {
-            changeNav(navBar);
-        });
+        search.addOpenHandler(e -> changeNav(searchNav));
+        search.addCloseHandler(closeEvent -> changeNav(navBar));
         searchNav.add(search);
         changeNav(navBar);
         buildSearches();
