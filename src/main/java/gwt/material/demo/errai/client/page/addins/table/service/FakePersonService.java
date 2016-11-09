@@ -53,7 +53,7 @@ public class FakePersonService implements PersonServiceAsync {
                     data = new ArrayList<>();
                     peopleMap.put(category, data);
                 }
-                data.add(new Person(i, "https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png", "Field " + index, "Field " + i, "Field " + index, "No " + i, category));
+                data.add(new Person(i, "Field " + index, "https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png", "Field " + i, "Field " + index, "No " + i, category));
             }
         }
     }
