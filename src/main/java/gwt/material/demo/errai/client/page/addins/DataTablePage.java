@@ -235,17 +235,27 @@ public class DataTablePage extends AbstractPage {
     protected void buildContextMenu() {
         MaterialLink linkCopy = new MaterialLink("Copy", new MaterialIcon(IconType.CONTENT_COPY));
         linkCopy.setPadding(12);
+        linkCopy.setDisplay(Display.BLOCK);
+        linkCopy.setIconPosition(IconPosition.LEFT);
         linkCopy.setTextColor(Color.BLACK);
-        MaterialLink linkPaste = new MaterialLink("Paste", new MaterialIcon(IconType.CONTENT_COPY));
+        MaterialLink linkPaste = new MaterialLink("Paste", new MaterialIcon(IconType.CONTENT_PASTE));
         linkPaste.setPadding(12);
+        linkPaste.setDisplay(Display.BLOCK);
+        linkPaste.setIconPosition(IconPosition.LEFT);
         linkPaste.setTextColor(Color.BLACK);
-        MaterialLink linkRename = new MaterialLink("Rename", new MaterialIcon(IconType.CONTENT_COPY));
+        MaterialLink linkRename = new MaterialLink("Rename", new MaterialIcon(IconType.EDIT));
         popupMenu.add(linkCopy);
         linkRename.setPadding(12);
+        linkRename.setDisplay(Display.BLOCK);
+        linkRename.setIconPosition(IconPosition.LEFT);
         linkRename.setTextColor(Color.BLACK);
         popupMenu.add(linkPaste);
         popupMenu.add(linkRename);
         popupMenu.addSelectionHandler(selectionEvent -> {
+            JQueryElement span = $(selectionEvent.getSelectedItem()).find("span");
+            for(Person per : contextMenuTable.getSelectedRowModels(false)){
+                MaterialToast.fireToast($(span).asElement().getInnerHTML() + " : " + per.getFirstName());
+            }
             popupMenu.close();
         });
     }
