@@ -36,6 +36,10 @@ public class CardPage extends AbstractPage {
     @DataField
     MaterialCard cardReveal;
 
+    @Inject
+    @DataField
+    MaterialCard cardMobile;
+
     @Override
     public String getName() {
         return "Cards";
@@ -60,6 +64,35 @@ public class CardPage extends AbstractPage {
         buildCardImage();
         buildHorizontalCard();
         buildCardReveal();
+        buildCardMobile();
+    }
+
+    private void buildCardMobile() {
+        cardMobile.setAxis(Axis.HORIZONTAL);
+        cardMobile.setDetectOrientation(true);
+        MaterialCardImage cardImageCon = new MaterialCardImage();
+        cardImageCon.setWaves(WavesType.LIGHT);
+        MaterialImage image = new MaterialImage();
+        image.setUrl("http://assets.materialup.com/uploads/b6992fb2-7bf4-401d-a233-e34a486b9337/gif.gif");
+        cardImageCon.add(image);
+
+        MaterialCardContent content = new MaterialCardContent();
+        MaterialLabel title = new MaterialLabel();
+        title.setText("Title of your card");
+        MaterialLabel description = new MaterialLabel();
+        description.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit");
+        description.setTruncate(true);
+        content.add(title);
+        content.add(description);
+
+        MaterialCardAction action = new MaterialCardAction();
+        MaterialLink link = new MaterialLink();
+        link.setText("Link 1");
+        action.add(link);
+
+        cardMobile.add(cardImageCon);
+        cardMobile.add(content);
+        cardMobile.add(action);
     }
 
     private void buildCardReveal() {
