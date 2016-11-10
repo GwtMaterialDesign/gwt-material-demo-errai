@@ -57,6 +57,7 @@ public class NavBarPage extends AbstractPage {
 
     private void buildNavBar(MaterialNavBar navBar, int type) {
         MaterialNavBrand navBrand = new MaterialNavBrand();
+        navBrand.setMarginLeft(60);
         navBrand.setText("App Title");
         MaterialNavSection navSection = new MaterialNavSection();
         MaterialLink link = new MaterialLink();

@@ -19,11 +19,11 @@ public class FormPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialTextBox txtBox1, txtBox2, txtBox3, txtDisTextBox;
+    MaterialTextBox txtBox1, txtBox2, txtBox3, txtDisTextBox, txtBoxRO, txtBoxTRO;
 
     @Inject
     @DataField
-    MaterialTextArea txtArea1, txtArea2, txtDisTextArea;
+    MaterialTextArea txtArea1, txtArea2, txtDisTextArea, txtAreaRO, txtAreaTRO;
 
     @Inject
     @DataField
@@ -31,19 +31,19 @@ public class FormPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialFloatBox txtFloat1, txtDisFloat;
+    MaterialFloatBox txtFloat1, txtDisFloat, txtFloatRO, txtFloatTRO;
 
     @Inject
     @DataField
-    MaterialIntegerBox txtInteger1, txtDisInteger;
+    MaterialIntegerBox txtInteger1, txtDisInteger, txtIntegerRO, txtIntegerTRO;
 
     @Inject
     @DataField
-    MaterialDoubleBox txtDouble1, txtDisDouble;
+    MaterialDoubleBox txtDouble1, txtDisDouble, txtDoubleRO, txtDoubleTRO;
 
     @Inject
     @DataField
-    MaterialLongBox txtLong1, txtDisLong;
+    MaterialLongBox txtLong1, txtDisLong, txtLongRO, txtLongTRO;
 
     @Inject
     @DataField
@@ -85,8 +85,8 @@ public class FormPage extends AbstractPage {
     @Override
     public String getDescription() {
         return "Forms are the standard way to receive user inputted data. The transitions and " +
-               "smoothness of these elements are very important because of the inherent user " +
-               "interaction associated with forms.";
+                "smoothness of these elements are very important because of the inherent user " +
+                "interaction associated with forms.";
     }
 
     @Override
@@ -109,6 +109,41 @@ public class FormPage extends AbstractPage {
         buildCheckBox();
         buildSwitch();
         buildRange();
+        buildReadOnly(txtBoxRO, txtAreaRO, txtFloatRO, txtIntegerRO, txtDoubleRO, txtLongRO, false);
+        buildReadOnly(txtBoxTRO, txtAreaTRO, txtFloatTRO, txtIntegerTRO, txtDoubleTRO, txtLongTRO, true);
+    }
+
+    private void buildReadOnly(MaterialTextBox txtBoxRO, MaterialTextArea txtAreaRO, MaterialFloatBox txtFloatRO, MaterialIntegerBox txtIntegerRO,
+                               MaterialDoubleBox txtDoubleRO, MaterialLongBox txtLongRO, boolean toggleReadOnly) {
+        txtBoxRO.setPlaceholder("Text Box");
+        txtBoxRO.setValue("Some Value");
+        txtBoxRO.setReadOnly(true);
+        txtBoxRO.setToggleReadOnly(toggleReadOnly);
+
+        txtAreaRO.setPlaceholder("Text Area");
+        txtAreaRO.setValue("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam mauris, accumsan placerat lectus ac, tincidunt mattis nisl. Ut efficitur massa in libero gravida tincidunt. Vestibulum eget massa eget ex auctor tempus. Aenean vitae augue euismod, lacinia lectus ut, rhoncus enim. Sed vitae laoreet felis, eget ullamcorper nunc. Vivamus elit urna, varius et arcu vel, euismod auctor augue. Praesent scelerisque scelerisque libero sit amet euismod. Mauris eu est at felis feugiat tincidunt eu vel lectus. Ut pretium magna vitae massa sollicitudin, eu tincidunt sapien scelerisque. Maecenas gravida lorem non dui pretium, id vestibulum mi imperdiet. Fusce facilisis, dui nec ultrices molestie, nisi metus bibendum lacus, eget posuere est odio vitae nulla. Mauris laoreet non justo fringilla tempus. Mauris ut risus risus. Vivamus auctor accumsan gravida. Nam venenatis sapien nisl, quis accumsan odio dignissim non. Vestibulum aliquam semper condimentum. Suspendisse a eros elementum, dapibus quam in, aliquet lorem. Morbi mi dui, convallis at luctus ultricies, malesuada at leo. Morbi et turpis a ex vehicula ullamcorper. Vestibulum lacinia, orci eget elementum fermentum, lectus velit interdum erat, sit amet pharetra justo elit in tortor. Suspendisse ac vestibulum nisi.Nunc euismod metus nec elit sollicitudin blandit. Proin eleifend ex bibendum sodales blandit. Vestibulum varius pharetra arcu, sit amet pellentesque odio hendrerit nec. Integer faucibus imperdiet tortor a tempus. Sed accumsan condimentum nisl. Cras interdum sapien quis maximus commodo. Nulla malesuada imperdiet enim, non ornare elit auctor in. Fusce at ipsum eget turpis tincidunt maximus. Nunc sodales tortor nec tincidunt fringilla. Quisque sollicitudin ipsum at dolor faucibus, ultricies convallis ipsum convallis. Donec consequat velit vel molestie tempus. Donec et accumsan lacus, non sollicitudin quam. Morbi arcu lacus, blandit eu lacus nec, finibus tempus ligula.");
+        txtAreaRO.setReadOnly(true);
+        txtAreaRO.setToggleReadOnly(toggleReadOnly);
+
+        txtFloatRO.setPlaceholder("Float Box");
+        txtFloatRO.setValue(1000.25f);
+        txtFloatRO.setReadOnly(true);
+        txtFloatRO.setToggleReadOnly(toggleReadOnly);
+
+        txtIntegerRO.setPlaceholder("Integer Box");
+        txtIntegerRO.setValue(10);
+        txtIntegerRO.setReadOnly(true);
+        txtIntegerRO.setToggleReadOnly(toggleReadOnly);
+
+        txtDoubleRO.setPlaceholder("Double Box");
+        txtDoubleRO.setValue(999.99);
+        txtDoubleRO.setReadOnly(true);
+        txtDoubleRO.setToggleReadOnly(toggleReadOnly);
+
+        txtLongRO.setPlaceholder("Long Box");
+        txtLongRO.setValue(1000l);
+        txtLongRO.setReadOnly(true);
+        txtLongRO.setToggleReadOnly(toggleReadOnly);
     }
 
     private void buildRange() {

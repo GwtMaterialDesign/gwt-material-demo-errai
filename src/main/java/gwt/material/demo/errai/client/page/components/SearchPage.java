@@ -4,6 +4,7 @@ import com.google.gwt.dom.client.Style;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.client.base.SearchObject;
+import gwt.material.design.client.constants.HideOn;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
@@ -56,6 +57,7 @@ public class SearchPage extends AbstractPage {
         navBrand.setPaddingLeft(20);
         navbar.add(navBrand);
 
+        navSection.setHideOn(HideOn.NONE);
         searchIcon.setIconType(IconType.SEARCH);
         searchIcon.addClickHandler(clickEvent -> {
             search.open();

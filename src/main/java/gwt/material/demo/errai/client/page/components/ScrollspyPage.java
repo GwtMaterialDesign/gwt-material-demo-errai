@@ -2,6 +2,7 @@ package gwt.material.demo.errai.client.page.components;
 
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
+import gwt.material.design.client.constants.HideOn;
 import gwt.material.design.client.ui.MaterialLink;
 import gwt.material.design.client.ui.MaterialPanel;
 import gwt.material.design.client.ui.MaterialScrollspy;
@@ -52,6 +53,7 @@ public class ScrollspyPage extends AbstractPage {
     private void buildScrollspy() {
         panels.setGrid("s10");
         tableContents.setGrid("s2");
+        tableContents.setHideOn(HideOn.HIDE_ON_SMALL);
         for (int i = 1; i <= 5; i++) {
             MaterialPanel panel = new MaterialPanel();
             panel.setScrollspy("item" + i);

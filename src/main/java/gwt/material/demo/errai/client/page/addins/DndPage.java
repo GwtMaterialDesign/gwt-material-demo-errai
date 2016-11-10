@@ -132,6 +132,7 @@ public class DndPage extends AbstractPage {
 
         MaterialPanel panel1 = new MaterialPanel();
         panel1.setPadding(20);
+        panel1.setBackgroundColor(Color.WHITE);
         panel.add(panel1);
         MaterialLink link = new MaterialLink("This is draggable");
         link.setIconType(IconType.TOUCH_APP);
