@@ -169,6 +169,7 @@ public class ComboBoxPage extends AbstractPage {
 
     private void buildCloseOnClick() {
         comboCloseOnClick.setPlaceholder("Time Zone");
+        comboCloseOnClick.setMultiple(true);
         comboCloseOnClick.setCloseOnSelect(true);
         addStateItemsWithGroup(comboCloseOnClick);
     }
@@ -222,6 +223,7 @@ public class ComboBoxPage extends AbstractPage {
         });
 
         combo18.setMultiple(true);
+        combo18.setCloseOnSelect(false);
         combo18.setPlaceholder("Time Zone");
         addStateItemsWithGroup(combo18);
         btnSetValues.setText("Set California and Nevada");
@@ -244,6 +246,7 @@ public class ComboBoxPage extends AbstractPage {
         });
 
         combo16.setMultiple(true);
+        combo16.setCloseOnSelect(false);
         combo16.setPlaceholder("Time Zone");
         addStateItemsWithGroup(combo16);
         btnGetValues.setText("Get Values");
@@ -268,6 +271,7 @@ public class ComboBoxPage extends AbstractPage {
     private void buildRemoveItem() {
         combo13.setPlaceholder("Time Zone");
         combo13.setMultiple(true);
+        combo13.setCloseOnSelect(false);
         combo13.addRemoveItemHandler(event -> {
             MaterialToast.fireToast("Removed: " + event.getTarget().getName());
         });
@@ -283,6 +287,7 @@ public class ComboBoxPage extends AbstractPage {
 
         combo12.setPlaceholder("Time Zone");
         combo12.setMultiple(true);
+        combo12.setCloseOnSelect(false);
         combo12.addSelectionHandler(selectionEvent -> {
             MaterialToast.fireToast("State: " + selectionEvent.getSelectedItem().getName() + " Value: " + selectionEvent.getSelectedItem().getValue());
         });
@@ -296,6 +301,7 @@ public class ComboBoxPage extends AbstractPage {
         addStateItemsWithGroup(combo9);
 
         combo10.setMultiple(true);
+        combo10.setCloseOnSelect(false);
         combo10.setPlaceholder("Time Zone");
         combo10.addValueChangeHandler(valueChangeEvent -> {
             for (State state : combo10.getSelectedValues()) {
@@ -307,6 +313,7 @@ public class ComboBoxPage extends AbstractPage {
 
     private void buildLimit() {
         combo8.setMultiple(true);
+        combo8.setCloseOnSelect(false);
         combo8.setLimit(2);
         combo8.setPlaceholder("Placeholder");
         addStateItemsWithGroup(combo8);
@@ -330,6 +337,7 @@ public class ComboBoxPage extends AbstractPage {
 
     private void buildMultipleSelect() {
         combo5.setMultiple(true);
+        combo5.setCloseOnSelect(false);
         combo5.setPlaceholder("Time Zone");
         addStateItemsWithGroup(combo5);
     }
@@ -341,6 +349,7 @@ public class ComboBoxPage extends AbstractPage {
     private void buildAllowClear() {
         combo3.setPlaceholder("Time Zone");
         combo3.setMultiple(true);
+        combo3.setCloseOnSelect(false);
         combo3.setAllowClear(true);
         addStateItems(combo3);
     }
@@ -349,6 +358,7 @@ public class ComboBoxPage extends AbstractPage {
         combo2.setPlaceholder("This is placeholder");
         combo2.setLabel("This is label");
         combo2.setMultiple(true);
+        combo2.setCloseOnSelect(false);
         addStateItems(combo2);
     }
 
