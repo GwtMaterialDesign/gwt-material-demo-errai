@@ -116,7 +116,7 @@ public class ComboBoxPage extends AbstractPage {
     private int dynamicIndex;
 
     @Inject
-    MaterialComboBox<State> combo21;
+    MaterialComboBox<State> combo21, comboCloseOnClick;
 
     @Inject
     @DataField
@@ -164,6 +164,13 @@ public class ComboBoxPage extends AbstractPage {
         buidProgrammaticAccess();
         buildInitializeUpdate();
         buildModal();
+        buildCloseOnClick();
+    }
+
+    private void buildCloseOnClick() {
+        comboCloseOnClick.setPlaceholder("Time Zone");
+        comboCloseOnClick.setCloseOnSelect(true);
+        addStateItemsWithGroup(comboCloseOnClick);
     }
 
     private void buildModal() {
