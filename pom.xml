@@ -192,10 +192,57 @@
 	<build>
 		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>${basedir}</directory>
+							<includes>
+								<include>src/gen/</include>
+								<include>src/main/webapp/app/</include>
+								<include>src/main/webapp/WEB-INF/deploy/</include>
+								<include>src/main/webapp/WEB-INF/lib/</include>
+								<include>src/main/webapp/WEB-INF/classes/**/*.*</include>
+								<include>src/main/webapp/WEB-INF/classes/**/*</include>
+								<include>src/main/webapp/WEB-INF/classes</include>
+								<include>**/gwt-unitCache/**</include>
+								<include>.errai/</include>
+							</includes>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
 				<version>${maven.gwt.plugin.version}</version>
+
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+
 				<configuration>
 					<runTarget>index.html</runTarget>
 					<extraJvmArgs>-Xmx1g -Xms756m -XX:CompileThreshold=1000</extraJvmArgs>
@@ -205,21 +252,6 @@
 					<optimizationLevel>9</optimizationLevel>
 					<style>OBF</style>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>resources</goal>
-							<goal>compile</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>gwt-clean</id>
-						<phase>clean</phase>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 
 			<plugin>
@@ -235,30 +267,6 @@
                       is bootstrapping. -->
 					<packagingExcludes>**/javax/**/*.*,**/client/**/*.class</packagingExcludes>
 					<warSourceExcludes>WEB-INF/web.xml</warSourceExcludes>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-clean-plugin</artifactId>
-				<version>${maven.clean.plugin.version}</version>
-				<configuration>
-					<filesets>
-						<fileset>
-							<directory>${basedir}</directory>
-							<includes>
-								<include>www-test/**</include>
-								<include>.gwt/**</include>
-								<include>.errai/**</include>
-								<include>src/main/webapp/WEB-INF/deploy/**</include>
-								<include>src/main/webapp/WEB-INF/lib/**</include>
-								<include>src/main/webapp/App/**</include>
-								<include>**/gwt-unitCache/**</include>
-								<include>**/*.JUnit/**</include>
-								<include>monitordb.*</include>
-							</includes>
-						</fileset>
-					</filesets>
 				</configuration>
 			</plugin>
 
