@@ -249,8 +249,8 @@ public class Header extends Composite {
         listSearches.add(new SearchObject(IconType.POLYMER, "SideNavs", "#sidenav"));
         listSearches.add(new SearchObject(IconType.POLYMER, "Scrollspy", "#scrollspy"));
         listSearches.add(new SearchObject(IconType.POLYMER, "Tabs", "#tab"));
-        listSearches.add(new SearchObject(IconType.POLYMER, "Tabs", "#toast"));
-        listSearches.add(new SearchObject(IconType.POLYMER, "Tabs", "#tooltip"));
+        listSearches.add(new SearchObject(IconType.POLYMER, "Toast", "#toast"));
+        listSearches.add(new SearchObject(IconType.POLYMER, "Tooltip", "#tooltip"));
 
         // Animations
         listSearches.add(new SearchObject(IconType.PLAY_CIRCLE_OUTLINE, "Core Animations", "#core_animation"));
