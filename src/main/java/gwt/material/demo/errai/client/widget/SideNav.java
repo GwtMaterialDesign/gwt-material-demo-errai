@@ -39,6 +39,7 @@ public class SideNav extends Composite {
     @PostConstruct
     protected void init() {
         sideNav.setId("sideNav");
+        sideNav.setShowOnAttach(false);
         sideNav.setType(SideNavType.PUSH);
         sideNav.setWidth(280);
         sideNav.reinitialize();

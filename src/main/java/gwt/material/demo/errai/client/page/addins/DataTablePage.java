@@ -63,7 +63,7 @@ public class DataTablePage extends AbstractPage {
     MaterialPanel infiniteTablePanel;
 
     private PersonServiceAsync personService = GWT.create(FakePersonService.class);
-    private MaterialInfiniteDataTable<Person> infiniteTable;
+    MaterialInfiniteDataTable<Person> infiniteTable;
 
     @Inject
     @DataField
@@ -107,7 +107,8 @@ public class DataTablePage extends AbstractPage {
     }
 
     public void buildInfiniteTable() {
-        infiniteTable = new MaterialInfiniteDataTable<>("InfiniteDataTable", 20, 30, new PersonDataSource(personService));
+        infiniteTable = new MaterialInfiniteDataTable<>(20, InfiniteDataView.DYNAMIC_VIEW, new PersonDataSource(personService));
+
         infiniteTable.setShadow(1);
         infiniteTable.setUseLoadOverlay(false);
         infiniteTable.setUseStickyHeader(true);
@@ -268,9 +269,10 @@ public class DataTablePage extends AbstractPage {
         pageTable.setUseCategories(false);
         pageTable.setUseRowExpansion(false);
         pageTable.setSelectionType(SelectionType.SINGLE);
-        dataSource = new ListDataSource<>(pageTable, getAllPersons());
+        dataSource = new ListDataSource<>();
+        dataSource.add(0, getAllPersons());
         pager = new MaterialDataPager<>(pageTable, dataSource);
-        pager.setRowCountOptions(5, 10, 15, 20);
+        pager.setLimitOptions(5, 10, 15, 20);
         pageTable.add(pager);
         buildTable(pageTable);
     }

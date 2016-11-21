@@ -119,3 +119,15 @@ main {
         width: 100% !important;
     }
 }
+
+.stepper.horizontal .step > div {
+    height: 60px;
+}
+
+.stepper.horizontal .step > div:hover {
+    background-color: red;
+}
+
+table tbody tr td img {
+    max-width: initial !important;
+}
