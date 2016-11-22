@@ -22,26 +22,26 @@ public class LoaderPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btnCircular;
+    private MaterialButton btnCircular;
 
     @Inject
     @DataField
-    MaterialButton btnProgress;
+    private MaterialButton btnProgress;
 
     @Inject
     @DataField
-    MaterialProgress progress;
+    private MaterialProgress progress;
 
     @Inject
     @DataField
-    MaterialProgress progress2;
+    private MaterialProgress progress2;
 
     @Inject
     @DataField
-    MaterialPreLoader loader1, loader2, loader3;
+    private MaterialPreLoader loader1, loader2, loader3;
 
     @Inject
-    MaterialSpinner spinner1, spinner2, spinner3;
+    private MaterialSpinner spinner1, spinner2, spinner3;
 
     @Override
     public String getName() {

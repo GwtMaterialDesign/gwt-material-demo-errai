@@ -30,27 +30,27 @@ public class AutocompletePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialAutoComplete ac1;
+    private MaterialAutoComplete ac1;
 
     @Inject
     @DataField
-    MaterialButton btnGetAllStates, btnClear;
+    private MaterialButton btnGetAllStates, btnClear;
 
     @Inject
     @DataField
-    MaterialAutoComplete ac2;
+    private MaterialAutoComplete ac2;
 
     @Inject
     @DataField
-    MaterialAutoComplete ac3;
+    private MaterialAutoComplete ac3;
 
     @Inject
     @DataField
-    MaterialModal modal;
+    private MaterialModal modal;
 
     @Inject
     @DataField
-    MaterialButton btnModal;
+    private MaterialButton btnModal;
 
     @Override
     public String getName() {
@@ -76,7 +76,7 @@ public class AutocompletePage extends AbstractPage {
         buildModal();
     }
 
-    private void buildModal() {
+    protected void buildModal() {
         MaterialModalContent content = new MaterialModalContent();
         modal.setDismissible(true);
         modal.add(content);
@@ -94,7 +94,7 @@ public class AutocompletePage extends AbstractPage {
         });
     }
 
-    private void buildItemLimit() {
+    protected void buildItemLimit() {
         UserOracle oracle = new UserOracle();
         oracle.addContacts(getAllUsers());
         ac3.setPlaceholder("Contacts");
@@ -102,7 +102,7 @@ public class AutocompletePage extends AbstractPage {
         ac3.setLimit(3);
     }
 
-    private void buildEvents() {
+    protected void buildEvents() {
         UserOracle oracle = new UserOracle();
         oracle.addContacts(getAllUsers());
         ac2.setPlaceholder("Contacts");
@@ -118,7 +118,7 @@ public class AutocompletePage extends AbstractPage {
         });
     }
 
-    private void buildBasic() {
+    protected void buildBasic() {
         UserOracle oracle = new UserOracle();
         oracle.addContacts(getAllUsers());
         ac1.setPlaceholder("Contacts");

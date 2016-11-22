@@ -24,7 +24,7 @@ public class SubheaderPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialSubHeaderContainer subheaderContainer, subheaderContainerStatic;
+    private MaterialSubHeaderContainer subheaderContainer, subheaderContainerStatic;
 
     @Override
     public String getName() {

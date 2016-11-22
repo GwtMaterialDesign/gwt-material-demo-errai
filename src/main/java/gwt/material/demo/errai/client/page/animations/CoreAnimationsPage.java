@@ -24,19 +24,19 @@ public class CoreAnimationsPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialComboBox<Transition> lstAnimations;
+    private MaterialComboBox<Transition> lstAnimations;
 
     @Inject
     @DataField
-    MaterialCard card;
+    private MaterialCard card;
 
     @Inject
     @DataField
-    MaterialIcon iconInfinite, iconCallback, iconStatefull;
+    private MaterialIcon iconInfinite, iconCallback, iconStatefull;
 
     @Inject
     @DataField
-    MaterialButton btnInfinite, btnStopInfinite, btnCallback, btnStatefull;
+    private MaterialButton btnInfinite, btnStopInfinite, btnCallback, btnStatefull;
 
     @Override
     public String getName() {

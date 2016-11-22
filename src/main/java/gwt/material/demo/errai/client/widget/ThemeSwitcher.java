@@ -25,7 +25,7 @@ public class ThemeSwitcher extends Composite {
 
     @Inject
     @DataField
-    MaterialComboBox<ThemeLoader.ThemeBundle> comboThemes;
+    private MaterialComboBox<ThemeLoader.ThemeBundle> comboThemes;
 
     @PostConstruct
     protected void init() {

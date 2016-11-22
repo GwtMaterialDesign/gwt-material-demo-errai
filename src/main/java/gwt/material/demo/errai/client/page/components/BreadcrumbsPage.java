@@ -18,15 +18,15 @@ public class BreadcrumbsPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialNavBar navbar1;
+    private MaterialNavBar navbar1;
 
     @Inject
     @DataField
-    MaterialNavBar navbar2;
+    private MaterialNavBar navbar2;
 
     @Inject
     @DataField
-    MaterialNavBar navbar3;
+    private MaterialNavBar navbar3;
 
     @Override
     public String getName() {

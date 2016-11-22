@@ -26,27 +26,27 @@ public class CollapsiblePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialCollapsible accordion;
+    private MaterialCollapsible accordion;
 
     @Inject
     @DataField
-    MaterialCollapsible expandable;
+    private MaterialCollapsible expandable;
 
     @Inject
     @DataField
-    MaterialCollapsible popout;
+    private MaterialCollapsible popout;
 
     @Inject
     @DataField
-    MaterialCollapsible colapsPreselected;
+    private MaterialCollapsible colapsPreselected;
 
     @Inject
     @DataField
-    MaterialCollapsible colapsNested;
+    private MaterialCollapsible colapsNested;
 
     @Inject
     @DataField
-    MaterialCollapsible colapsSecondary;
+    private MaterialCollapsible colapsSecondary;
 
     @Override
     public String getName() {

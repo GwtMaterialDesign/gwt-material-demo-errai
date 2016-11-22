@@ -17,7 +17,7 @@ public class DocViewerPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialDocViewer docViewer;
+    private MaterialDocViewer docViewer;
 
     @Override
     public String getName() {

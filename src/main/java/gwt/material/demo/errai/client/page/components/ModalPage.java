@@ -20,43 +20,43 @@ public class ModalPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialModal modalBasic;
+    private MaterialModal modalBasic;
 
     @Inject
     @DataField
-    MaterialButton btnBasic;
+    private MaterialButton btnBasic;
 
     @Inject
     @DataField
-    MaterialModal modalFixedFooter;
+    private MaterialModal modalFixedFooter;
 
     @Inject
     @DataField
-    MaterialButton btnFixedFooter;
+    private MaterialButton btnFixedFooter;
 
     @Inject
     @DataField
-    MaterialModal modalBottomSheet;
+    private MaterialModal modalBottomSheet;
 
     @Inject
     @DataField
-    MaterialButton btnBottomSheet;
+    private MaterialButton btnBottomSheet;
 
     @Inject
     @DataField
-    MaterialModal modalAutoHide;
+    private MaterialModal modalAutoHide;
 
     @Inject
     @DataField
-    MaterialButton btnAutoHide;
+    private MaterialButton btnAutoHide;
 
     @Inject
     @DataField
-    MaterialModal modalEvents;
+    private MaterialModal modalEvents;
 
     @Inject
     @DataField
-    MaterialButton btnEvents;
+    private MaterialButton btnEvents;
 
     @Override
     public String getName() {

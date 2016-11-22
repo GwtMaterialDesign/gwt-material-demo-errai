@@ -22,11 +22,11 @@ public class WindowPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btnSimple, btnMaximize, btnStyled, btnEvent;
+    private MaterialButton btnSimple, btnMaximize, btnStyled, btnEvent;
 
     @Inject
     @DataField
-    MaterialWindow windowSimple, windowMaximize, windowStyled, windowEvent;
+    private MaterialWindow windowSimple, windowMaximize, windowStyled, windowEvent;
 
     @Override
     public String getName() {

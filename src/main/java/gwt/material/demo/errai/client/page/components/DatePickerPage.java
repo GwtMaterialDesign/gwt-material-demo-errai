@@ -18,63 +18,63 @@ public class DatePickerPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialDatePicker dpBasic;
+    private MaterialDatePicker dpBasic;
 
     @Inject
     @DataField
-    MaterialDatePicker dpMobile;
+    private MaterialDatePicker dpMobile;
 
     @Inject
     @DataField
-    MaterialDatePicker dpDisabled;
+    private MaterialDatePicker dpDisabled;
 
     @Inject
     @DataField
-    MaterialDatePicker dpSelection;
+    private MaterialDatePicker dpSelection;
 
     @Inject
     @DataField
-    MaterialDatePicker dpGetSetDate;
+    private MaterialDatePicker dpGetSetDate;
 
     @Inject
     @DataField
-    MaterialButton btnGetDate;
+    private MaterialButton btnGetDate;
 
     @Inject
     @DataField
-    MaterialButton btnSetDate;
+    private MaterialButton btnSetDate;
 
     @Inject
     @DataField
-    MaterialDatePicker dpFormats;
+    private MaterialDatePicker dpFormats;
 
     @Inject
     @DataField
-    MaterialDatePicker dpLimit;
+    private MaterialDatePicker dpLimit;
 
     @Inject
     @DataField
-    MaterialDatePicker dpClear;
+    private MaterialDatePicker dpClear;
 
     @Inject
     @DataField
-    MaterialButton btnClear;
+    private MaterialButton btnClear;
 
     @Inject
     @DataField
-    MaterialDatePicker dpEvents;
+    private MaterialDatePicker dpEvents;
 
     @Inject
     @DataField
-    MaterialDatePicker dpOpenClose;
+    private MaterialDatePicker dpOpenClose;
 
     @Inject
     @DataField
-    MaterialButton btnOpenDp;
+    private MaterialButton btnOpenDp;
 
     @Inject
     @DataField
-    MaterialDatePicker dpAutoClose;
+    private MaterialDatePicker dpAutoClose;
 
     @Override
     public String getName() {

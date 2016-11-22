@@ -23,44 +23,44 @@ public class DropdownPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btnDropdown1;
+    private MaterialButton btnDropdown1;
 
     @Inject
-    MaterialDropDown dropdown1;
-
-    @Inject
-    @DataField
-    MaterialButton btnDropdown2;
-
-    @Inject
-    MaterialDropDown dropdown2;
+    private MaterialDropDown dropdown1;
 
     @Inject
     @DataField
-    MaterialButton btnDropdown3;
+    private MaterialButton btnDropdown2;
 
     @Inject
-    MaterialDropDown dropdown3;
-
-    @Inject
-    @DataField
-    MaterialButton btnDropdown4;
-
-    @Inject
-    MaterialDropDown dropdown4;
+    private MaterialDropDown dropdown2;
 
     @Inject
     @DataField
-    MaterialNavBar navbarDropdown;
+    private MaterialButton btnDropdown3;
 
     @Inject
-    MaterialNavSection navSection;
+    private MaterialDropDown dropdown3;
 
     @Inject
-    MaterialButton btnDropdown5;
+    @DataField
+    private MaterialButton btnDropdown4;
 
     @Inject
-    MaterialDropDown dropdown5;
+    private MaterialDropDown dropdown4;
+
+    @Inject
+    @DataField
+    private MaterialNavBar navbarDropdown;
+
+    @Inject
+    private MaterialNavSection navSection;
+
+    @Inject
+    private MaterialButton btnDropdown5;
+
+    @Inject
+    private MaterialDropDown dropdown5;
 
     @Override
     public String getName() {

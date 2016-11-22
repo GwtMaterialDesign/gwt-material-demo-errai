@@ -27,7 +27,7 @@ public class SplitPanelPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialRow splitPanelContainer, splitPanelStylingContainer, splitPanelVerticalContainer,
+    private MaterialRow splitPanelContainer, splitPanelStylingContainer, splitPanelVerticalContainer,
                 splitPanelDockContainer, splitPanelMinMaxContainer, splitPanelBarPositionContainer;
 
     @Override

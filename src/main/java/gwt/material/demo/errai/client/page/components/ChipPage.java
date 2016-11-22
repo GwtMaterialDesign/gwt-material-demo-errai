@@ -20,23 +20,23 @@ public class ChipPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialChip chip1, chip2, chip3, chip4, chip5;
+    private MaterialChip chip1, chip2, chip3, chip4, chip5;
 
     @Inject
     @DataField
-    MaterialChip letterChip1, letterChip2, letterChip3, letterChip4;
+    private MaterialChip letterChip1, letterChip2, letterChip3, letterChip4;
 
     @Inject
     @DataField
-    MaterialChip staticChip1, staticChip2, staticChip3;
+    private MaterialChip staticChip1, staticChip2, staticChip3;
 
     @Inject
     @DataField
-    MaterialChip contactChip1, contactChip2, contactChip3;
+    private MaterialChip contactChip1, contactChip2, contactChip3;
 
     @Inject
     @DataField
-    MaterialChip event1, event2;
+    private MaterialChip event1, event2;
 
     @Override
     public String getName() {

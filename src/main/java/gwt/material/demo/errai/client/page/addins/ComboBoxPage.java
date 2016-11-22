@@ -3,11 +3,6 @@ package gwt.material.demo.errai.client.page.addins;
 import gwt.material.demo.errai.client.dto.DataHelper;
 import gwt.material.demo.errai.client.dto.State;
 import gwt.material.demo.errai.client.dto.TimeZone;
-import gwt.material.demo.errai.client.dto.DataHelper;
-import gwt.material.demo.errai.client.dto.State;
-import gwt.material.demo.errai.client.dto.TimeZone;
-import gwt.material.demo.errai.client.page.AbstractPage;
-import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
@@ -21,7 +16,6 @@ import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
 import org.jboss.errai.ui.shared.api.annotations.Templated;
 
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,104 +29,104 @@ public class ComboBoxPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialComboBox<String> combo1;
+    private MaterialComboBox<String> combo1;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo2;
+    private MaterialComboBox<State> combo2;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo3;
+    private MaterialComboBox<State> combo3;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo4;
+    private MaterialComboBox<State> combo4;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo5;
+    private MaterialComboBox<State> combo5;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo6;
+    private MaterialComboBox<State> combo6;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo7;
+    private MaterialComboBox<State> combo7;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo8;
+    private MaterialComboBox<State> combo8;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo9, combo10;
+    private MaterialComboBox<State> combo9, combo10;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo11, combo12;
+    private MaterialComboBox<State> combo11, combo12;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo13;
+    private MaterialComboBox<State> combo13;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo14;
+    private MaterialComboBox<State> combo14;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo15, combo16;
+    private MaterialComboBox<State> combo15, combo16;
 
     @Inject
     @DataField
-    MaterialButton btnGetValue, btnGetValues;
+    private MaterialButton btnGetValue, btnGetValues;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo17, combo18;
+    private MaterialComboBox<State> combo17, combo18;
 
     @Inject
     @DataField
-    MaterialButton btnSetValue, btnSetValues;
+    private MaterialButton btnSetValue, btnSetValues;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo19;
+    private MaterialComboBox<State> combo19;
 
     @Inject
     @DataField
-    MaterialButton btnOpen, btnClose;
+    private MaterialButton btnOpen, btnClose;
 
     @Inject
     @DataField
-    MaterialComboBox<State> combo20;
+    private MaterialComboBox<State> combo20;
 
     @Inject
     @DataField
-    MaterialButton btnAddItem;
-
-    private int dynamicIndex;
+    private MaterialButton btnAddItem;
 
     @Inject
-    MaterialComboBox<State> combo21, comboCloseOnClick;
+    private MaterialComboBox<State> combo21, comboCloseOnClick;
 
     @Inject
     @DataField
-    MaterialModal modal;
+    private MaterialModal modal;
 
     @Inject
-    MaterialModalContent modalContent;
+    private MaterialModalContent modalContent;
 
     @Inject
     @DataField
-    MaterialButton btnOpenModal;
+    private MaterialButton btnOpenModal;
 
     @Override
     public String getName() {
         return "ComboBox";
     }
+
+    private int dynamicIndex;
 
     @Override
     public String getDescription() {

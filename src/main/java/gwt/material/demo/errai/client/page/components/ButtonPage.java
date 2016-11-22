@@ -21,35 +21,35 @@ public class ButtonPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btn1, btn2, btn3, btn4, btn5;
+    private MaterialButton btn1, btn2, btn3, btn4, btn5;
 
     @Inject
     @DataField
-    MaterialButton btnFloating1, btnFloating2, btnFloating3, btnFloating4, btnFloating5;
+    private MaterialButton btnFloating1, btnFloating2, btnFloating3, btnFloating4, btnFloating5;
 
     @Inject
     @DataField
-    MaterialButton btnFlat1, btnFlat2, btnFlat3, btnFlat4;
+    private MaterialButton btnFlat1, btnFlat2, btnFlat3, btnFlat4;
 
     @Inject
     @DataField
-    MaterialButton btnLarge1, btnLarge2, btnLarge3;
+    private MaterialButton btnLarge1, btnLarge2, btnLarge3;
 
     @Inject
     @DataField
-    MaterialButton btnDisabled1, btnDisabled2, btnDisabled3, btnDisabled4;
+    private MaterialButton btnDisabled1, btnDisabled2, btnDisabled3, btnDisabled4;
 
     @Inject
     @DataField
-    MaterialButton btnEvents1, btnEvents2, btnEvents3;
+    private MaterialButton btnEvents1, btnEvents2, btnEvents3;
 
     @Inject
     @DataField
-    MaterialLink btnLink1, btnLink2, btnLink3;
+    private MaterialLink btnLink1, btnLink2, btnLink3;
 
     @Inject
     @DataField
-    MaterialIcon btnIconButton1, btnIconButton2, btnIconButton3;
+    private MaterialIcon btnIconButton1, btnIconButton2, btnIconButton3;
 
     @Override
     public String getName() {

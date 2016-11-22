@@ -27,7 +27,7 @@ public class CutoutPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btnCodeCutout, btnSearchCutout;
+    private MaterialButton btnCodeCutout, btnSearchCutout;
 
     @Override
     public String getName() {

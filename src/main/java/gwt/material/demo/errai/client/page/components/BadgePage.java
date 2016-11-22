@@ -20,32 +20,32 @@ public class BadgePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialLink link;
+    private MaterialLink link;
 
     @Inject
     @DataField
-    MaterialLink icon;
+    private MaterialLink icon;
 
     @Inject
-    MaterialLink icon2;
-
-    @Inject
-    @DataField
-    MaterialCollection collection;
+    private MaterialLink icon2;
 
     @Inject
     @DataField
-    MaterialButton button;
-
-    @Inject
-    MaterialDropDown dp;
+    private MaterialCollection collection;
 
     @Inject
     @DataField
-    MaterialNavBar navBar;
+    private MaterialButton button;
 
     @Inject
-    MaterialNavSection navSection;
+    private MaterialDropDown dp;
+
+    @Inject
+    @DataField
+    private MaterialNavBar navBar;
+
+    @Inject
+    private MaterialNavSection navSection;
 
     @Override
     public String getName() {

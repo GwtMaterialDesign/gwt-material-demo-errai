@@ -18,11 +18,11 @@ public class TooltipPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btnTop, btnLeft, btnRight, btnBottom;
+    private MaterialButton btnTop, btnLeft, btnRight, btnBottom;
 
     @Inject
     @DataField
-    MaterialButton btnHtml;
+    private MaterialButton btnHtml;
 
     @Override
     public String getName() {

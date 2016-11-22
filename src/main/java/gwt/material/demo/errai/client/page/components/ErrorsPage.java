@@ -28,39 +28,39 @@ public class ErrorsPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialAutoComplete autocomplete;
+    private MaterialAutoComplete autocomplete;
 
     @Inject
     @DataField
-    MaterialDatePicker datePicker;
+    private MaterialDatePicker datePicker;
 
     @Inject
     @DataField
-    MaterialTimePicker timePicker;
+    private MaterialTimePicker timePicker;
 
     @Inject
     @DataField
-    MaterialRange range;
+    private MaterialRange range;
 
     @Inject
     @DataField
-    MaterialSwitch switch1;
+    private MaterialSwitch switch1;
 
     @Inject
     @DataField
-    MaterialTextArea textArea;
+    private MaterialTextArea textArea;
 
     @Inject
     @DataField
-    MaterialTextBox textBox;
+    private MaterialTextBox textBox;
 
     @Inject
     @DataField
-    MaterialComboBox<String> comboBox;
+    private MaterialComboBox<String> comboBox;
 
     @Inject
     @DataField
-    MaterialRow buttonPanel, buttonDpPanel, buttonTpPanel, buttonRangePanel, buttonSwitchPanel,
+    private MaterialRow buttonPanel, buttonDpPanel, buttonTpPanel, buttonRangePanel, buttonSwitchPanel,
                 buttonTextAreaPanel, buttonTextBoxPanel, buttonComboBoxPanel;
 
     @Override

@@ -21,11 +21,11 @@ public class TabsPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialTab tabBasic, tabDisabled, tabIndicator, tabIndex, tabIcon;
+    private MaterialTab tabBasic, tabDisabled, tabIndicator, tabIndex, tabIcon;
 
     @Inject
     @DataField
-    MaterialPanel basicContent, disabledContent, indicatorContent, indexContent, iconContent;
+    private MaterialPanel basicContent, disabledContent, indicatorContent, indexContent, iconContent;
 
     @Override
     public String getName() {

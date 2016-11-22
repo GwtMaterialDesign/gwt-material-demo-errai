@@ -21,15 +21,15 @@ public class SwipeablePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialSwipeablePanel swipe;
+    private MaterialSwipeablePanel swipe;
 
     @Inject
     @DataField
-    MaterialSwipeablePanel swipeEvents;
+    private MaterialSwipeablePanel swipeEvents;
 
     @Inject
     @DataField
-    MaterialSwipeablePanel swipeDisabled;
+    private MaterialSwipeablePanel swipeDisabled;
 
     @Override
     public String getName() {

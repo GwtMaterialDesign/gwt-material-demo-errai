@@ -25,10 +25,10 @@ public class SideNav extends Composite {
 
     @Inject
     @DataField
-    MaterialSideNav sideNav;
+    private MaterialSideNav sideNav;
 
     @Inject
-    MaterialSideProfile profile;
+    private MaterialSideProfile profile;
 
     @Inject
     private Event<SideNavOpenedEvent> sidenavOpenedEvent;

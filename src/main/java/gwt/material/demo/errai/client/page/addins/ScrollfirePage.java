@@ -26,15 +26,15 @@ public class ScrollfirePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialPanel panel;
+    private MaterialPanel panel;
 
     @Inject
     @DataField
-    UnorderedList listItem;
+    private UnorderedList listItem;
 
     @Inject
     @DataField
-    MaterialImage image;
+    private MaterialImage image;
 
     @Override
     public String getName() {

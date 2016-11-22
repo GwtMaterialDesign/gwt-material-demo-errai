@@ -22,23 +22,23 @@ public class CardPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialCard cardBasic;
+    private MaterialCard cardBasic;
 
     @Inject
     @DataField
-    MaterialCard cardImage;
+    private MaterialCard cardImage;
 
     @Inject
     @DataField
-    MaterialCard cardHorizontal;
+    private MaterialCard cardHorizontal;
 
     @Inject
     @DataField
-    MaterialCard cardReveal;
+    private MaterialCard cardReveal;
 
     @Inject
     @DataField
-    MaterialCard cardMobile;
+    private MaterialCard cardMobile;
 
     @Override
     public String getName() {

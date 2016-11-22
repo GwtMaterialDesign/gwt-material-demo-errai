@@ -15,9 +15,9 @@ public class Footer extends Composite {
 
     @Inject
     @DataField
-    MaterialFooter footer;
+    private MaterialFooter footer;
 
-    MaterialFooterCopyright copyright = new MaterialFooterCopyright();
+    private MaterialFooterCopyright copyright = new MaterialFooterCopyright();
 
     @PostConstruct
     protected void init() {

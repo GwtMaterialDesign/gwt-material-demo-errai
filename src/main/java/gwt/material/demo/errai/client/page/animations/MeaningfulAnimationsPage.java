@@ -26,19 +26,19 @@ public class MeaningfulAnimationsPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialRow rowCards;
+    private MaterialRow rowCards;
 
     @Inject
     @DataField
-    MaterialButton btnShowGrid, btnCloseGrid, btnShowStaggeredList, btnShowFadeInImage;
+    private MaterialButton btnShowGrid, btnCloseGrid, btnShowStaggeredList, btnShowFadeInImage;
 
     @Inject
     @DataField
-    UnorderedList listItems;
+    private UnorderedList listItems;
 
     @Inject
     @DataField
-    MaterialImage image;
+    private MaterialImage image;
 
     @Override
     public String getName() {

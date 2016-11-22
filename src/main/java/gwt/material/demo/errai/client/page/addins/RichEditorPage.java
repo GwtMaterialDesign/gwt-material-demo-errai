@@ -19,47 +19,47 @@ public class RichEditorPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialRichEditor rich;
+    private MaterialRichEditor rich;
 
     @Inject
     @DataField
-    MaterialRichEditor rich2;
+    private MaterialRichEditor rich2;
 
     @Inject
     @DataField
-    MaterialButton btnGetHtml;
+    private MaterialButton btnGetHtml;
 
     @Inject
     @DataField
-    MaterialButton btnSetHtml;
+    private MaterialButton btnSetHtml;
 
     @Inject
     @DataField
-    MaterialTextBox txtHtml;
+    private MaterialTextBox txtHtml;
 
     @Inject
     @DataField
-    MaterialRichEditor rich3;
+    private MaterialRichEditor rich3;
 
     @Inject
     @DataField
-    MaterialRichEditor rich4;
+    private MaterialRichEditor rich4;
 
     @Inject
     @DataField
-    MaterialRichEditor rich5;
+    private MaterialRichEditor rich5;
 
     @Inject
     @DataField
-    MaterialRichEditor rich6;
+    private MaterialRichEditor rich6;
 
     @Inject
     @DataField
-    MaterialButton btnClear, btnInsertText;
+    private MaterialButton btnClear, btnInsertText;
 
     @Inject
     @DataField
-    MaterialRichEditor rich7;
+    private MaterialRichEditor rich7;
 
     @Override
     public String getName() {

@@ -18,10 +18,10 @@ public class FooterPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialFooter footer;
+    private MaterialFooter footer;
 
     @Inject
-    MaterialFooterCopyright copyright;
+    private MaterialFooterCopyright copyright;
 
     @Override
     public String getName() {

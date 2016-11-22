@@ -17,15 +17,15 @@ public class AvatarPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialAvatar avatar;
+    private MaterialAvatar avatar;
 
     @Inject
     @DataField
-    MaterialAvatar avatar2;
+    private MaterialAvatar avatar2;
 
     @Inject
     @DataField
-    MaterialTextBox txtAvatar;
+    private MaterialTextBox txtAvatar;
 
     @Override
     public String getName() {

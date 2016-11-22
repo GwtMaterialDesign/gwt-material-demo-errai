@@ -22,19 +22,19 @@ import javax.inject.Inject;
 public class Client extends Composite {
 
     @Inject
-    Navigation navigation;
+    private Navigation navigation;
 
     @Inject
-    Header header;
+    private Header header;
 
     @Inject
-    SideNav sideNav;
+    private SideNav sideNav;
 
     @Inject
-    Main content;
+    private Main content;
 
     @Inject
-    Footer footer;
+    private Footer footer;
 
     @PostConstruct
     protected void init() {

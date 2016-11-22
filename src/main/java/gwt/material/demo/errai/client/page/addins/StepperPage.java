@@ -27,41 +27,41 @@ public class StepperPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialStepper stepper;
+    private MaterialStepper stepper;
 
     @Inject
     @DataField
-    MaterialStepper stepper2;
+    private MaterialStepper stepper2;
 
     @Inject
     @DataField
-    MaterialModal modal;
+    private MaterialModal modal;
 
     @Inject
     @DataField
-    MaterialButton btnModal;
+    private MaterialButton btnModal;
 
     @Inject
-    MaterialModalContent content;
+    private MaterialModalContent content;
 
     @Inject
-    MaterialStepper stepper3;
-
-    @Inject
-    @DataField
-    MaterialStepper stepper4;
+    private MaterialStepper stepper3;
 
     @Inject
     @DataField
-    MaterialStepper stepper5;
+    private MaterialStepper stepper4;
 
     @Inject
     @DataField
-    MaterialStepper stepper6;
+    private MaterialStepper stepper5;
 
     @Inject
     @DataField
-    MaterialStepper stepperMobile;
+    private MaterialStepper stepper6;
+
+    @Inject
+    @DataField
+    private MaterialStepper stepperMobile;
 
     @Override
     public String getName() {

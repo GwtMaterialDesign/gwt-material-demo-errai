@@ -56,26 +56,26 @@ public class DataTablePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialDataTable<Person> standardTable, pageTable, contextMenuTable;
+    private MaterialDataTable<Person> standardTable, pageTable, contextMenuTable;
 
     @Inject
     @DataField
-    MaterialPanel infiniteTablePanel;
+    private MaterialPanel infiniteTablePanel;
 
     private PersonServiceAsync personService = GWT.create(FakePersonService.class);
-    MaterialInfiniteDataTable<Person> infiniteTable;
+    private MaterialInfiniteDataTable<Person> infiniteTable;
 
     @Inject
     @DataField
-    MaterialCheckBox cbCategories, cbStickyHeader, cbRowExpansion;
+    private MaterialCheckBox cbCategories, cbStickyHeader, cbRowExpansion;
 
     @Inject
     @DataField
-    MaterialComboBox<SelectionType> comboSelection;
+    private MaterialComboBox<SelectionType> comboSelection;
 
     @Inject
     @DataField
-    MaterialPopupMenu popupMenu;
+    private MaterialPopupMenu popupMenu;
 
     private MaterialDataPager pager;
     private ListDataSource<Person> dataSource;

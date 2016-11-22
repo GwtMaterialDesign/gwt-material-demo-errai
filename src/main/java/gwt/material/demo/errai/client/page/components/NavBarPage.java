@@ -25,11 +25,11 @@ public class NavBarPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialNavBar navbar1;
+    private MaterialNavBar navbar1;
 
     @Inject
     @DataField
-    MaterialNavBar navbar2;
+    private MaterialNavBar navbar2;
 
     @Override
     public String getName() {

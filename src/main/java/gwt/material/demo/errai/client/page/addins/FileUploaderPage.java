@@ -20,7 +20,7 @@ public class FileUploaderPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialPanel uploadPanel;
+    private MaterialPanel uploadPanel;
 
     @Override
     public String getName() {

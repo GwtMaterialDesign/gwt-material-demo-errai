@@ -19,63 +19,63 @@ public class FormPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialTextBox txtBox1, txtBox2, txtBox3, txtDisTextBox, txtBoxRO, txtBoxTRO;
+    private MaterialTextBox txtBox1, txtBox2, txtBox3, txtDisTextBox, txtBoxRO, txtBoxTRO;
 
     @Inject
     @DataField
-    MaterialTextArea txtArea1, txtArea2, txtDisTextArea, txtAreaRO, txtAreaTRO;
+    private MaterialTextArea txtArea1, txtArea2, txtDisTextArea, txtAreaRO, txtAreaTRO;
 
     @Inject
     @DataField
-    MaterialTextBox txtCharCounter1, txtCharCounter2;
+    private MaterialTextBox txtCharCounter1, txtCharCounter2;
 
     @Inject
     @DataField
-    MaterialFloatBox txtFloat1, txtDisFloat, txtFloatRO, txtFloatTRO;
+    private MaterialFloatBox txtFloat1, txtDisFloat, txtFloatRO, txtFloatTRO;
 
     @Inject
     @DataField
-    MaterialIntegerBox txtInteger1, txtDisInteger, txtIntegerRO, txtIntegerTRO;
+    private MaterialIntegerBox txtInteger1, txtDisInteger, txtIntegerRO, txtIntegerTRO;
 
     @Inject
     @DataField
-    MaterialDoubleBox txtDouble1, txtDisDouble, txtDoubleRO, txtDoubleTRO;
+    private MaterialDoubleBox txtDouble1, txtDisDouble, txtDoubleRO, txtDoubleTRO;
 
     @Inject
     @DataField
-    MaterialLongBox txtLong1, txtDisLong, txtLongRO, txtLongTRO;
+    private MaterialLongBox txtLong1, txtDisLong, txtLongRO, txtLongTRO;
 
     @Inject
     @DataField
-    MaterialTextBox txtBoxValueChange, txtBoxKey, txtBoxBlur, txtBoxFocus;
+    private MaterialTextBox txtBoxValueChange, txtBoxKey, txtBoxBlur, txtBoxFocus;
 
     @Inject
     @DataField
-    MaterialListBox lstBox1, lstBoxDisabled;
+    private MaterialListBox lstBox1, lstBoxDisabled;
 
     @Inject
     @DataField
-    MaterialListBox lstBox2;
+    private MaterialListBox lstBox2;
 
     @Inject
     @DataField
-    MaterialButton btnAddItem, btnInsertItem, btnClear, btnSetSelected, btnGetSelected, btnRemoveItem;
+    private MaterialButton btnAddItem, btnInsertItem, btnClear, btnSetSelected, btnGetSelected, btnRemoveItem;
 
     @Inject
     @DataField
-    MaterialRadioButton rb1, rb2, rb3, rb4;
+    private MaterialRadioButton rb1, rb2, rb3, rb4;
 
     @Inject
     @DataField
-    MaterialCheckBox cb1, cb2, cb3, cb4, cb5, cb6, cbAll, cb7, cb8, cb9, cb10, cb11;
+    private MaterialCheckBox cb1, cb2, cb3, cb4, cb5, cb6, cbAll, cb7, cb8, cb9, cb10, cb11;
 
     @Inject
     @DataField
-    MaterialSwitch switch1, switch2, switch3, switch4;
+    private MaterialSwitch switch1, switch2, switch3, switch4;
 
     @Inject
     @DataField
-    MaterialRange range;
+    private MaterialRange range;
 
     @Override
     public String getName() {

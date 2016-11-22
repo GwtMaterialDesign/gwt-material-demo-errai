@@ -20,35 +20,35 @@ public class TimePicker extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialTimePicker tpBasic;
+    private MaterialTimePicker tpBasic;
 
     @Inject
     @DataField
-    MaterialTimePicker tpMobile;
+    private MaterialTimePicker tpMobile;
 
     @Inject
     @DataField
-    MaterialTimePicker tpDisabled;
+    private MaterialTimePicker tpDisabled;
 
     @Inject
     @DataField
-    MaterialTimePicker tpHour24;
+    private MaterialTimePicker tpHour24;
 
     @Inject
     @DataField
-    MaterialTimePicker tpEvents;
+    private MaterialTimePicker tpEvents;
 
     @Inject
     @DataField
-    MaterialTimePicker tpAutoClose;
+    private MaterialTimePicker tpAutoClose;
 
     @Inject
     @DataField
-    MaterialTimePicker tpClear;
+    private MaterialTimePicker tpClear;
 
     @Inject
     @DataField
-    MaterialButton btnClear, btnSetValue;
+    private MaterialButton btnClear, btnSetValue;
 
     @Override
     public String getName() {

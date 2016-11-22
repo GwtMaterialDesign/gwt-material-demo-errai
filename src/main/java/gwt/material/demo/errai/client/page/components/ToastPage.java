@@ -18,19 +18,19 @@ public class ToastPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btnBasic;
+    private MaterialButton btnBasic;
 
     @Inject
     @DataField
-    MaterialButton btnWithAction;
+    private MaterialButton btnWithAction;
 
     @Inject
     @DataField
-    MaterialButton btnStyle;
+    private MaterialButton btnStyle;
 
     @Inject
     @DataField
-    MaterialButton btnCallback;
+    private MaterialButton btnCallback;
 
     @Override
     public String getName() {

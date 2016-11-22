@@ -21,19 +21,19 @@ public class SearchPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialNavBar navbar, searchbar;
+    private MaterialNavBar navbar, searchbar;
 
     @Inject
-    MaterialSearch search;
+    private MaterialSearch search;
 
     @Inject
-    MaterialNavBrand navBrand;
+    private MaterialNavBrand navBrand;
 
     @Inject
-    MaterialNavSection navSection;
+    private MaterialNavSection navSection;
 
     @Inject
-    MaterialLink searchIcon;
+    private MaterialLink searchIcon;
 
     @Override
     public String getName() {

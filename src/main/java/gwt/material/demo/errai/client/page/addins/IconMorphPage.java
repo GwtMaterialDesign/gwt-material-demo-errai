@@ -20,11 +20,11 @@ public class IconMorphPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialIconMorph iconMorph;
+    private MaterialIconMorph iconMorph;
 
     @Inject
     @DataField
-    MaterialIconMorph iconMorphTiny, iconMorphSmall, iconMorphMedium, iconMorphLarge;
+    private MaterialIconMorph iconMorphTiny, iconMorphSmall, iconMorphMedium, iconMorphLarge;
 
     @Override
     public String getName() {

@@ -20,31 +20,31 @@ public class FABPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialFAB fabBasic;
+    private MaterialFAB fabBasic;
 
     @Inject
     @DataField
-    MaterialFAB fabOpenClose;
+    private MaterialFAB fabOpenClose;
 
     @Inject
     @DataField
-    MaterialButton btnOpen;
+    private MaterialButton btnOpen;
 
     @Inject
     @DataField
-    MaterialButton btnClose;
+    private MaterialButton btnClose;
 
     @Inject
     @DataField
-    MaterialFAB fabAxis;
+    private MaterialFAB fabAxis;
 
     @Inject
     @DataField
-    MaterialFAB fabClickOnly;
+    private MaterialFAB fabClickOnly;
 
     @Inject
     @DataField
-    MaterialFAB fabEvents;
+    private MaterialFAB fabEvents;
 
     @Override
     public String getName() {

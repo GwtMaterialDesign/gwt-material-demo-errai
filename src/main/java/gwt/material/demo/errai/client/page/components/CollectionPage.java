@@ -19,35 +19,35 @@ public class CollectionPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialCollection collectionBasic;
+    private MaterialCollection collectionBasic;
 
     @Inject
     @DataField
-    MaterialCollection collectionSelection;
+    private MaterialCollection collectionSelection;
 
     @Inject
     @DataField
-    MaterialCollection collectionHeader;
+    private MaterialCollection collectionHeader;
 
     @Inject
     @DataField
-    MaterialCollection collectionSecondary;
+    private MaterialCollection collectionSecondary;
 
     @Inject
     @DataField
-    MaterialCollection collectionAvatar;
+    private MaterialCollection collectionAvatar;
 
     @Inject
     @DataField
-    MaterialCollection collectionDismissable;
+    private MaterialCollection collectionDismissable;
 
     @Inject
     @DataField
-    MaterialCollection collectionCheckBox;
+    private MaterialCollection collectionCheckBox;
 
     @Inject
     @DataField
-    MaterialCollection collectionSwitch;
+    private MaterialCollection collectionSwitch;
 
     @Override
     public String getName() {

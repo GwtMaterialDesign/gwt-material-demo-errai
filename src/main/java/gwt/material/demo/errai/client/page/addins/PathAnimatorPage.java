@@ -23,35 +23,35 @@ public class PathAnimatorPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialButton btnSource1;
+    private MaterialButton btnSource1;
 
     @Inject
     @DataField
-    MaterialOverlay overlay1;
+    private MaterialOverlay overlay1;
 
     @Inject
     @DataField
-    MaterialCard card;
+    private MaterialCard card;
 
     @Inject
     @DataField
-    MaterialOverlay overlay2;
+    private MaterialOverlay overlay2;
 
     @Inject
     @DataField
-    MaterialButton btnSource2;
+    private MaterialButton btnSource2;
 
     @Inject
     @DataField
-    MaterialCard card2;
+    private MaterialCard card2;
 
     @Inject
     @DataField
-    MaterialColumn grid1, grid2, grid3, grid4, grid5, grid6, grid7;
+    private MaterialColumn grid1, grid2, grid3, grid4, grid5, grid6, grid7;
 
     @Inject
     @DataField
-    MaterialOverlay gridOverlay1, gridOverlay2, gridOverlay3, gridOverlay4, gridOverlay5, gridOverlay6, gridOverlay7;
+    private MaterialOverlay gridOverlay1, gridOverlay2, gridOverlay3, gridOverlay4, gridOverlay5, gridOverlay6, gridOverlay7;
 
     @Override
     public String getName() {

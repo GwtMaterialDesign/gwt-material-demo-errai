@@ -20,11 +20,11 @@ public class ScrollspyPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialPanel panels;
+    private MaterialPanel panels;
 
     @Inject
     @DataField
-    MaterialScrollspy tableContents;
+    private MaterialScrollspy tableContents;
 
     @Override
     public String getName() {

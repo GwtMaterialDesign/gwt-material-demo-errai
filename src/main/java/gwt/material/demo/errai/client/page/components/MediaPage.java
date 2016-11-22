@@ -18,19 +18,19 @@ public class MediaPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialImage image;
+    private MaterialImage image;
 
     @Inject
     @DataField
-    MaterialImage imageCircle;
+    private MaterialImage imageCircle;
 
     @Inject
     @DataField
-    MaterialVideo video;
+    private MaterialVideo video;
 
     @Inject
     @DataField
-    MaterialSlider slider;
+    private MaterialSlider slider;
 
     @Override
     public String getName() {

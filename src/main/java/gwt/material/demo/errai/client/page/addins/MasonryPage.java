@@ -21,7 +21,7 @@ public class MasonryPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialMasonry masonryBasic, masonryLeft, masonryTop, masonryTransition;
+    private MaterialMasonry masonryBasic, masonryLeft, masonryTop, masonryTransition;
 
     @Override
     public String getName() {

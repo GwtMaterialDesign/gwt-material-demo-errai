@@ -23,11 +23,11 @@ public class OverlayPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialOverlay overlayBasic, overlayEvents;
+    private MaterialOverlay overlayBasic, overlayEvents;
 
     @Inject
     @DataField
-    MaterialButton btnOverlay, btnOverlayEvents;
+    private MaterialButton btnOverlay, btnOverlayEvents;
 
     @PostConstruct
     public void init() {

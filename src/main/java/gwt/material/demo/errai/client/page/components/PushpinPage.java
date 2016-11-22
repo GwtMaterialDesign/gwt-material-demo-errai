@@ -17,7 +17,7 @@ public class PushpinPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialLabel target;
+    private MaterialLabel target;
 
     @Override
     public String getName() {

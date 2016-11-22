@@ -13,7 +13,7 @@ public class Main extends Composite {
 
     @Inject
     @DataField
-    MaterialContainer container;
+    private MaterialContainer container;
 
     public MaterialContainer getContainer() {
         return container;

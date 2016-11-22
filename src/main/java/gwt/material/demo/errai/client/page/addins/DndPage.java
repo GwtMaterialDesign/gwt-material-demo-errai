@@ -26,11 +26,11 @@ public class DndPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialPanel draggableContainer, draggableEventsContainer, draggableIgnoreContainer, draggableXYAxisContainer;
+    private MaterialPanel draggableContainer, draggableEventsContainer, draggableIgnoreContainer, draggableXYAxisContainer;
 
     @Inject
     @DataField
-    MaterialRow dropzoneContainer;
+    private MaterialRow dropzoneContainer;
 
     @Override
     public String getName() {

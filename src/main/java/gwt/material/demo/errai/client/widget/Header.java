@@ -34,46 +34,46 @@ public class Header extends Composite {
 
     @Inject
     @DataField
-    MaterialNavBar navBar;
+    private MaterialNavBar navBar;
 
     @Inject
     @DataField
-    MaterialNavBar searchNav;
+    private MaterialNavBar searchNav;
 
     @Inject
-    MaterialSearch search;
+    private MaterialSearch search;
 
     @Inject
-    MaterialNavSection navSection;
+    private MaterialNavSection navSection;
 
     @Inject
-    MaterialLink iconSearch;
-
-    @Inject
-    @DataField
-    MaterialPanel titlePanel;
-
-    @Inject
-    MaterialLabel lblTitle;
-
-    @Inject
-    MaterialLabel lblDescription;
-
-    @Inject
-    MaterialComboBox<ThemeLoader.ThemeBundle> comboBox;
-
-    @Inject
-    ThemeSwitcher themeSwitcher;
-
-    @Inject
-    MaterialPanel codePanel;
-
-    @Inject
-    MaterialChip chipHtml, chipJava;
+    private MaterialLink iconSearch;
 
     @Inject
     @DataField
-    MaterialCutOut codeCutout, searchCutout;
+    private MaterialPanel titlePanel;
+
+    @Inject
+    private MaterialLabel lblTitle;
+
+    @Inject
+    private MaterialLabel lblDescription;
+
+    @Inject
+    private MaterialComboBox<ThemeLoader.ThemeBundle> comboBox;
+
+    @Inject
+    private ThemeSwitcher themeSwitcher;
+
+    @Inject
+    private MaterialPanel codePanel;
+
+    @Inject
+    private MaterialChip chipHtml, chipJava;
+
+    @Inject
+    @DataField
+    private MaterialCutOut codeCutout, searchCutout;
 
     private PageChangeEvent pageChangeEvent;
 

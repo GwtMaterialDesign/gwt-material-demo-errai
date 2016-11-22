@@ -21,27 +21,27 @@ public class RatingPage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialRating ratingBasic;
+    private MaterialRating ratingBasic;
 
     @Inject
     @DataField
-    MaterialRating ratingIcon;
+    private MaterialRating ratingIcon;
 
     @Inject
     @DataField
-    MaterialRating ratingValueChange;
+    private MaterialRating ratingValueChange;
 
     @Inject
     @DataField
-    MaterialRating ratingSettingValue;
+    private MaterialRating ratingSettingValue;
 
     @Inject
     @DataField
-    MaterialRating ratingEditable;
+    private MaterialRating ratingEditable;
 
     @Inject
     @DataField
-    MaterialRating ratingMaxRating;
+    private MaterialRating ratingMaxRating;
 
     @Override
     public String getName() {

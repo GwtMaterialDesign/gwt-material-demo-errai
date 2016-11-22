@@ -21,11 +21,11 @@ public class BubblePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialBubble bubble;
+    private MaterialBubble bubble;
 
     @Inject
     @DataField
-    MaterialBubble bubble2, bubble3, bubble4, bubble5;
+    private MaterialBubble bubble2, bubble3, bubble4, bubble5;
 
     @Override
     public String getName() {

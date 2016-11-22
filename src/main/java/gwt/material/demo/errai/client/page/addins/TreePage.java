@@ -25,11 +25,11 @@ public class TreePage extends AbstractPage {
 
     @Inject
     @DataField
-    MaterialPanel panel;
+    private MaterialPanel panel;
 
     @Inject
     @DataField
-    MaterialButton btnExpand, btnCollapse;
+    private MaterialButton btnExpand, btnCollapse;
 
     @Override
     public String getName() {
