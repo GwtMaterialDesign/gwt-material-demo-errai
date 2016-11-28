@@ -2,7 +2,6 @@ package gwt.material.demo.errai.client.page.animations;
 
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.combobox.MaterialComboBox;
 import gwt.material.design.client.constants.ButtonType;
 import gwt.material.design.client.constants.Color;
@@ -10,7 +9,6 @@ import gwt.material.design.client.constants.IconSize;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
 import gwt.material.design.client.ui.animate.MaterialAnimation;
-import gwt.material.design.client.ui.animate.MaterialAnimator;
 import gwt.material.design.client.ui.animate.Transition;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -53,6 +51,8 @@ public class CoreAnimationsPage extends AbstractPage {
         return PageCategory.ANIMATIONS;
     }
 
+    private  MaterialAnimation infiniteAnimation;
+
     @Override
     protected void onPostConstruct() {
         super.onPostConstruct();
@@ -78,7 +78,9 @@ public class CoreAnimationsPage extends AbstractPage {
         iconCallback.setBackgroundColor(Color.BLUE);
         btnCallback.setText("Animate with Callback");
         btnCallback.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.FLIPINX, iconCallback, 0, () -> {
+            MaterialAnimation animation = new MaterialAnimation();
+            animation.setTransition(Transition.FLIPINX);
+            animation.animate(iconCallback, () -> {
                 MaterialToast.fireToast("Callback Fired");
             });
         });
@@ -90,13 +92,16 @@ public class CoreAnimationsPage extends AbstractPage {
         iconInfinite.setBackgroundColor(Color.PINK);
         btnInfinite.setText("Infinite Animation");
         btnInfinite.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.PULSE, iconInfinite, 0, true);
+            infiniteAnimation = new MaterialAnimation();
+            infiniteAnimation.setTransition(Transition.PULSE);
+            infiniteAnimation.setInfinite(true);
+            infiniteAnimation.animate(iconInfinite);
         });
 
         btnStopInfinite.setText("Stop Animation");
         btnStopInfinite.setType(ButtonType.FLAT);
         btnStopInfinite.addClickHandler(clickEvent -> {
-            MaterialAnimator.stopAnimation(iconInfinite);
+            infiniteAnimation.stopAnimation();
         });
     }
 
@@ -119,7 +124,11 @@ public class CoreAnimationsPage extends AbstractPage {
         card.add(title);
 
         lstAnimations.addValueChangeHandler(event -> {
-            MaterialAnimator.animate(event.getValue(), card, 0);
+            MaterialAnimation animation = new MaterialAnimation();
+            animation.setTransition(event.getValue());
+            animation.setDurationMillis(1000);
+            animation.setDelayMillis(0);
+            animation.animate(card);
         });
         lstAnimations.addItem("bounce", Transition.BOUNCE);
         lstAnimations.addItem("flash", Transition.FLASH);

@@ -10,6 +10,7 @@ import gwt.material.design.client.constants.Color;
 import gwt.material.design.client.constants.IconPosition;
 import gwt.material.design.client.constants.IconType;
 import gwt.material.design.client.ui.*;
+import gwt.material.design.client.ui.animate.MaterialAnimation;
 import gwt.material.design.client.ui.animate.MaterialAnimator;
 import gwt.material.design.client.ui.animate.Transition;
 import gwt.material.design.client.ui.html.UnorderedList;
@@ -68,14 +69,18 @@ public class MeaningfulAnimationsPage extends AbstractPage {
     protected void buildFadeInImage() {
         btnShowFadeInImage.setText("Show Fade in Image");
         btnShowFadeInImage.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.FADE_IN_IMAGE, image, 0);
+            MaterialAnimation gridAnimation = new MaterialAnimation();
+            gridAnimation.setTransition(Transition.FADE_IN_IMAGE);
+            gridAnimation.animate(image);
         });
     }
 
     protected void buildStaggeredList() {
         btnShowStaggeredList.setText("Show Staggered List");
         btnShowStaggeredList.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.SHOW_STAGGERED_LIST, listItems, 0);
+            MaterialAnimation gridAnimation = new MaterialAnimation();
+            gridAnimation.setTransition(Transition.SHOW_STAGGERED_LIST);
+            gridAnimation.animate(listItems);
         });
         for (int i = 1; i <= 5; i++) {
             listItems.add(new MaterialTitle("Item " + i, "Description " + i));
@@ -85,13 +90,17 @@ public class MeaningfulAnimationsPage extends AbstractPage {
     protected void buildShowGrid() {
         btnShowGrid.setText("Show Grid");
         btnShowGrid.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.SHOW_GRID, rowCards, 0);
+            MaterialAnimation gridAnimation = new MaterialAnimation();
+            gridAnimation.setTransition(Transition.SHOW_GRID);
+            gridAnimation.animate(rowCards);
         });
 
         btnCloseGrid.setText("Close Grid");
         btnCloseGrid.setType(ButtonType.FLAT);
         btnCloseGrid.addClickHandler(clickEvent -> {
-            MaterialAnimator.animate(Transition.CLOSE_GRID, rowCards, 0);
+            MaterialAnimation gridAnimation = new MaterialAnimation();
+            gridAnimation.setTransition(Transition.CLOSE_GRID);
+            gridAnimation.animate(rowCards);
         });
         for (int i = 1; i <= 12; i++) {
             MaterialColumn col = new MaterialColumn(12, 3, 3);
