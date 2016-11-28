@@ -123,3 +123,7 @@ main {
 table tbody tr td img {
     max-width: initial !important;
 }
+
+.lean-overlay {
+    z-index: 1001 !important;
+}
