@@ -85,7 +85,7 @@ public class DataHelper {
         addins.addSubLink(new Link("Waterfall", "#waterfall"));
         addins.addSubLink(new Link("Window", "#window"));
 
-        Link styleLayout = new Link(IconType.STYLE, "Style & Layout");
+        Link styleLayout = new Link(IconType.STYLE, "Style and Layout");
         styleLayout.addSubLink(new Link("Colors", "#colors"));
         styleLayout.addSubLink(new Link("Grid", "#grid"));
         styleLayout.addSubLink(new Link("Helpers", "#helpers"));

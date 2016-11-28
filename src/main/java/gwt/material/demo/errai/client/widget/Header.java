@@ -104,7 +104,7 @@ public class Header extends Composite {
 
         codePanel.setWidth("190px");
         chipHtml.setText("HTML");
-        chipHtml.setLetter("<>");
+        chipHtml.setLetter("H");
         chipHtml.setMarginRight(12);
         chipHtml.setTextColor(Color.WHITE);
 
@@ -112,7 +112,7 @@ public class Header extends Composite {
         ThemeManager.register(chipHtml, ThemeManager.DARKER_SHADE);
 
         chipJava.setText("JAVA");
-        chipJava.setLetter("<>");
+        chipJava.setLetter("J");
         chipJava.setTextColor(Color.WHITE);
         ThemeManager.register(chipJava.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
         ThemeManager.register(chipJava, ThemeManager.DARKER_SHADE);

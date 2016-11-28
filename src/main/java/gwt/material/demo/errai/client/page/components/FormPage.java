@@ -19,7 +19,7 @@ public class FormPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialTextBox txtBox1, txtBox2, txtBox3, txtDisTextBox, txtBoxRO, txtBoxTRO;
+    private MaterialTextBox txtBox1, txtBoxLabel, txtBoxPlaceholder, txtBox2, txtBox3, txtDisTextBox, txtBoxRO, txtBoxTRO;
 
     @Inject
     @DataField
@@ -98,6 +98,7 @@ public class FormPage extends AbstractPage {
     protected void onPostConstruct() {
         super.onPostConstruct();
         buildTextBox();
+        buildTextBoxLabelAndPlaceholder();
         buildTextArea();
         buildCharCounter();
         buildNumber();
@@ -113,34 +114,39 @@ public class FormPage extends AbstractPage {
         buildReadOnly(txtBoxTRO, txtAreaTRO, txtFloatTRO, txtIntegerTRO, txtDoubleTRO, txtLongTRO, true);
     }
 
+    private void buildTextBoxLabelAndPlaceholder() {
+        txtBoxLabel.setLabel("This is a label");
+        txtBoxPlaceholder.setPlaceholder("This is a placeholder");
+    }
+
     private void buildReadOnly(MaterialTextBox txtBoxRO, MaterialTextArea txtAreaRO, MaterialFloatBox txtFloatRO, MaterialIntegerBox txtIntegerRO,
                                MaterialDoubleBox txtDoubleRO, MaterialLongBox txtLongRO, boolean toggleReadOnly) {
-        txtBoxRO.setPlaceholder("Text Box");
+        txtBoxRO.setLabel("Text Box");
         txtBoxRO.setValue("Some Value");
         txtBoxRO.setReadOnly(true);
         txtBoxRO.setToggleReadOnly(toggleReadOnly);
 
-        txtAreaRO.setPlaceholder("Text Area");
+        txtAreaRO.setLabel("Text Area");
         txtAreaRO.setValue("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam mauris, accumsan placerat lectus ac, tincidunt mattis nisl. Ut efficitur massa in libero gravida tincidunt. Vestibulum eget massa eget ex auctor tempus. Aenean vitae augue euismod, lacinia lectus ut, rhoncus enim. Sed vitae laoreet felis, eget ullamcorper nunc. Vivamus elit urna, varius et arcu vel, euismod auctor augue. Praesent scelerisque scelerisque libero sit amet euismod. Mauris eu est at felis feugiat tincidunt eu vel lectus. Ut pretium magna vitae massa sollicitudin, eu tincidunt sapien scelerisque. Maecenas gravida lorem non dui pretium, id vestibulum mi imperdiet. Fusce facilisis, dui nec ultrices molestie, nisi metus bibendum lacus, eget posuere est odio vitae nulla. Mauris laoreet non justo fringilla tempus. Mauris ut risus risus. Vivamus auctor accumsan gravida. Nam venenatis sapien nisl, quis accumsan odio dignissim non. Vestibulum aliquam semper condimentum. Suspendisse a eros elementum, dapibus quam in, aliquet lorem. Morbi mi dui, convallis at luctus ultricies, malesuada at leo. Morbi et turpis a ex vehicula ullamcorper. Vestibulum lacinia, orci eget elementum fermentum, lectus velit interdum erat, sit amet pharetra justo elit in tortor. Suspendisse ac vestibulum nisi.Nunc euismod metus nec elit sollicitudin blandit. Proin eleifend ex bibendum sodales blandit. Vestibulum varius pharetra arcu, sit amet pellentesque odio hendrerit nec. Integer faucibus imperdiet tortor a tempus. Sed accumsan condimentum nisl. Cras interdum sapien quis maximus commodo. Nulla malesuada imperdiet enim, non ornare elit auctor in. Fusce at ipsum eget turpis tincidunt maximus. Nunc sodales tortor nec tincidunt fringilla. Quisque sollicitudin ipsum at dolor faucibus, ultricies convallis ipsum convallis. Donec consequat velit vel molestie tempus. Donec et accumsan lacus, non sollicitudin quam. Morbi arcu lacus, blandit eu lacus nec, finibus tempus ligula.");
         txtAreaRO.setReadOnly(true);
         txtAreaRO.setToggleReadOnly(toggleReadOnly);
 
-        txtFloatRO.setPlaceholder("Float Box");
+        txtFloatRO.setLabel("Float Box");
         txtFloatRO.setValue(1000.25f);
         txtFloatRO.setReadOnly(true);
         txtFloatRO.setToggleReadOnly(toggleReadOnly);
 
-        txtIntegerRO.setPlaceholder("Integer Box");
+        txtIntegerRO.setLabel("Integer Box");
         txtIntegerRO.setValue(10);
         txtIntegerRO.setReadOnly(true);
         txtIntegerRO.setToggleReadOnly(toggleReadOnly);
 
-        txtDoubleRO.setPlaceholder("Double Box");
+        txtDoubleRO.setLabel("Double Box");
         txtDoubleRO.setValue(999.99);
         txtDoubleRO.setReadOnly(true);
         txtDoubleRO.setToggleReadOnly(toggleReadOnly);
 
-        txtLongRO.setPlaceholder("Long Box");
+        txtLongRO.setLabel("Long Box");
         txtLongRO.setValue(1000l);
         txtLongRO.setReadOnly(true);
         txtLongRO.setToggleReadOnly(toggleReadOnly);
@@ -294,86 +300,86 @@ public class FormPage extends AbstractPage {
     }
 
     private void buildEventsValueBox() {
-        txtBoxValueChange.setPlaceholder("Value Change Event");
+        txtBoxValueChange.setLabel("Value Change Event");
         txtBoxValueChange.addValueChangeHandler(valueChangeEvent -> {
             txtBoxValueChange.setHelperText("Value Changed to " + valueChangeEvent.getValue());
         });
 
-        txtBoxKey.setPlaceholder("Key Press Event");
+        txtBoxKey.setLabel("Key Press Event");
         txtBoxKey.addKeyPressHandler(keyPressEvent -> {
             txtBoxKey.setHelperText("Key Pressed : " + txtBoxKey.getText());
         });
 
-        txtBoxBlur.setPlaceholder("Blur Event");
+        txtBoxBlur.setLabel("Blur Event");
         txtBoxBlur.addBlurHandler(blurEvent -> {
             txtBoxBlur.setHelperText("TextBox on Blur");
         });
 
-        txtBoxFocus.setPlaceholder("Focus Event");
+        txtBoxFocus.setLabel("Focus Event");
         txtBoxFocus.addFocusHandler(focusEvent -> {
             txtBoxFocus.setHelperText("TextBox on Focus");
         });
     }
 
     private void buildDisabledValueBox() {
-        txtDisTextBox.setPlaceholder("TextBox");
+        txtDisTextBox.setLabel("TextBox");
         txtDisTextBox.setEnabled(false);
 
-        txtDisTextArea.setPlaceholder("Text Area");
+        txtDisTextArea.setLabel("Text Area");
         txtDisTextArea.setEnabled(false);
 
-        txtDisFloat.setPlaceholder("FloatBox");
+        txtDisFloat.setLabel("FloatBox");
         txtDisFloat.setEnabled(false);
 
-        txtDisInteger.setPlaceholder("IntegerBox");
+        txtDisInteger.setLabel("IntegerBox");
         txtDisInteger.setEnabled(false);
 
-        txtDisDouble.setPlaceholder("DoubleBox");
+        txtDisDouble.setLabel("DoubleBox");
         txtDisDouble.setEnabled(false);
 
-        txtDisLong.setPlaceholder("LongBox");
+        txtDisLong.setLabel("LongBox");
         txtDisLong.setEnabled(false);
     }
 
     private void buildNumber() {
-        txtFloat1.setPlaceholder("Float value");
+        txtFloat1.setLabel("Float value");
         txtFloat1.setValue(1000.25f);
 
-        txtInteger1.setPlaceholder("Integer value");
+        txtInteger1.setLabel("Integer value");
         txtInteger1.setValue(10);
 
-        txtDouble1.setPlaceholder("Double value");
+        txtDouble1.setLabel("Double value");
         txtDouble1.setValue(999.99);
 
-        txtLong1.setPlaceholder("Long value");
+        txtLong1.setLabel("Long value");
         txtLong1.setValue(Long.valueOf(1000));
     }
 
     private void buildCharCounter() {
-        txtCharCounter1.setPlaceholder("Input Text");
+        txtCharCounter1.setLabel("Input Text");
         txtCharCounter1.setLength(10);
 
-        txtCharCounter2.setPlaceholder("Text Area");
+        txtCharCounter2.setLabel("Text Area");
         txtCharCounter2.setLength(120);
     }
 
     private void buildTextArea() {
         txtArea1.setResizeRule(MaterialTextArea.ResizeRule.AUTO);
         txtArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam mauris, accumsan placerat lectus ac, tincidunt mattis nisl. Ut efficitur massa in libero gravida tincidunt. Vestibulum eget massa eget ex auctor tempus. Aenean vitae augue euismod, lacinia lectus ut, rhoncus enim. Sed vitae laoreet felis, eget ullamcorper nunc. Vivamus elit urna, varius et arcu vel, euismod auctor augue. Praesent scelerisque scelerisque libero sit amet euismod. Mauris eu est at felis feugiat tincidunt eu vel lectus. Ut pretium magna vitae massa sollicitudin, eu tincidunt sapien scelerisque. Maecenas gravida lorem non dui pretium, id vestibulum mi imperdiet. Fusce facilisis, dui nec ultrices molestie, nisi metus bibendum lacus, eget posuere est odio vitae nulla. Mauris laoreet non justo fringilla tempus. Mauris ut risus risus. Vivamus auctor accumsan gravida. Nam venenatis sapien nisl, quis accumsan odio dignissim non. Vestibulum aliquam semper condimentum. Suspendisse a eros elementum, dapibus quam in, aliquet lorem. Morbi mi dui, convallis at luctus ultricies, malesuada at leo. Morbi et turpis a ex vehicula ullamcorper. Vestibulum lacinia, orci eget elementum fermentum, lectus velit interdum erat, sit amet pharetra justo elit in tortor. Suspendisse ac vestibulum nisi. Nunc euismod metus nec elit sollicitudin blandit. Proin eleifend ex bibendum sodales blandit. Vestibulum varius pharetra arcu, sit amet pellentesque odio hendrerit nec. Integer faucibus imperdiet tortor a tempus. Sed accumsan condimentum nisl. Cras interdum sapien quis maximus commodo. Nulla malesuada imperdiet enim, non ornare elit auctor in. Fusce at ipsum eget turpis tincidunt maximus. Nunc sodales tortor nec tincidunt fringilla. Quisque sollicitudin ipsum at dolor faucibus, ultricies convallis ipsum convallis. Donec consequat velit vel molestie tempus. Donec et accumsan lacus, non sollicitudin quam. Morbi arcu lacus, blandit eu lacus nec, finibus tempus ligula.");
-        txtArea1.setPlaceholder("Using AUTO");
+        txtArea1.setLabel("Using AUTO");
 
         txtArea2.setResizeRule(MaterialTextArea.ResizeRule.FOCUS);
         txtArea2.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam mauris, accumsan placerat lectus ac, tincidunt mattis nisl. Ut efficitur massa in libero gravida tincidunt. Vestibulum eget massa eget ex auctor tempus. Aenean vitae augue euismod, lacinia lectus ut, rhoncus enim. Sed vitae laoreet felis, eget ullamcorper nunc. Vivamus elit urna, varius et arcu vel, euismod auctor augue. Praesent scelerisque scelerisque libero sit amet euismod. Mauris eu est at felis feugiat tincidunt eu vel lectus. Ut pretium magna vitae massa sollicitudin, eu tincidunt sapien scelerisque. Maecenas gravida lorem non dui pretium, id vestibulum mi imperdiet. Fusce facilisis, dui nec ultrices molestie, nisi metus bibendum lacus, eget posuere est odio vitae nulla. Mauris laoreet non justo fringilla tempus. Mauris ut risus risus. Vivamus auctor accumsan gravida. Nam venenatis sapien nisl, quis accumsan odio dignissim non. Vestibulum aliquam semper condimentum. Suspendisse a eros elementum, dapibus quam in, aliquet lorem. Morbi mi dui, convallis at luctus ultricies, malesuada at leo. Morbi et turpis a ex vehicula ullamcorper. Vestibulum lacinia, orci eget elementum fermentum, lectus velit interdum erat, sit amet pharetra justo elit in tortor. Suspendisse ac vestibulum nisi. Nunc euismod metus nec elit sollicitudin blandit. Proin eleifend ex bibendum sodales blandit. Vestibulum varius pharetra arcu, sit amet pellentesque odio hendrerit nec. Integer faucibus imperdiet tortor a tempus. Sed accumsan condimentum nisl. Cras interdum sapien quis maximus commodo. Nulla malesuada imperdiet enim, non ornare elit auctor in. Fusce at ipsum eget turpis tincidunt maximus. Nunc sodales tortor nec tincidunt fringilla. Quisque sollicitudin ipsum at dolor faucibus, ultricies convallis ipsum convallis. Donec consequat velit vel molestie tempus. Donec et accumsan lacus, non sollicitudin quam. Morbi arcu lacus, blandit eu lacus nec, finibus tempus ligula.");
-        txtArea2.setPlaceholder("Using FOCUS");
+        txtArea2.setLabel("Using FOCUS");
     }
 
     private void buildTextBox() {
-        txtBox1.setPlaceholder("First Name");
+        txtBox1.setLabel("First Name");
 
-        txtBox2.setPlaceholder("Email");
+        txtBox2.setLabel("Email");
         txtBox2.setIconType(IconType.ACCOUNT_CIRCLE);
 
-        txtBox3.setPlaceholder("Information");
+        txtBox3.setLabel("Information");
         txtBox3.setIconType(IconType.INFO);
         txtBox3.setHelperText("A brief info about you");
     }

@@ -103,12 +103,12 @@ public class ErrorsPage extends AbstractPage {
     }
 
     protected void buildTextArea() {
-        textArea.setPlaceholder("Text Area");
+        textArea.setLabel("Text Area");
         buildButtonPanel(textArea, buttonTextAreaPanel);
     }
 
     protected void buildTextBox() {
-        textBox.setPlaceholder("Text Box");
+        textBox.setLabel("Text Box");
         buildButtonPanel(textBox, buttonTextBoxPanel);
     }
 

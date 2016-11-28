@@ -22,11 +22,15 @@ public class WindowPage extends AbstractPage {
 
     @Inject
     @DataField
-    private MaterialButton btnSimple, btnMaximize, btnStyled, btnEvent;
+    private MaterialButton btnSimple, btnMaximize, btnStyled, btnEvent, btnOverlay;
 
     @Inject
     @DataField
-    private MaterialWindow windowSimple, windowMaximize, windowStyled, windowEvent;
+    private MaterialWindow windowSimple, windowMaximize, windowStyled, windowEvent, windowOverlay;
+
+    @Inject
+    @DataField
+    private MaterialCheckBox cbOverlay;
 
     @Override
     public String getName() {
@@ -50,6 +54,13 @@ public class WindowPage extends AbstractPage {
         buildMaximize();
         buildStyled();
         buildEvent();
+        buildOverlay();
+    }
+
+    private void buildOverlay() {
+        btnOverlay.setText("Open Window");
+        cbOverlay.setText("With Overlay");
+        buildWindow(windowOverlay, btnOverlay);
     }
 
     protected void buildEvent() {
@@ -103,6 +114,7 @@ public class WindowPage extends AbstractPage {
         panel.add(title);
         // Activate Window
         activator.addClickHandler(clickEvent -> {
+            MaterialWindow.setOverlay(cbOverlay.getValue());
             window.open();
         });
     }
