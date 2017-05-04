@@ -24,7 +24,7 @@ header nav ul {
     margin-top: 64px;
     color: #fff;
     padding: 80px;
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 /** Sidenav **/
@@ -39,6 +39,10 @@ header nav ul {
 /** Main **/
 main {
     margin-top: -40px;
+}
+
+main .content {
+    margin-top: -60px;
     padding-left: 80px;
     padding-right: 80px;
 }

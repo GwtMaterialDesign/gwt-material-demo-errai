@@ -68,7 +68,7 @@ public class CoreAnimationsPage extends AbstractPage {
         iconStatefull.setBackgroundColor(Color.BLUE);
         btnStatefull.setText("Animate");
         btnStatefull.addClickHandler(clickEvent -> {
-            new MaterialAnimation().transition(Transition.JELLO).durationMillis(1000).animate(iconStatefull);
+            new MaterialAnimation().transition(Transition.JELLO).duration(1000).animate(iconStatefull);
         });
     }
 
@@ -125,9 +125,9 @@ public class CoreAnimationsPage extends AbstractPage {
 
         lstAnimations.addValueChangeHandler(event -> {
             MaterialAnimation animation = new MaterialAnimation();
-            animation.setTransition(event.getValue());
-            animation.setDurationMillis(1000);
-            animation.setDelayMillis(0);
+            animation.setTransition(event.getValue().get(0));
+            animation.setDuration(1000);
+            animation.setDelay(0);
             animation.animate(card);
         });
         lstAnimations.addItem("bounce", Transition.BOUNCE);

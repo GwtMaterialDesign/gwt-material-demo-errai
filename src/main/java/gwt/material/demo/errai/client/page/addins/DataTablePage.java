@@ -320,7 +320,7 @@ public class DataTablePage extends AbstractPage {
         comboSelection.addItem("MULTIPLE", SelectionType.MULTIPLE);
         comboSelection.addItem("NONE", SelectionType.NONE);
         comboSelection.addSelectionHandler(selectionEvent -> {
-            standardTable.setSelectionType(selectionEvent.getSelectedItem());
+            standardTable.setSelectionType(selectionEvent.getSelectedValues().get(0));
             standardTable.setRedraw(true);
             standardTable.refreshView();
         });

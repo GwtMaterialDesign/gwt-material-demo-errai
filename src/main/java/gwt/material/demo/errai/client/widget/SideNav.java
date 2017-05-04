@@ -25,7 +25,7 @@ public class SideNav extends Composite {
 
     @Inject
     @DataField
-    private MaterialSideNav sideNav;
+    private MaterialSideNavPush sideNav;
 
     @Inject
     private MaterialSideProfile profile;
@@ -39,8 +39,6 @@ public class SideNav extends Composite {
     @PostConstruct
     protected void init() {
         sideNav.setId("sideNav");
-        sideNav.setShowOnAttach(true);
-        sideNav.setType(SideNavType.PUSH);
         sideNav.setWidth(280);
         sideNav.reinitialize();
 

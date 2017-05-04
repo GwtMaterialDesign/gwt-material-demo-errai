@@ -36,8 +36,8 @@ public class ThemeSwitcher extends Composite {
         ThemeManager.initialize();
 
         buildThemeList();
-        comboThemes.setValue(ThemeManager.getBundle());
-        comboThemes.addValueChangeHandler(event -> ThemeManager.loadTheme(event.getValue()));
+        comboThemes.setSingleValue(ThemeManager.getBundle());
+        comboThemes.addValueChangeHandler(event -> ThemeManager.loadTheme(event.getValue().get(0)));
     }
 
     protected void buildThemeList() {

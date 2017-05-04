@@ -54,7 +54,7 @@ public class AvatarPage extends AbstractPage {
         txtAvatar.setText("Marjorie");
         txtAvatar.addKeyUpHandler(keyUpEvent -> {
             avatar2.setName(txtAvatar.getText());
-            avatar2.initialize();
+            avatar2.reinitialize();
         });
 
         avatar2.setName(txtAvatar.getText());

@@ -50,26 +50,10 @@ public class Header extends Composite {
     private MaterialLink iconSearch;
 
     @Inject
-    @DataField
-    private MaterialPanel titlePanel;
-
-    @Inject
-    private MaterialLabel lblTitle;
-
-    @Inject
-    private MaterialLabel lblDescription;
-
-    @Inject
     private MaterialComboBox<ThemeLoader.ThemeBundle> comboBox;
 
     @Inject
     private ThemeSwitcher themeSwitcher;
-
-    @Inject
-    private MaterialPanel codePanel;
-
-    @Inject
-    private MaterialChip chipHtml, chipJava;
 
     @Inject
     @DataField
@@ -80,10 +64,8 @@ public class Header extends Composite {
     @PostConstruct
     protected void init() {
         ThemeManager.register(navBar, ThemeManager.DARKER_SHADE);
-        ThemeManager.register(titlePanel);
 
         navBar.setActivates("sideNav");
-        navBar.setType(NavBarType.FIXED);
 
         // Nav section
         navSection.setHideOn(HideOn.NONE);
@@ -96,35 +78,6 @@ public class Header extends Composite {
         navSection.add(iconSearch);
         navBar.add(navSection);
 
-        // Title Panel
-        lblTitle.setFontSize(2.3, Style.Unit.EM);
-        titlePanel.add(lblTitle);
-        lblDescription.setMarginBottom(20);
-        titlePanel.add(lblDescription);
-
-        codePanel.setWidth("190px");
-        chipHtml.setText("HTML");
-        chipHtml.setLetter("H");
-        chipHtml.setMarginRight(12);
-        chipHtml.setTextColor(Color.WHITE);
-
-        ThemeManager.register(chipHtml.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
-        ThemeManager.register(chipHtml, ThemeManager.DARKER_SHADE);
-
-        chipJava.setText("JAVA");
-        chipJava.setLetter("J");
-        chipJava.setTextColor(Color.WHITE);
-        ThemeManager.register(chipJava.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
-        ThemeManager.register(chipJava, ThemeManager.DARKER_SHADE);
-
-        chipHtml.addClickHandler(clickEvent -> {
-            Window.open(getPageChangeEvent().getHtmlCodeLink(), "_blank", "");
-        });
-
-        chipJava.addClickHandler(clickEvent -> {
-            Window.open(getPageChangeEvent().getJavaCodeLink(), "_blank", "");
-        });
-
         // Search Navbar
         search.setPlaceholder("Search");
         search.addOpenHandler(e -> changeNav(searchNav));
@@ -134,8 +87,8 @@ public class Header extends Composite {
         buildSearches();
 
         ThemeManager.register(codeCutout, ThemeManager.DARKER_SHADE);
-        setupCutout(codeCutout, codePanel, true, 0.8, 10, "1430px", "Code Samples",
-            "See code examples of the feature here!");
+        /*setupCutout(codeCutout, codePanel, true, 0.8, 10, "1430px", "Code Samples",
+            "See code examples of the feature here!");*/
 
         ThemeManager.register(searchCutout, ThemeManager.REGULAR_SHADE);
         setupCutout(searchCutout, iconSearch.getIcon(), true, 0.8, -3, null, "Search Feature",
@@ -177,45 +130,12 @@ public class Header extends Composite {
         nav.setVisible(true);
     }
 
-    public void onPageChange(@Observes PageChangeEvent event) {
-        setPageChangeEvent(event);
-
-        PageCategory pageCategory = pageChangeEvent.getPageCategory();
-        switch (pageCategory) {
-            case ADDINS:
-            case COMPONENTS:
-            case ANIMATIONS:
-                codePanel.add(chipHtml);
-                codePanel.add(chipJava);
-                titlePanel.add(codePanel);
-                break;
-            default:
-                codePanel.removeFromParent();
-                break;
-        }
-        $("body").scrollTop(0);
-        lblTitle.setText(event.getTitle());
-        lblDescription.setText(event.getDescription());
-    }
-
     public void onCodeCutOut(@Observes CodeCutOutEvent event) {
         Scheduler.get().scheduleDeferred(() -> codeCutout.open());
     }
 
     public void onSearchCutOut(@Observes SearchCutOutEvent event) {
         Scheduler.get().scheduleDeferred(() -> searchCutout.open());
-    }
-
-    public void onSideNavOpened(@Observes SideNavOpenedEvent event) {
-        navBar.getElement().getStyle().setProperty("transition", "none");
-        navBar.getElement().getStyle().setProperty("width", "calc(100% - 280px)");
-        searchNav.getElement().getStyle().setProperty("width", "calc(100% - 280px)");
-    }
-
-    public void onSideNavClosed(@Observes SideNavClosedEvent event) {
-        navBar.getElement().getStyle().setProperty("transition", "none");
-        navBar.getElement().getStyle().setProperty("width", "100%");
-        searchNav.getElement().getStyle().setProperty("width", "100%");
     }
 
     public void buildSearches() {
@@ -285,13 +205,5 @@ public class Header extends Composite {
         listSearches.add(new SearchObject(IconType.EXTENSION, "Window", "#window"));
 
         search.setListSearches(listSearches);
-    }
-
-    public PageChangeEvent getPageChangeEvent() {
-        return pageChangeEvent;
-    }
-
-    public void setPageChangeEvent(PageChangeEvent pageChangeEvent) {
-        this.pageChangeEvent = pageChangeEvent;
     }
 }

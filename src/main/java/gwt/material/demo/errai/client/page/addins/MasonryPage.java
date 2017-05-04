@@ -48,7 +48,7 @@ public class MasonryPage extends AbstractPage {
     }
 
     protected void buildTransition() {
-        masonryTransition.setTransitionDuration(0);
+        masonryTransition.setDuration(0);
         buildMasonry(masonryTransition);
     }
 

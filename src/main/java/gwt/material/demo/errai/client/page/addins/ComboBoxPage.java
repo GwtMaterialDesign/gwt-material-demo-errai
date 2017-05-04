@@ -188,7 +188,7 @@ public class ComboBoxPage extends AbstractPage {
         btnAddItem.addClickHandler(clickEvent -> {
             State newState = new State("Item " + dynamicIndex, "I" + dynamicIndex);
             combo20.addItem(newState.getName(), newState);
-            combo20.setValue(newState);
+            combo20.setSingleValue(newState);
             dynamicIndex++;
         });
     }
@@ -213,7 +213,7 @@ public class ComboBoxPage extends AbstractPage {
         btnSetValue.setText("Set California");
         btnSetValue.addClickHandler(clickEvent -> {
             State california = combo17.getValues().get(2);
-            combo17.setValue(california);
+            combo17.setSingleValue(california);
         });
 
         combo18.setMultiple(true);
@@ -236,7 +236,7 @@ public class ComboBoxPage extends AbstractPage {
 
         btnGetValue.setText("Get Value");
         btnGetValue.addClickHandler(clickEvent -> {
-            MaterialToast.fireToast("Value: " + combo15.getSelectedValue().getName());
+            MaterialToast.fireToast("Value: " + combo15.getSelectedValue().get(0).getName());
         });
 
         combo16.setMultiple(true);
@@ -267,7 +267,7 @@ public class ComboBoxPage extends AbstractPage {
         combo13.setMultiple(true);
         combo13.setCloseOnSelect(false);
         combo13.addRemoveItemHandler(event -> {
-            MaterialToast.fireToast("Removed: " + event.getTarget().getName());
+            MaterialToast.fireToast("Removed: " + event.getSelectedValues().get(0).getName());
         });
 
         addStateItemsWithGroup(combo13);
@@ -275,7 +275,7 @@ public class ComboBoxPage extends AbstractPage {
 
     private void buildSelection() {
         combo11.addSelectionHandler(selectionEvent -> {
-            MaterialToast.fireToast("State: " + selectionEvent.getSelectedItem().getName() + " Value: " + selectionEvent.getSelectedItem().getValue());
+            MaterialToast.fireToast("State: " + selectionEvent.getSelectedValues().get(0).getName() + " Value: " + selectionEvent.getSelectedValues().get(0).getValue());
         });
         addStateItemsWithGroup(combo11);
 
@@ -283,14 +283,14 @@ public class ComboBoxPage extends AbstractPage {
         combo12.setMultiple(true);
         combo12.setCloseOnSelect(false);
         combo12.addSelectionHandler(selectionEvent -> {
-            MaterialToast.fireToast("State: " + selectionEvent.getSelectedItem().getName() + " Value: " + selectionEvent.getSelectedItem().getValue());
+            MaterialToast.fireToast("State: " + selectionEvent.getSelectedValues().get(0).getName() + " Value: " + selectionEvent.getSelectedValues().get(0).getValue());
         });
         addStateItemsWithGroup(combo12);
     }
 
     private void buildValueChange() {
         combo9.addValueChangeHandler(valueChangeEvent -> {
-            MaterialToast.fireToast("State: " + valueChangeEvent.getValue().getName() + " Value: " + valueChangeEvent.getValue().getValue());
+            MaterialToast.fireToast("State: " + valueChangeEvent.getValue().get(0).getName() + " Value: " + valueChangeEvent.getValue().get(0).getValue());
         });
         addStateItemsWithGroup(combo9);
 
