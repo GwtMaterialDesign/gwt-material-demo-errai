@@ -31,20 +31,22 @@ public class Client extends Composite {
     private SideNav sideNav;
 
     @Inject
-    private Main content;
+    private Footer footer;
 
     @Inject
-    private Footer footer;
+    private Main content;
 
     @PostConstruct
     protected void init() {
         StyleInjector.inject(AppResources.INSTANCE.appCss().getText());
         content.getContainer().add(navigation.getContentPanel());
         ThemeManager.initialize();
+
         RootPanel.get().add(header);
         RootPanel.get().add(sideNav);
         RootPanel.get().add(content);
         RootPanel.get().add(footer);
+
         Timer timer = new Timer() {
             @Override
             public void run() {

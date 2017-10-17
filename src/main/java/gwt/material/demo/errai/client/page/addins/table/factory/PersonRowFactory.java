@@ -7,11 +7,11 @@ import gwt.material.design.client.data.factory.RowComponentFactory;
 
 public class PersonRowFactory extends RowComponentFactory<Person> {
 
-    @Override
+  /*  @Override
     public RowComponent<Person> generate(Person model) {
         // We won't change the way it loads the RowComponent
         return super.generate(model);
-    }
+    }*/
 
     @Override
     public String getCategory(Person model) {

@@ -40,7 +40,7 @@ public class SideNav extends Composite {
     protected void init() {
         sideNav.setId("sideNav");
         sideNav.setWidth(280);
-        sideNav.reinitialize();
+        sideNav.reload();
 
         ThemeManager.register(profile);
         MaterialAvatar avatar = new MaterialAvatar("kevzlou7979");

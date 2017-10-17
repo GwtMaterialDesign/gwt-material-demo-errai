@@ -107,7 +107,7 @@ public class DataTablePage extends AbstractPage {
     }
 
     public void buildInfiniteTable() {
-        infiniteTable = new MaterialInfiniteDataTable<>(20, InfiniteDataView.DYNAMIC_VIEW, new PersonDataSource(personService));
+        /*infiniteTable = new MaterialInfiniteDataTable<>(20, InfiniteDataView.DYNAMIC_VIEW, new PersonDataSource(personService));
 
         infiniteTable.setShadow(1);
         infiniteTable.setUseLoadOverlay(false);
@@ -209,11 +209,11 @@ public class DataTablePage extends AbstractPage {
             // we will forcefully invoke a table refresh that
             // sends a request for data.
             infiniteTable.refreshView();
-        }
+        }*/
     }
 
     public void buildContextMenuTable() {
-        contextMenuTable.getTableTitle().setText("Table with Context Menu");
+        /*contextMenuTable.getTableTitle().setText("Table with Context Menu");
         contextMenuTable.setShadow(1);
         contextMenuTable.setHeight("400px");
         contextMenuTable.setUseStickyHeader(false);
@@ -230,11 +230,11 @@ public class DataTablePage extends AbstractPage {
             return true;
         });
         buildContextMenu();
-        buildTable(contextMenuTable);
+        buildTable(contextMenuTable);*/
     }
 
     protected void buildContextMenu() {
-        MaterialLink linkCopy = new MaterialLink("Copy", new MaterialIcon(IconType.CONTENT_COPY));
+        /*MaterialLink linkCopy = new MaterialLink("Copy", new MaterialIcon(IconType.CONTENT_COPY));
         linkCopy.setPadding(12);
         linkCopy.setDisplay(Display.BLOCK);
         linkCopy.setIconPosition(IconPosition.LEFT);
@@ -258,11 +258,11 @@ public class DataTablePage extends AbstractPage {
                 MaterialToast.fireToast($(span).asElement().getInnerHTML() + " : " + per.getFirstName());
             }
             popupMenu.close();
-        });
+        });*/
     }
 
     public void buildPageTable() {
-        pageTable.getTableTitle().setText("Page Table");
+        /*pageTable.getTableTitle().setText("Page Table");
         pageTable.setShadow(1);
         pageTable.setHeight("400px");
         pageTable.setUseStickyHeader(false);
@@ -274,11 +274,11 @@ public class DataTablePage extends AbstractPage {
         pager = new MaterialDataPager<>(pageTable, dataSource);
         pager.setLimitOptions(5, 10, 15, 20);
         pageTable.add(pager);
-        buildTable(pageTable);
+        buildTable(pageTable);*/
     }
 
     public void buildStandardTable() {
-        cbCategories.setText("With Categories");
+        /*cbCategories.setText("With Categories");
         cbCategories.setType(CheckBoxType.FILLED);
         cbCategories.addValueChangeHandler(event -> {
             standardTable.setUseCategories(event.getValue());
@@ -311,11 +311,11 @@ public class DataTablePage extends AbstractPage {
         standardTable.setUseCategories(false);
         standardTable.setUseRowExpansion(false);
         standardTable.setSelectionType(SelectionType.SINGLE);
-        buildTable(standardTable);
+        buildTable(standardTable);*/
     }
 
     public void buildSelection() {
-        comboSelection.setLabel("Selection Type");
+        /*comboSelection.setLabel("Selection Type");
         comboSelection.addItem("SINGLE", SelectionType.SINGLE);
         comboSelection.addItem("MULTIPLE", SelectionType.MULTIPLE);
         comboSelection.addItem("NONE", SelectionType.NONE);
@@ -323,11 +323,11 @@ public class DataTablePage extends AbstractPage {
             standardTable.setSelectionType(selectionEvent.getSelectedValues().get(0));
             standardTable.setRedraw(true);
             standardTable.refreshView();
-        });
+        });*/
     }
 
     public void buildTable(MaterialDataTable<Person> table) {
-        table.setRowFactory(new PersonRowFactory());
+        /*table.setRowFactory(new PersonRowFactory());
         table.setCategoryFactory(new CustomCategoryFactory());
         table.setRenderer(new CustomRenderer<>());
 
@@ -502,7 +502,7 @@ public class DataTablePage extends AbstractPage {
         table.addRowShortPressHandler((e, mouseEvent, model, row) -> {
             //.log("Row Short Pressed: " + model.getId() + ", x:" + mouseEvent.getPageX() + ", y: " + mouseEvent.getPageY());
             return true;
-        });
+        });*/
     }
 
     public List<Person> getAllPersons() {

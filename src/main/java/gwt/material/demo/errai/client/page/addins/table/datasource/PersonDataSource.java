@@ -45,7 +45,7 @@ public class PersonDataSource implements DataSource<Person> {
 
     @Override
     public void load(LoadConfig<Person> loadConfig, LoadCallback<Person> callback) {
-        List<CategoryComponent> categories = loadConfig.getOpenCategories();
+        /*List<CategoryComponent> categories = loadConfig.getOpenCategories();
         List<String> categoryNames = categories.stream().map(CategoryComponent::getCategory).collect(Collectors.toList());
 
         personService.getPeople(loadConfig.getOffset(), loadConfig.getLimit(), categoryNames,
@@ -72,7 +72,7 @@ public class PersonDataSource implements DataSource<Person> {
                         GWT.log("Getting people async call failed.", throwable);
                         callback.onFailure(throwable);
                     }
-                });
+                });*/
     }
 
     @Override

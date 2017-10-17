@@ -2,7 +2,6 @@ package gwt.material.demo.errai.client.page.addins;
 
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.design.addins.client.avatar.MaterialAvatar;
 import gwt.material.design.client.ui.MaterialTextBox;
 import org.jboss.errai.ui.nav.client.local.Page;
@@ -53,8 +52,8 @@ public class AvatarPage extends AbstractPage {
         txtAvatar.setPlaceholder("Avatar Name");
         txtAvatar.setText("Marjorie");
         txtAvatar.addKeyUpHandler(keyUpEvent -> {
-            avatar2.setName(txtAvatar.getText());
-            avatar2.reinitialize();
+            avatar2.setValue(txtAvatar.getText());
+            avatar2.reload();
         });
 
         avatar2.setName(txtAvatar.getText());

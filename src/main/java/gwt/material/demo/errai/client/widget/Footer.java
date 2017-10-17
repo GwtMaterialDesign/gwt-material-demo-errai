@@ -59,6 +59,7 @@ public class Footer extends Composite {
         row.add(col1);
         row.add(col2);
         row.add(col3);
+        footer.setPaddingTop(0);
         footer.add(row);
         footer.add(copyright);
         copyright.add(new MaterialLabel("@ 2016 Copyright GWT Material"));

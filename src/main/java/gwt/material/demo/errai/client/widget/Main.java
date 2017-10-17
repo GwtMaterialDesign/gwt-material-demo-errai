@@ -59,13 +59,13 @@ public class Main extends Composite {
         chipHtml.setMarginRight(12);
         chipHtml.setTextColor(Color.WHITE);
 
-        ThemeManager.register(chipHtml.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
+        ThemeManager.register(chipHtml.getLetterLabel(), ThemeManager.LIGHTER_SHADE);
         ThemeManager.register(chipHtml, ThemeManager.DARKER_SHADE);
 
         chipJava.setText("JAVA");
         chipJava.setLetter("J");
         chipJava.setTextColor(Color.WHITE);
-        ThemeManager.register(chipJava.getLetterMixin().getSpan(), ThemeManager.LIGHTER_SHADE);
+        ThemeManager.register(chipJava.getLetterLabel(), ThemeManager.LIGHTER_SHADE);
         ThemeManager.register(chipJava, ThemeManager.DARKER_SHADE);
 
         chipHtml.addClickHandler(clickEvent -> {

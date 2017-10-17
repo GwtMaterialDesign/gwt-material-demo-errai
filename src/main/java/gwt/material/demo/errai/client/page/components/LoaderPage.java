@@ -95,11 +95,11 @@ public class LoaderPage extends AbstractPage {
     private void buildProgress() {
         btnProgress.setText("Show Progress");
         btnProgress.addClickHandler(clickEvent -> {
-            MaterialLoader.showProgress(true);
+            MaterialLoader.progress(true);
             Timer timer = new Timer() {
                 @Override
                 public void run() {
-                    MaterialLoader.showProgress(false);
+                    MaterialLoader.progress(false);
                 }
             };
             timer.schedule(2000);
@@ -109,11 +109,11 @@ public class LoaderPage extends AbstractPage {
     private void buildCircular() {
         btnCircular.setText("Show Loader");
         btnCircular.addClickHandler(clickEvent -> {
-            MaterialLoader.showLoading(true);
+            MaterialLoader.loading(true);
             Timer timer = new Timer() {
                 @Override
                 public void run() {
-                    MaterialLoader.showLoading(false);
+                    MaterialLoader.loading(false);
                 }
             };
             timer.schedule(2000);
