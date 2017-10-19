@@ -94,8 +94,8 @@ public class CollapsiblePage extends AbstractPage {
     }
 
     private void buidExpandable() {
-        buildCollapsible(expandable, BASIC);
         expandable.setAccordion(false);
+        buildCollapsible(expandable, BASIC);
     }
 
     private void buildAccordion() {

@@ -4,10 +4,7 @@ import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
 import gwt.material.demo.errai.client.page.AbstractPage;
 import gwt.material.demo.errai.client.page.PageCategory;
-import gwt.material.design.client.constants.Axis;
-import gwt.material.design.client.constants.IconPosition;
-import gwt.material.design.client.constants.IconType;
-import gwt.material.design.client.constants.WavesType;
+import gwt.material.design.client.constants.*;
 import gwt.material.design.client.ui.*;
 import org.jboss.errai.ui.nav.client.local.Page;
 import org.jboss.errai.ui.shared.api.annotations.DataField;
@@ -68,7 +65,6 @@ public class CardPage extends AbstractPage {
     }
 
     private void buildCardMobile() {
-        cardMobile.setAxis(Axis.HORIZONTAL);
         cardMobile.setDetectOrientation(true);
         MaterialCardImage cardImageCon = new MaterialCardImage();
         cardImageCon.setWaves(WavesType.LIGHT);
@@ -131,7 +127,7 @@ public class CardPage extends AbstractPage {
     }
 
     private void buildHorizontalCard() {
-        cardHorizontal.setAxis(Axis.HORIZONTAL);
+        cardHorizontal.setOrientation(Orientation.LANDSCAPE);
         MaterialCardImage cardImageCon = new MaterialCardImage();
         cardImageCon.setWaves(WavesType.LIGHT);
         MaterialImage image = new MaterialImage();

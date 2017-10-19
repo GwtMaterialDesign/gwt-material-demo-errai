@@ -40,7 +40,7 @@ public class SideNav extends Composite {
     protected void init() {
         sideNav.setId("sideNav");
         sideNav.setWidth(280);
-        sideNav.reload();
+
 
         ThemeManager.register(profile);
         MaterialAvatar avatar = new MaterialAvatar("kevzlou7979");
@@ -61,13 +61,9 @@ public class SideNav extends Composite {
         profile.add(description);
         sideNav.add(profile);
 
-        sideNav.addOpenedHandler(event -> {
-            sidenavOpenedEvent.fire(new SideNavOpenedEvent());
-        });
+        sideNav.addOpenedHandler(event -> sidenavOpenedEvent.fire(new SideNavOpenedEvent()));
 
-        sideNav.addClosingHandler(event -> {
-            sideNavClosedEvent.fire(new SideNavClosedEvent());
-        });
+        sideNav.addClosingHandler(event -> sideNavClosedEvent.fire(new SideNavClosedEvent()));
 
         for (Link l : DataHelper.getAppLinks()) {
             if (l.getSubLinks().size() > 0) {
@@ -114,6 +110,8 @@ public class SideNav extends Composite {
                 sideNav.add(link);
             }
         }
+
+        sideNav.reload();
     }
 
 }

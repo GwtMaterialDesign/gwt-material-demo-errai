@@ -108,7 +108,11 @@ public class ComboBoxPage extends AbstractPage {
     private MaterialButton btnAddItem;
 
     @Inject
-    private MaterialComboBox<State> combo21, comboCloseOnClick;
+    private MaterialComboBox<State> combo21;
+
+    @Inject
+    @DataField
+    private MaterialComboBox<State> comboCloseOnClick;
 
     @Inject
     @DataField
@@ -283,7 +287,10 @@ public class ComboBoxPage extends AbstractPage {
         combo12.setMultiple(true);
         combo12.setCloseOnSelect(false);
         combo12.addSelectionHandler(selectionEvent -> {
-            MaterialToast.fireToast("State: " + selectionEvent.getSelectedValues().get(0).getName() + " Value: " + selectionEvent.getSelectedValues().get(0).getValue());
+            for (State state : selectionEvent.getSelectedValues()) {
+                MaterialToast.fireToast("State: " + state.getName() + " Value: " + state.getValue());
+
+            }
         });
         addStateItemsWithGroup(combo12);
     }

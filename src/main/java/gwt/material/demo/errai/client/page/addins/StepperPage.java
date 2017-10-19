@@ -148,7 +148,7 @@ public class StepperPage extends AbstractPage {
             modal.close();
             stepper3.reset();
         });
-        stepper3.setAxis(Axis.HORIZONTAL);
+        stepper3.setAxis(Axis.VERTICAL);
         modal.add(content);
         content.add(stepper3);
         buildStepper(stepper3, BASIC);
