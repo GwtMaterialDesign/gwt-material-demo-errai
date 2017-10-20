@@ -51,7 +51,7 @@ public class SideNav extends Composite {
         avatar.setShadow(1);
         MaterialLabel label = new MaterialLabel("gwt-material-errai");
         label.setFontWeight(Style.FontWeight.BOLD);
-        MaterialLabel description = new MaterialLabel("Version 1.0");
+        MaterialLabel description = new MaterialLabel("Version 2.0-rc7");
         description.setFontSize(0.8, Style.Unit.EM);
         description.setMarginTop(20);
         profile.setTextColor(Color.WHITE);
